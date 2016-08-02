@@ -1,0 +1,46 @@
+Running from command line
+
+Environment variable settings
+	EIS_TEST_AUTO_HOME=C:\Users\blazej\EISTestAutomation
+	JUNIT_HOME=c:\JUnit
+
+	NOTE:  DO NOT set a CLASSPATH environment variable!!!
+	CLASSPATH=.;%JUNIT_HOME%\junit.jar;%EIS_TEST_AUTO_HOME%\lib\selenium-java-2.18.0.jar;%EIS_TEST_AUTO_HOME%\lib\selenium-server-standalone-2.17.0.jar;
+
+Run without Ant
+	Run from:
+		%EIS_TEST_AUTO_HOME%\bin
+
+	Run command (Java class, not Junit test):
+		NOTE:  This works only for calling a main method in a Java class, which in this framework IS NOT A TEST!!!
+		java -cp .;%EIS_TEST_AUTO_HOME%\lib\selenium-java-2.18.0.jar;%EIS_TEST_AUTO_HOME%\lib\selenium-server-standalone-2.17.0.jar lm.Table_access
+		
+	Run command (JUnit test):
+		NOTE:  CANNOT DO THIS ANYMORE, because we need to pass properties - JUnit tests can only be run from Ant, or we need to set properties on the java command line
+		java -cp .;%JUNIT_HOME%\junit.jar;%EIS_TEST_AUTO_HOME%\lib\selenium-java-2.18.0.jar;%EIS_TEST_AUTO_HOME%\lib\selenium-server-standalone-2.17.0.jar org.junit.runner.JUnitCore lm.LM_POC
+
+Run with Ant:
+	Run from:
+		%EIS_TEST_AUTO_HOME%\build
+
+	Run command (Java class, not Junit test):
+		NOTE:  This works only for calling a main method in a Java class, which in this framework IS NOT A TEST!!!
+		ant runJavaClass -DappDir=lm -DtestName=Table_access
+			(NOTE that the Table_access.java class is no longer in the lm package.  It has been moved to the archive folder,
+			which is outside of the Eclipse build path.  Use Perforce to access the file.
+		
+	Run command (JUnit test):
+		ant runSingleTest -DappDir=mja -DtestName=GenerateApprovalChain -DtestPropertiesFilenameKey=TEST_MJA_GENERATE_APPROVAL_CHAIN_01_LF_PROPERTIES_FILE
+		
+		NOTE:  The WebDriver_API_alone class contains JUnit tests, but it has not been ported to the framework
+			However, it does contain some interesting WebDriver code for demo
+		ant runSingleTestDemo -DappDir=lm -DtestName=WebDriver_API_alone
+		ant runSingleTestDemo -DappDir=lm -DtestName=WebDriver_API_alone -DsearchTerm="Nicolas Cage" -DlinkText="ridiculous Japanese ads"
+
+
+Keep in mind that suites of JUnit tests can be run
+
+For AntTest.java (run from build directory):
+	ant test -Dcolor=green -Dsize=small
+
+

@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="runSingleTest" basedir=".">
+  	<property name="src.dir" location="../src"/>
+  	<property name="bin.dir" location="../bin"/>
+	<property name="lib.dir" location="../lib"/>
+	<property name="reports.dir" location="../reports"/>
+	<property name="reports.xml.dir" location="${reports.dir}/junit-xml"/>
+  	<property name="reports.html.dir" location="${reports.dir}/junit-html"/>
+	<property environment="env"/>
+	
+	
+	<target name="init">
+		<mkdir dir="${reports.xml.dir}" />
+		<mkdir dir="${reports.html.dir}" />
+		<!-- <echo message="Build logged to ${build.log.filename}"/> -->
+	</target>	
+
+	<!-- Set the EISTestAutoHome property based on whether the ant call was made by Jenkins.
+		If so, Jenkins passes a property named env.JENKINS_EIS_TEST_AUTO_HOME, which points
+		to the root of the workspace it created, followed by "\EISTestAutomation".  If not,
+		we know	that the ant call was made from a process on the local machine (e.g., Eclipse),
+		and we should use the EIS_TEST_AUTO_HOME environment variable.  Note that the framework
+		method Util.getTestRootDir() uses the property we set here in its logic to determine
+		the root directory of the framework. -->
+	<condition property="EISTestAutoHome" value="${env.JENKINS_EIS_TEST_AUTO_HOME}"> 
+		<isset property="env.JENKINS_EIS_TEST_AUTO_HOME"/>
+	</condition>
+	<!-- ant will not set the EISTestAutoHome property if it was set by the condition task
+		above, because properties are immutable -->
+	<property name="EISTestAutoHome" value="${env.EIS_TEST_AUTO_HOME}"/>
+
+	<property name="pageWaitTimeout" value="10000"/>
+	<property name="appServerBaseURL" value="https://test.salesforce.com"/>
+	<property name="environment" value="STG"/>
+
+	<!-- This property is used only by the gdw\VerifySFDCDeletionLogic class -->
+	<property name="testPart" value="ONE"/>
+
+    <path id="class_path">
+      	<pathelement path="${bin.dir}"/>
+      	<fileset dir="${lib.dir}">
+        	<include name="**/*.jar"/>
+      	</fileset>
+      	<pathelement path="${env.JUNIT_HOME}/junit.jar"/>
+    </path>
+	<target name="compile" depends="init">
+		<!-- <echoproperties/> -->
+		
+		<property name="myclasspath" refid="class_path"/>
+		<!-- <echo message="Classpath = ${myclasspath}"/> -->
+		
+		<mkdir dir="${bin.dir}"/>
+		
+    	<!-- <javac includeantruntime="true" destdir="${bin.dir}" srcdir="${src.dir}" nowarn="on" debug="on" verbose="yes" fork="true" memoryInitialSize="${memInitialSize}" memoryMaximumSize="${memMaxSize}"> -->
+
+		<!-- debug must be on in order to see line numbers in stack traces -->
+		<javac  includeantruntime="false" destdir="${bin.dir}" srcdir="${src.dir}" nowarn="off" debug="on" verbose="no" encoding="ISO-8859-1">
+			<exclude name="${src.dir}/pelican"/>
+    		<classpath refid="class_path"/>
+    	</javac>
+  	</target>
+	
+	
+	
+	
+	<target name="BicRestTests" depends="init,compile">
+  		<junit fork="yes" failureProperty="test.failed">
+			<formatter type="brief" usefile="false"/>
+    		<classpath refid="class_path"/>
+			<sysproperty key="EISTestAutoHome" value="${EISTestAutoHome}"/>
+			<sysproperty key="appDir" value="${appDir}"/>
+			<sysproperty key="pageWaitTimeout" value="${pageWaitTimeout}"/>
+			<sysproperty key="appServerBaseURL" value="${appServerBaseURL}"/>
+  			<sysproperty key="environment" value="${environment}"/>
+  			<sysproperty key="testdatafile" value="${testdatafile}"/>
+  			<!--<sysproperty key="environment" value="${environment}"/>
+		    <sysproperty key="userName" value="${userName}"/>
+			<sysproperty key="password" value="${password}"/>
+			<sysproperty key="partnerUserName" value="${partnerUserName}"/>
+			<sysproperty key="partnerPassword" value="${partnerPassword}"/> -->
+   <!--
+    Note the classpath order: instrumented classes are before the
+    original (uninstrumented) classes.  This is important.
+   -->
+   <classpath location="${bin.dir}" />
+   <!--
+    The instrumented classes reference classes used by the
+    Cobertura runtime, so Cobertura and its dependencies
+    must be on your classpath.
+   -->
+   <formatter type="xml" />
+   <test name="${appDir}.${testName}" todir="${reports.xml.dir}" if="testcase" />
+   <batchtest todir="${reports.xml.dir}" unless="testcase">
+    <fileset dir="${src.dir}">
+     <include name="**/bornincloud/Test_REST_Get*" />
+    </fileset>
+   </batchtest>
+  </junit>
+		
+		<junitreport todir="${reports.html.dir}">
+		                        <fileset dir="${reports.xml.dir}">
+		                                <include name="TEST-*.xml" />
+		                        </fileset>
+		 <report format="frames" todir="${reports.html.dir}" />
+		</junitreport>
+		
+		<fail message="Test failed - Build failed" status="2">
+		<condition>
+		<isset property="junit.failure" />
+		</condition> 
+		</fail>
+		
+ </target>
+	
+	<target name="BicDebugTarget" depends="init,compile">
+	  		<junit fork="yes" failureProperty="test.failed">
+				<formatter type="brief" usefile="false"/>
+	    		<classpath refid="class_path"/>
+				<sysproperty key="EISTestAutoHome" value="${EISTestAutoHome}"/>
+				<sysproperty key="appDir" value="${appDir}"/>
+				<sysproperty key="pageWaitTimeout" value="${pageWaitTimeout}"/>
+				<sysproperty key="appServerBaseURL" value="${appServerBaseURL}"/>
+	  			<sysproperty key="environment" value="${environment}"/>
+	  			<sysproperty key="testdatafile" value="${testdatafile}"/>
+	  			<!--<sysproperty key="environment" value="${environment}"/>
+			    <sysproperty key="userName" value="${userName}"/>
+				<sysproperty key="password" value="${password}"/>
+				<sysproperty key="partnerUserName" value="${partnerUserName}"/>
+				<sysproperty key="partnerPassword" value="${partnerPassword}"/> -->
+	   <!--
+	    Note the classpath order: instrumented classes are before the
+	    original (uninstrumented) classes.  This is important.
+	   -->
+	   <classpath location="${bin.dir}" />
+	   <!--
+	    The instrumented classes reference classes used by the
+	    Cobertura runtime, so Cobertura and its dependencies
+	    must be on your classpath.
+	   -->
+	   <formatter type="xml" />
+	   <test name="${appDir}.${testName}" todir="${reports.xml.dir}" if="testcase" />
+	   <batchtest todir="${reports.xml.dir}" unless="testcase">
+	    <fileset dir="${src.dir}">
+	     <include name="**/bornincloud/Test_REST_Create*" />
+	     <include name="**/bornincloud/Test_REST_Update*" />
+	     <include name="**/bornincloud/Test_REST_Get*" />
+	    </fileset>
+	   </batchtest>
+	  </junit>
+			
+			<junitreport todir="${reports.html.dir}">
+			                        <fileset dir="${reports.xml.dir}">
+			                                <include name="TEST-*.xml" />
+			                        </fileset>
+			 <report format="frames" todir="${reports.html.dir}" />
+			</junitreport>
+			
+			<fail message="Test failed - Build failed" status="2">
+			<condition>
+			<isset property="junit.failure" />
+			</condition> 
+			</fail>
+			
+	 </target>
+	
+	<target name="runSingleTest" depends="compile" description="Run a single JUnit test">
+  	  	<property name="testPropertiesFilenameKey" value=""/>
+		<property name="appBrowser" value=""/> 
+		
+		<junit printsummary="on" fork="no" maxmemory="1024m" clonevm="no" haltonfailure="true" haltonerror="true" showoutput="yes" filtertrace="true" enableTestListenerEvents="true">
+		
+			<!-- Note that testName should refer to the name of the class, not the name of the test method -->
+			 <formatter type="xml" />  
+			<test name="${appDir}.${testName}" todir="${reports.xml.dir}"/>
+			<formatter type="brief" usefile="false"/> 
+    		<classpath refid="class_path"/>
+			<sysproperty key="EISTestAutoHome" value="${EISTestAutoHome}"/>
+			<sysproperty key="appDir" value="${appDir}"/>
+			<sysproperty key="testName" value="${testName}"/>
+			<sysproperty key="pageWaitTimeout" value="${pageWaitTimeout}"/>
+			<sysproperty key="appServerBaseURL" value="${appServerBaseURL}"/>
+			<sysproperty key="appBrowser" value="${appBrowser}"/>
+			<sysproperty key="environment" value="${environment}"/>
+			<sysproperty key="testdatafile" value="${testdatafile}"/>
+			<!-- temp -->
+			<sysproperty key="UserName_jenkins"  value="${env.CustomerPortal_UserName}"/>
+			<sysproperty key="Password_jenkins"  value="${env.CustomerPortal_Password}"/>
+			<sysproperty key="deployServer"  value="${env.deployServer}"/>
+			<sysproperty key="SKU_jenkins"  value="${env.SKU}"/>
+			<sysproperty key="EMAIL_jenkins"  value="${env.EMAIL}"/>
+			<sysproperty key="OxygenUserID_jenkins"  value="${env.OxygenUserID}"/>
+			<!-- temp -->
+		<!--<sysproperty key="userName" value="${userName}"/>
+			<sysproperty key="password" value="${password}"/>
+			<sysproperty key="partnerUserName" value="${partnerUserName}"/>
+			<sysproperty key="partnerPassword" value="${partnerPassword}"/> -->
+			<sysproperty key="testPropertiesFilenameKey" value="${testPropertiesFilenameKey}"/>
+			
+			<!-- This property is used only by the gdw\VerifySFDCDeletionLogic class -->
+			<sysproperty key="testPart" value="${testPart}"/>
+		</junit>
+		
+	</target>
+	
+	<!--COMPILATION JOB-->
+	<!-- initialize -->
+	<target name="initializetests">
+		<mkdir dir="${bin.dir}"/>
+	</target>
+	<target name="compileWorkspace" depends="initializetests" description="Compile all Java Packages">
+		<echo message="I am compiling all Java packages"></echo>
+		
+		<javac  includeantruntime="false" destdir="${bin.dir}" srcdir="${src.dir}" nowarn="off" debug="on" verbose="no" encoding="ISO-8859-1">
+		   		<classpath refid="class_path"/>
+		   </javac>
+		<echo message="Done compilation"></echo>
+	</target>
+	
+	<!--END OF COMPILATION JOB-->
+	<target name="parallelExecution" depends="compile" description="Run a parallel exeuction on multiple browsers">
+		<property name="testPropertiesFilenameKey" value=""/>
+		<property name="appBrowser" value=""/> 
+		<parallel>
+			<!-- parallel execution on IE browser. Set appBrowser as ie-->
+			<sequential>	
+					<junit printsummary="withOutAndErr" fork="yes" maxmemory="1024m" clonevm="no" haltonfailure="true" haltonerror="true" showoutput="true" filtertrace="true" enableTestListenerEvents="true">
+							<formatter type="xml" />
+							<test name="${appDir}.${testName}" todir="${reports.xml.dir}"/>
+							<formatter type="brief" usefile="false"/>
+							<classpath refid="class_path"/>
+							<sysproperty key="EISTestAutoHome" value="${EISTestAutoHome}"/>
+							<sysproperty key="appDir" value="${appDir}"/>
+							<sysproperty key="testName" value="${testName}"/>
+							<sysproperty key="pageWaitTimeout" value="${pageWaitTimeout}"/>
+							<sysproperty key="appServerBaseURL" value="${appServerBaseURL}"/>
+							<sysproperty key="appBrowser" value="ie"/>
+							<sysproperty key="environment" value="${environment}"/>
+							<sysproperty key="testPropertiesFilenameKey" value="${testPropertiesFilenameKey}"/>
+					</junit>
+			</sequential>	
+			<!-- parallel execution on fiefox browser. Set appBrowser as firefox-->
+			<sequential>
+					<junit printsummary="withOutAndErr" fork="yes" maxmemory="1024m" clonevm="no" haltonfailure="true" haltonerror="true" showoutput="true" filtertrace="true" enableTestListenerEvents="true">
+							<formatter type="xml" />
+							<test name="${appDir}.${testName}" todir="${reports.xml.dir}"/>
+							<formatter type="brief" usefile="false"/>
+							<classpath refid="class_path"/>
+							<sysproperty key="EISTestAutoHome" value="${EISTestAutoHome}"/>
+							<sysproperty key="appDir" value="${appDir}"/>
+							<sysproperty key="testName" value="${testName}"/>
+							<sysproperty key="pageWaitTimeout" value="${pageWaitTimeout}"/>
+							<sysproperty key="appServerBaseURL" value="${appServerBaseURL}"/>
+							<sysproperty key="appBrowser" value="firefox"/>
+							<sysproperty key="environment" value="${environment}"/>
+							<sysproperty key="testPropertiesFilenameKey" value="${testPropertiesFilenameKey}"/>
+					</junit>
+			</sequential>
+			<!-- parallel execution on fiefox browser. Set appBrowser as chrome-->
+			<sequential>
+					<junit printsummary="withOutAndErr" fork="yes" maxmemory="1024m" clonevm="no" haltonfailure="true" haltonerror="true" showoutput="true" filtertrace="true" enableTestListenerEvents="true">
+							<formatter type="xml" />
+							<test name="${appDir}.${testName}" todir="${reports.xml.dir}"/>
+							<formatter type="brief" usefile="false"/>
+							<classpath refid="class_path"/>
+							<sysproperty key="EISTestAutoHome" value="${EISTestAutoHome}"/>
+							<sysproperty key="appDir" value="${appDir}"/>
+							<sysproperty key="testName" value="${testName}"/>
+							<sysproperty key="pageWaitTimeout" value="${pageWaitTimeout}"/>
+							<sysproperty key="appServerBaseURL" value="${appServerBaseURL}"/>
+							<sysproperty key="appBrowser" value="chrome"/>
+							<sysproperty key="environment" value="${environment}"/>
+							<sysproperty key="testPropertiesFilenameKey" value="${testPropertiesFilenameKey}"/>
+					</junit>
+			</sequential>
+		</parallel>
+	</target>
+	<!--Target to update host file before running a test-->
+	<target name="updateHostFile" depends="compile" description="Run a single JUnit test">			
+		<junit printsummary="withOutAndErr" fork="no" maxmemory="1024m" clonevm="no" haltonfailure="true" haltonerror="true" showoutput="true" filtertrace="true" enableTestListenerEvents="true">
+			<!-- Note that testName should refer to the name of the class, not the name of the test method -->
+    		<classpath refid="class_path"/>
+			<formatter type="brief" usefile="false"/> 
+			<test name="common.UpdateHostFile" todir="${reports.xml.dir}"/>
+			<sysproperty key="EISTestAutoHome" value="${EISTestAutoHome}"/>
+			<sysproperty key="appDir" value="common"/>
+			<sysproperty key="testName" value="UpdateHostFile"/>
+			<sysproperty key="deployServer"  value="${env.deployServer}"/>
+		</junit>
+	</target>
+	
+	<target name="CITests" depends="updateHostFile" description="Run a single JUnit test">
+  	  	<property name="testPropertiesFilenameKey" value=""/>
+		<property name="appBrowser" value=""/> 
+		
+		<junit printsummary="on" fork="no" maxmemory="1024m" clonevm="no" haltonfailure="true" haltonerror="true" showoutput="yes" filtertrace="true" enableTestListenerEvents="true">
+			<!-- Note that testName should refer to the name of the class, not the name of the test method -->
+			 <formatter type="xml" />  
+			<test name="${appDir}.${testName}" todir="${reports.xml.dir}"/>
+			<formatter type="brief" usefile="false"/> 
+    		<classpath refid="class_path"/>
+			<sysproperty key="EISTestAutoHome" value="${EISTestAutoHome}"/>
+			<sysproperty key="appDir" value="${appDir}"/>
+			<sysproperty key="testName" value="${testName}"/>
+			<sysproperty key="pageWaitTimeout" value="${pageWaitTimeout}"/>
+			<sysproperty key="appServerBaseURL" value="${appServerBaseURL}"/>
+			<sysproperty key="appBrowser" value="${appBrowser}"/>
+			<sysproperty key="environment" value="${environment}"/>
+			<sysproperty key="testdatafile" value="${testdatafile}"/>
+			<sysproperty key="testPropertiesFilenameKey" value="${testPropertiesFilenameKey}"/>
+			<sysproperty key="testPart" value="${testPart}"/>
+		</junit>
+		
+	</target>
+	
+	<!-- GENERATING THE HTML REPORT FOR ALL RECENT JENKINS TESTS-->
+	<target name="runReport" depends="compile" description="Run a single JUnit test">			
+		<junit printsummary="withOutAndErr" fork="no" maxmemory="1024m" clonevm="no" haltonfailure="true" haltonerror="true" showoutput="true" filtertrace="true" enableTestListenerEvents="true">
+			<!-- Note that testName should refer to the name of the class, not the name of the test method -->
+			<!-- <formatter type="xml" /> -->
+    		<classpath refid="class_path"/>
+			<formatter type="brief" usefile="false"/> 
+			<test name="${appDir}.${testName}" todir="${reports.xml.dir}"/>
+			<sysproperty key="EISTestAutoHome" value="${EISTestAutoHome}"/>
+			<sysproperty key="appDir" value="${appDir}"/>
+			<sysproperty key="testName" value="${testName}"/>
+			<sysproperty key="testType" value="${testType}"/>
+			<sysproperty key="environment" value="${environment}"/>	
+			<sysproperty key="jenkinsJobLocation" value="${jenkinsJobLocation}"/>
+			<sysproperty key="reportTitle" value="${reportTitle}"/>
+			<sysproperty key="filterTests" value="${filterTests}"/>
+		</junit>
+		
+	</target>
+	
+	<target name="BUUCRestTests" depends="init,compile">
+  		<junit fork="no" failureProperty="test.failed">
+			<formatter type="brief" usefile="false"/>
+    		<classpath refid="class_path"/>
+			<sysproperty key="EISTestAutoHome" value="${EISTestAutoHome}"/>
+			<sysproperty key="appDir" value="${appDir}"/>
+			<sysproperty key="pageWaitTimeout" value="${pageWaitTimeout}"/>
+			<sysproperty key="appServerBaseURL" value="${appServerBaseURL}"/>
+  			<sysproperty key="environment" value="${environment}"/>
+  			<sysproperty key="testdatafile" value="${testdatafile}"/>
+  			<!--<sysproperty key="environment" value="${environment}"/>
+		    <sysproperty key="userName" value="${userName}"/>
+			<sysproperty key="password" value="${password}"/>
+			<sysproperty key="partnerUserName" value="${partnerUserName}"/>
+			<sysproperty key="partnerPassword" value="${partnerPassword}"/> -->
+   <!--
+    Note the classpath order: instrumented classes are before the
+    original (uninstrumented) classes.  This is important.
+   -->
+   <classpath location="${bin.dir}" />
+   <!--
+    The instrumented classes reference classes used by the
+    Cobertura runtime, so Cobertura and its dependencies
+    must be on your classpath.
+   -->
+   <formatter type="xml" />
+   <test name="${appDir}.${testName}" todir="${reports.xml.dir}" if="testcase" />
+   <batchtest todir="${reports.xml.dir}" unless="testcase">
+    <fileset dir="${src.dir}">
+     <include name="**/bornincloud/Test_BUUC_REST_*" />
+    </fileset>
+   </batchtest>
+  </junit>
+		
+		<junitreport todir="${reports.html.dir}">
+		                        <fileset dir="${reports.xml.dir}">
+		                                <include name="TEST-*.xml" />
+		                        </fileset>
+		 <report format="frames" todir="${reports.html.dir}" />
+		</junitreport>
+		
+		<fail message="Test failed - Build failed" status="2">
+		<condition>
+		<isset property="junit.failure" />
+		</condition> 
+		</fail>
+		
+ </target>
+ <target name="IPPRestTests" depends="init,compile">
+  		<junit fork="yes" failureProperty="test.failed">
+			<formatter type="brief" usefile="false"/>
+    		<classpath refid="class_path"/>
+			<sysproperty key="EISTestAutoHome" value="${EISTestAutoHome}"/>
+			<sysproperty key="appDir" value="${appDir}"/>
+			<sysproperty key="pageWaitTimeout" value="${pageWaitTimeout}"/>
+			<sysproperty key="appServerBaseURL" value="${appServerBaseURL}"/>
+  			<sysproperty key="environment" value="${environment}"/>
+  			<sysproperty key="testdatafile" value="${testdatafile}"/>
+   <!--
+    Note the classpath order: instrumented classes are before the
+    original (uninstrumented) classes.  This is important.
+   -->
+   <classpath location="${bin.dir}" />
+   <!--
+    The instrumented classes reference classes used by the
+    Cobertura runtime, so Cobertura and its dependencies
+    must be on your classpath.
+   -->
+   <formatter type="xml" />
+   <test name="${appDir}.${testName}" todir="${reports.xml.dir}" if="testcase" />
+   <batchtest todir="${reports.xml.dir}" unless="testcase">
+    <fileset dir="${src.dir}">
+     <include name="**/bornincloud/Test_IPP_REST_*" />
+    </fileset>
+   </batchtest>
+  </junit>
+		
+		<junitreport todir="${reports.html.dir}">
+		                        <fileset dir="${reports.xml.dir}">
+		                                <include name="TEST-*.xml" />
+		                        </fileset>
+		 <report format="frames" todir="${reports.html.dir}" />
+		</junitreport>
+		
+		<fail message="Test failed - Build failed" status="2">
+		<condition>
+		<isset property="junit.failure" />
+		</condition> 
+		</fail>
+		
+ </target>
+	
+	<!-- ==============================================TESTNG==========================================================  -->
+	<target name="setClassPath">
+		<path id="jarclassPath">
+			<pathelement path="."/>
+			<fileset dir="${lib.dir}" includes="**/*.jar"></fileset>
+		</path>
+		<pathconvert pathsep=":" property="test.classpath" refid="jarclassPath"></pathconvert>
+	</target>
+	<target name="loadTestNG" depends="setClassPath">
+		<taskdef  resource="testngtasks" classpath="${test.classpath}"/>		
+	</target>
+	<!-- initialize -->
+	<target name="initialize">
+		<mkdir dir="${bin.dir}"/>
+	</target>
+	<target name="cleantests">
+		<echo message="I am deleting the target compiled classes directoru"></echo>
+		<delete dir="${bin.dir}"></delete>
+	</target>
+	<!-- Compile -->
+	<target name="compileTestNg" depends="cleantests,initialize,loadTestNG">	
+		
+		<echo message="I am compiling"/>
+		<javac  includeantruntime="false" destdir="${bin.dir}" srcdir="${src.dir}" classpath="${test.classpath}" debug="on" verbose="no" encoding="ISO-8859-1">
+		</javac>		
+	</target>
+	
+	<target name="runTestng" depends="compileTestNg" description="Run suite of Testng tests" >
+			<testng outputdir="${reports.dir}/test-output" classpath="${test.classpath}:${bin.dir}" haltonfailure="true"  useDefaultListeners="true"  listeners="org.uncommons.reportng.HTMLReporter" delegatecommandsystemproperties="true">
+			      <sysproperty key="org.uncommons.reportng.title" value="Pelican Test Automation Results" />
+			      <jvmarg value="-Xms1024m"/>			
+				<xmlfileset dir="${basedir}" includes="pelicantestng.xml"/>
+		</testng>
+			
+	</target>
+	<!-- =============================================END OF TESTNG==========================================================  -->
+	 
+	
+	<property name="testngxmldir" location="${basedir}/testngXML"/>
+	<target name="copyxml"
+	        description="Run all the test methods in the specified class">
+	   <condition property="classNameSpecified">
+	      <isset property="class.name" />
+	   </condition>
+	   <fail unless="classNameSpecified"
+	         message="class.name property not specified. Unable to run the class"/>
+		<echo message="Deleting the testngXMLDirectory"/>
+		<delete dir="${testngxmldir}"></delete>
+		<echo message="Creating testngXML directory"/>
+		<mkdir dir="${testngxmldir}"/>
+	   <copy todir="${testngxmldir}" file="${basedir}/class.xml" overwrite="true">
+	      <filterset>
+	         <filter token="CLASS" value="${class.name}"/>
+	      </filterset>
+	   </copy>		
+	  
+	</target>
+	<target name="runsingletestng" depends="compileTestNg,copyxml" description="Run a single Testng test" >
+				<testng outputdir="${reports.dir}/test-output" classpath="${test.classpath}:${bin.dir}" haltonfailure="true"  useDefaultListeners="true"  listeners="org.uncommons.reportng.HTMLReporter" delegatecommandsystemproperties="true">
+				      <sysproperty key="org.uncommons.reportng.title" value="Pelican Test Automation Results" />
+				      <jvmarg value="-Xms1024m"/>			
+					<xmlfileset dir="${testngxmldir}" includes="class.xml"/>
+			</testng>
+				
+		</target>
+		
+	
+	<!-- This target is not used by the framework, because the framework runs tests as JUnit classes.
+		 It is here as a legacy of some debugging work, and may be useful if we ever ditch JUnit.
+		 Note that testName should refer to the name of the class, not the name of a test method;
+			there is no test method - we are executing main
+	-->
+	<!--
+	<target name="runJavaClass" depends="compile" description="Run a Java class">
+		<java fork="true" debug="true" classname="${app}.${testName}">
+      		<classpath refid="class_path"/>
+			<sysproperty key="appDir" value="${appDir}"/>
+			<sysproperty key="testName" value="${testName}"/>
+  		</java>
+	</target>
+	-->
+</project>

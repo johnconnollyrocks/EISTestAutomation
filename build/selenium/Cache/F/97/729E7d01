@@ -1,0 +1,314 @@
+<div class="snippet_set" id="snippet_set" data-locale="en-US">
+  <style type="text/css">
+#snippetContainer div.snippet {
+  display: none;
+}
+
+#snippetContainer div.snippet img.icon {
+  margin: -0.75em 1em 0 0;
+  float: left;
+}
+
+  .snippet {
+    position: relative;
+  }
+
+  .snippet .icon {
+    position: absolute;
+    right: 400px;
+    top: 5px;
+  }
+
+  .snippet p {
+    display: table-cell;
+    height: 40px;
+    padding-left: 80px;
+    vertical-align: middle;
+    width: 400px;
+  }
+</style>      <div data-snippet-id="2770" data-weight="33"><!--basic-->
+      <div class="snippet">
+                <!--icon:https://lh5.googleusercontent.com/-MXfb-qW5zf0/Ua5gKq8I2zI/AAAAAAAAAP4/jfHpok3SILU/w40-h50-no/SnippetNewsletter4.png-->
+        <img class="icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAyCAYAAAAus5mQAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJ
+bWFnZVJlYWR5ccllPAAAA2hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdp
+bj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6
+eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0
+NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJo
+dHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlw
+dGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEu
+MC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVz
+b3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1N
+Ok9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowMTgwMTE3NDA3MjA2ODExOEMxNEFBN0YwQzM0
+QTAxNCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo2MjM1NTM4MEE5ODkxMUUyQkEyMkFBRDAx
+ODhFMDQ0RCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo2MjM1NTM3RkE5ODkxMUUyQkEyMkFB
+RDAxODhFMDQ0RCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChNYWNpbnRv
+c2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MDc4MDEx
+NzQwNzIwNjgxMThDMTRBQTdGMEMzNEEwMTQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MDE4
+MDExNzQwNzIwNjgxMThDMTRBQTdGMEMzNEEwMTQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRm
+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
+" />
+        <p><a href="https://www.mozilla.org/newsletter/?utm_source=snippet&amp;utm_medium=snippet&amp;utm_campaign=en">Sign up</a> for our monthly newsletter and get the latest on your favorite browser.</p>
+      </div></div>
+      <div data-snippet-id="4490" data-weight="300"><div class="snippet">
+  <a href="https://welcome.webmaker.org/?ref=makerparty2014_snippet&amp;utm_source=firefox&amp;utm_medium=snippet&amp;utm_campaign=snippettest_textC_icon1"><img class="icon" src="data:image/gif;base64,R0lGODlhKAAyANU/AEtLS83NzX19fYGBgdHR0XV1dXl5ecnJyTMzM9XV1ZmZmZWVlaSkpFRUVJGRkYWFhcTExGhoaLW1tWFhYb6+vp2dnUNDQ4mJiWtra/Hx8f39/W1tbSsrK+Li4q2trVlZWTo6Ot/f37GxsW5ubsHBwWVlZfr6+t3d3ejo6I6Ojtzc3HFxce7u7vj4+PT09KqqqlxcXOrq6tra2tjY2OTk5Pb29ubm5qCgoHJycri4uIyMjCAgILu7u+zs7GZmZv///yH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NDkxMSwgMjAxMy8xMC8yOS0xMTo0NzoxNiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkY3OEY5N0Q2RjEwQjExRTM4OTVBQzI4RjBBMzcyRjgwIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkY3OEY5N0Q3RjEwQjExRTM4OTVBQzI4RjBBMzcyRjgwIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RjcxMDk2QTdGMEM0MTFFMzg5NUFDMjhGMEEzNzJGODAiIHN0UmVm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" /></a>
+  <p>Cat videos are a universal form of communication. Learn more about what the Web can give us with <a href="https://welcome.webmaker.org/?ref=makerparty2014_snippet&amp;utm_source=firefox&amp;utm_medium=snippet&amp;utm_campaign=snippettest_textC_icon1">Mozilla Webmaker and our global Maker Party</a>. </p>
+</div></div>
+      <div data-snippet-id="4499" data-weight="50"><div class="snippet">
+  <a href="http://welcome.webmaker.org/?ref=makerparty2014_snippet&amp;utm_source=firefox&amp;utm_medium=snippet&amp;utm_campaign=snippettest_textD_icon4"><img class="icon" src="data:image/gif;base64,R0lGODlhKAAyAKIFAHBQOtKrj7iMbTMzM2Yzmf///wAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDoyMDFmYjdkNS0xZTUwLTE2NDctOGFmMC04NjRmY2ViOGVlM2UiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6REJGQjY3RDgxNjZDMTFFNDkwRTZCQjQyNkUyRjczOTYiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6REJGQjY3RDcxNjZDMTFFNDkwRTZCQjQyNkUyRjczOTYiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOmJjOGZlYjVlLTQyMzYtNzU0My1hYmViLTMzNmRkOTc4YmRmYSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoyMDFmYjdkNS0xZTUwLTE2NDctOGFmMC04NjRmY2ViOGVlM2UiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94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" /></a>
+  <p>There's more to the Internet than cute cat videos. What else can the Web give us? <a href="http://welcome.webmaker.org/?ref=makerparty2014_snippet&amp;utm_source=firefox&amp;utm_medium=snippet&amp;utm_campaign=snippettest_textD_icon4">Learn more with Mozilla Webmaker and our global Maker Party</a>.</p>
+</div></div>
+      <div data-snippet-id="4501" data-weight="50"><div class="snippet">
+  <a href="http://welcome.webmaker.org/?ref=makerparty2014_snippet&amp;utm_source=firefox&amp;utm_medium=snippet&amp;utm_campaign=snippettest_textE_icon5"><img class="icon" src="data:image/gif;base64,R0lGODlhKAAyAKIHAElGRsxmZmZmZplmMzMzM//MmcyZZv///yH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1Y2NjNDZmNC0wZmIxLTc5NDgtODQyMy1hOWRjZTM5NTFmMjIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OTI5NUJGREExNzJFMTFFNEI2RUJEQzJEMjBCMTBCRDEiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OTI5NUJGRDkxNzJFMTFFNEI2RUJEQzJEMjBCMTBCRDEiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOmRkOTk3NTE3LTUxYWQtN2E0Ni04MTY4LTM5NGVlY2RjYmVlNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo1Y2NjNDZmNC0wZmIxLTc5NDgtODQyMy1hOWRjZTM5NTFmMjIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4B//79/Pv6+fj39vX08/Lx8O/u7ezr6uno5+bl5OPi4eDf3t3c29rZ2NfW1dTT0tHQz87NzMvKycjHxsXEw8LBwL++vby7urm4t7a1tLOysbCvrq2sq6qpqKempaSjoqGgn56dnJuamZiXlpWUk5KRkI+OjYyLiomIh4aFhIOCgYB/fn18e3p5eHd2dXRzcnFwb25tbGtqaWhnZmVkY2JhYF9eXVxbWllYV1ZVVFNSUVBPTk1MS0pJSEdGRURDQkFAPz49PDs6OTg3NjU0MzIxMC8uLSwrKikoJyYlJCMiISAfHh0cGxoZGBcWFRQTEhEQDw4NDAsKCQgHBgUEAwIBAAAh+QQJCgAHACwAAAAAKAAyAAAD/3i6TP5OlWKqnSzrDKGkVoVtpNI9IjitanGWx+mkKZu+JRROdGjwP1Akh7q0fMHekKQL2pyr2mq5abKA1xaLqqFOIJOBePx9jGBel7kwJqsdZ1gm3B6c6oO4fEFv3+t6ewcsYjIPYoGCgyuFhgSIBYoaWw8BlpdgK5J8U5WXlpmJcpSgHaUsmx9lpRCnmpJSAACOBLKosFCytLavilITssHCAFkVvlDAw8LFBse/R8ggxoI7Vz3M0zBP1VnYzaNRPt3dITDc4c/bQeZG6uNAKSRI5+/v8vPp9Vf3+PT6ov3E/duXIaDBaLc0HAxYj99CJA03PMQXkcHEefWyLbgI8WSdRgUcBXpTGLKdNQskQ+BhSA5lQR8r+40rt0CMSjxuOqrTaNMCzpwi0blU0LPCT0g6hfIccPMnPJNPlzat06MaSB8aihr4WdXIVZoMBAg4Ibbs2A5mxZJNq0At2rRrzcYtqyABACH5BAkKAAcALAAAAAAoADIAAAP/eLqs9pDIKUuBpuntsKGUhXHk4X1gdRkiW5TamapPa8GNPFv2ijO6FG/V+i2Ck+Gw9jKaPEJlz/lEDimD7EBiPD1CPKyW+zu1mBbtdkI1r9AFNaUNkdoLKTr8bsmXPXxhEwGEAWQlboEUhYYEOF4udxKEfoheigSUIDhZkHcAAJUwnZd2oKIcaqSJSqCuAJyqnqavsDAPqgOQe0qPBrm7kXa+wcFSxMWzQ8jJyjyWzbvHJNHJy9TVxs8b2dE33N3WTTHhxd/k5dLjOenqHO3u4PBu7/P04Kvz5+z58PsMwKrlyvJvQcBoAwcUVHDwly4vCdWkkgWhX8WIWTQkxEWRMCPGjA02OlSD4aMWjQM9aikZkQnKgA0xulxAQYDNmylu4gSh0+acAzV75hTKkyiZBAAh+QQJCgAHACwAAAAAKAAyAAAD9Xi6rPYwkklnu5jFbWrN4DFxZOdZYTOW24mmy8pCLgEz8myed0zoLU9PkQPyhkXgzob8KSWUocj5LFivr1RydsUye9WuVxoWF7KhZ8SMBqkh7G/q/YiD6fbbY8DvA813fX46gHMGgoiDJV0we4mIXFcwiY6UJIwplo8Di5KGdJcFjaCho6QbmBmnHKkYq6Vur6iisbIbaba3tbkPuLy9u78GqsIQxMXDrsjJFxGCtseHiqvEm698zdKWp9gNm3zXAxffnKvdDORA4CTnC+k66xzt6I8z2xDz7vUs944C/wBPAAzoYeA/gQIUGBSAcGBDghX+KUgAACH5BAkKAAcALAAAAAAoADIAAAPJeLrW/tCtSeuMGNpNif9ZxnEfGEbjVnqnmE4r0WIvvM5orcS4ph+lXk4XFD5+QJnRR1QuJcjD8xidQnVWKjbbQHK7v6/BuxyYB+Ct8Yweh3Hs+IA8k7PVLfnDjD/pHXw1Ylocg1eFhocViYoUjIQXj2mOkm6LlRuVjZqTCpyWDJyZopSal2ttM6dCZj2rfnaqpXmxLa8YdmewtxG5rSGBkbC5GXLCwL7FcbwGvqm4y7N7ychsAgIx19rYK9vX2d4K393e4Nvm2goJACH5BAkKAAcALAAAAAAoADIAAAP/eLpE9qYUSOtbOOtGpf2GJmZeNEFNqjrQOJbls66UKz7wOau1neGn0i7V8y1ykmRhWDQekMrlrmkcDFRRKa/iXFix0Zmlq2hYrVkJ50M+mM9pKag7Q6dBF2d9EMeH9AQBAWB9eEYNgoR3hj4qiQRxMWyNKY+RJ3OUKgAAhSBWhyucnh+gTpyji58DbaidqqWsZJd+ZwN5RrR4trg+WX7Afza/wYwvl5jFvRrIycrDzc7A0M3KyyTRksHH2dbC2NnaxuDhzyLhSd7M6NJ+I0DVH+LvJvEW8zcQ9vrpXPnwke71o7KgAzKBFGzRA0gKSMIzC+sFrFDClsIf/HQZfGARNmJBigdBPryoQKBGfiM9lgTZEKWBjhpMwtr40mKZFAJy6pyhc+eKnjlV3GwAVABPoEd7Cj2QAAAh+QQFCgAHACwAAAAAKAAyAAAD/3i61N6qFEOrXDhr9V6cFXVtJNYRIiitxemVXJemrOvAcSjNoSHZuENDpwIRgbihj1VkpU5BJbO5enaCmsZgy/05ajesicDttr6rl1ixPZW3YMp60e68B3HDnD2wwacgewd1bniAcnsNAYuMD4CBiQSMjWhTiHM2iw2Pl2uZAZuHensUNgAAnKNzpS6nqatLp7KyqZ1BKbOztapYRI+7Yr6/lhXBPcNOPcbCwz28JM7IorYb0dJMIUE7S9ei2lTdyTA84d4l5OXYzxk8NOHZ50vM1/AaRNbdRPYWRvz5/PvaHUNmLaA8Z9x+FWTHD2HCXSkMbsOncCCGOxMHNrNI50dNxnnE9HUs89FfRZF8SPYDqQ7loAHCKEJcchGmSZnTAI40gzOksgwYVz7MWe+AgKNITyBN2mHpUaUCFDgVAHVpVaYPjipIAAA7" /></a>
+  <p> The Web is your playground! <a href="http://welcome.webmaker.org/?ref=makerparty2014_snippet&amp;utm_source=firefox&amp;utm_medium=snippet&amp;utm_campaign=snippettest_textE_icon5">See what you can build with Mozilla Webmaker and our global Maker Party</a>.</p>
+</div></div>
+    <script type="text/javascript">
+//<![CDATA[
+/*!
+  * $script.js Async loader & dependency manager
+  * https://github.com/ded/script.js
+  * (c) Dustin Diaz, Jacob Thornton 2011
+  * License: MIT
+  */
+(function(a,b,c){typeof c["module"]!="undefined"&&c.module.exports?c.module.exports=b():typeof c["define"]!="undefined"&&c["define"]=="function"&&c.define.amd?define(a,b):c[a]=b()})("$script",function(){function p(a,b){for(var c=0,d=a.length;c<d;++c)if(!b(a[c]))return j;return 1}function q(a,b){p(a,function(a){return!b(a)})}function r(a,b,i){function o(a){return a.call?a():d[a]}function t(){if(!--n){d[m]=1,l&&l();for(var a in f)p(a.split("|"),o)&&!q(f[a],o)&&(f[a]=[])}}a=a[k]?a:[a];var j=b&&b.call,l=j?b:i,m=j?a.join(""):b,n=a.length;return setTimeout(function(){q(a,function(a){if(h[a])return m&&(e[m]=1),h[a]==2&&t();h[a]=1,m&&(e[m]=1),s(!c.test(a)&&g?g+a+".js":a,t)})},0),r}function s(c,d){var e=a.createElement("script"),f=j;e.onload=e.onerror=e[o]=function(){if(e[m]&&!/^c|loade/.test(e[m])||f)return;e.onload=e[o]=null,f=1,h[c]=2,d()},e.async=1,e.src=c,b.insertBefore(e,b.firstChild)}var a=document,b=a.getElementsByTagName("head")[0],c=/^https?:\/\//,d={},e={},f={},g,h={},i="string",j=!1,k="push",l="DOMContentLoaded",m="readyState",n="addEventListener",o="onreadystatechange";return!a[m]&&a[n]&&(a[n](l,function t(){a.removeEventListener(l,t,j),a[m]="complete"},j),a[m]="loading"),r.get=s,r.order=function(a,b,c){(function d(e){e=a.shift(),a.length?r(e,d):r(e,b,c)})()},r.path=function(a){g=a},r.ready=function(a,b,c){a=a[k]?a:[a];var e=[];return!q(a,function(a){d[a]||e[k](a)})&&p(a,function(a){return d[a]})?b():!function(a){f[a]=f[a]||[],f[a][k](b),c&&c(e)}(a.join("|")),r},r},this);
+
+(function(showDefaultSnippets) {
+    'use strict';
+
+    var SAMPLE_RATE = 0.1;
+    var STATS_URL = 'https://snippets-stats.mozilla.org/foo.html';
+    var GEO_URL = 'https://geo.mozilla.org/country.js';
+    var GEO_CACHE_DURATION = 1000 * 60 * 60 * 24 * 30; // 30 days
+
+    // showDefaultSnippets polyfill, available in about:home v4
+    if (typeof showDefaultSnippets !== 'function') {
+        showDefaultSnippets = function() {
+            localStorage.snippets = '';
+            showSnippets();
+        };
+    }
+
+    // gSnippetsMap polyfill, available in Firefox 22 and above.
+    var gSnippetsMap = null;
+    if (supportsLocalStorage()) {
+        // localStorage is available, so we wrap it with gSnippetsMap.
+        gSnippetsMap = {
+            set: function(key, value) {
+                localStorage[key] = value;
+            },
+            get: function(key) {
+                return localStorage[key];
+            }
+        };
+    } else {
+        // localStorage isn't available, use gSnippetsMap (backed by IndexedDB).
+        gSnippetsMap = window.gSnippetsMap;
+    }
+
+    var snippets = (document.getElementById('snippetContainer')
+                    .getElementsByClassName('snippet'));
+    var show_snippet = null;
+    if (snippets.length > 0) {
+        show_snippet = chooseSnippet(snippets);
+    }
+
+    if (show_snippet) {
+        show_snippet.style.display = 'block';
+
+        try {
+            activateSnippetsButtonClick(show_snippet);
+        } catch (err) {
+            // Do nothing, most likely a newer version of Firefox w/o
+            // activateSnippetsButtonClick
+        }
+
+        // Send impression to the snippets stats server.
+        var show_snippet_id = show_snippet.parentNode.dataset.snippetId;
+        send_impression(show_snippet_id);
+
+        // Trigger show_snippet event on snippet node.
+        var evt = document.createEvent('Event');
+        evt.initEvent('show_snippet', true, true);
+        show_snippet.dispatchEvent(evt);
+
+        // Add sample rate and snippet ID to currently displayed links.
+        var parameters = ('sample_rate=' + SAMPLE_RATE + '&snippet_name=' +
+                          show_snippet_id);
+        modifyLinks(show_snippet.getElementsByTagName('a'), parameters);
+    } else {
+        showDefaultSnippets();
+    }
+
+    // Fetch user country if we don't have it.
+    if (!haveUserCountry()) {
+        downloadUserCountry();
+    }
+
+            // Choose which snippet to display to the user based on various factors,
+    // such as which country they are in.
+    function chooseSnippet(snippets) {
+        // Build an object that maps countries to snippets.
+        var snippetsFor = {};
+
+        for (var k = 0; k < snippets.length; k++) {
+            var snippet = snippets[k];
+            var country = snippet.parentNode.dataset.country || 'none';
+
+            // Create a new entry in the object if it doesn't exist.
+            if (snippetsFor.hasOwnProperty(country)) {
+                snippetsFor[country].push(snippet);
+            } else {
+                snippetsFor[country] = [snippet];
+            }
+        }
+
+        // Choose a random snippet from the set of non-geolocated snippets,
+        // including snippets for the user's country if it is available.
+        var country = getUserCountry();
+        if (country && snippetsFor.hasOwnProperty(country)) {
+            snippets = snippetsFor[country];
+            if (snippetsFor.none) {
+                snippets = snippets.concat(snippetsFor.none);
+            }
+        } else {
+            snippets = snippetsFor.none;
+        }
+
+        if (snippets && snippets.length) {
+            var sum = 0;
+            for (var k = 0; k < snippets.length; k++) {
+                sum += parseInt(snippets[k].parentNode.dataset.weight, 10) || 100;
+                snippets[k].parentNode.dataset.weight = sum;
+            }
+            var random_number = Math.random() * sum;
+            for (var k = 0; k < snippets.length; k++) {
+                if (random_number < snippets[k].parentNode.dataset.weight) {
+                    return snippets[k];
+                }
+            }
+        } else {
+            return null;
+        }
+    }
+    
+    // Check whether we have the user's country stored and if it is still valid.
+    function haveUserCountry() {
+        // Check if there's an existing country code to use.
+        if (gSnippetsMap.get('geoCountry')) {
+            // Make sure we have a valid lastUpdated date.
+            var lastUpdated = Date.parse(gSnippetsMap.get('geoLastUpdated'));
+            if (lastUpdated) {
+                // Make sure that it is past the lastUpdated date.
+                var now = new Date();
+                if (now < lastUpdated + GEO_CACHE_DURATION) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    function getUserCountry() {
+        if (haveUserCountry()) {
+            return gSnippetsMap.get('geoCountry').toLowerCase();
+        } else {
+            return null;
+        }
+    }
+
+    // Download the user's country using the geolocation service.
+    function downloadUserCountry() {
+        $script(GEO_URL, 'geo');
+        $script.ready('geo', function() {
+            try {
+                gSnippetsMap.set('geoCountry', geoip_country_code());
+                gSnippetsMap.set('geoLastUpdated', new Date());
+            } catch (e) {
+                // Most likely failed to load JS file. Continue on without us,
+                // we'll try again next time.
+            }
+        });
+    }
+
+    // Notifies stats server that the given snippet ID
+    // was shown. No personally-identifiable information
+    // is sent.
+    function send_impression(id) {
+        if (Math.random() <= SAMPLE_RATE) {
+            var locale = document.getElementById('snippet_set').getAttribute('data-locale');
+            var url = STATS_URL + '?snippet_name=' + id + '&locale=' + locale;
+            var r = new XMLHttpRequest();
+            r.open('GET', url);
+            r.send();
+        }
+    }
+    // Modifies the given links to include the specified GET parameters.
+    function modifyLinks(links, parameters) {
+        for (var k = 0, len = links.length; k < len; k++) {
+            var link = links[k];
+            var delimeter = (link.href.indexOf('?') !== -1 ? '&' : '?');
+
+            // Pull the fragment off of the link
+            var fragment_position = link.href.indexOf('#');
+            if (fragment_position === -1) {
+                fragment_position = link.href.length;
+            }
+
+            var href = link.href.substring(0, fragment_position);
+            var fragment = link.href.substring(fragment_position);
+
+            link.href = href + delimeter + parameters + fragment;
+        }
+    }
+
+    // Check for localStorage support. Copied from Modernizr.
+    function supportsLocalStorage() {
+        var s = 'snippets-test';
+        try {
+            localStorage.setItem(s, s);
+            localStorage.removeItem(s);
+            return true;
+        } catch(e) {
+            return false;
+        }
+    }
+
+})(window.showDefaultSnippets);
+//]]>
+</script></div>
+<!-- Content generated at 2014-08-10T08:00:27Z -->

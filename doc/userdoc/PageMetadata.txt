@@ -1,0 +1,98 @@
+A page metadata file (also known as a page properties file) contains metadata about the page itself,
+	as well as metadata about the fields on the page.  The entire contents of the file are used in the
+	instantiation of a Page object.
+  
+Page metadata files are stored in an application-specific directory, the path of which is built in
+	an application-specific constants or "test base" class.  In that directory is a manifest file,
+	which contains file handles and actual file names.  The names of all Page metadata files
+	MUST be present in the manifest!  (See the AppstoreTestBase class, and documentation in the
+	IT Quality Engineering portal for details.) 
+
+
+------------------------
+
+
+These Page metadata properties are required:
+	1) pageName 			=myPageName
+
+		Used in test data files as a means of referencing a Field object in page metadata
+
+	2) parentWindowName		=myParentWindowName
+	
+		References the Window.windowName member; used in some methods when performing special handling
+
+These Page metadata properties are optional:
+	1) pageMessageLocator	=myPageMessageLocator
+	
+		Defines the Selenium locator(s) for a page-level error or message field
+		To specify more than one pageMessageLocator, delimit them with ITConstants.PROPERTY_INSTANCE_DELIM
+		Note that a pageMessageLocator can contain a ParmSet object instead of a Selenium locator (see
+			documentation in ITConstants.java); if a ParmSet is present, all other pageMessageLocators
+			will be ignored
+		
+	2) fieldDependencies	=prerequisiteField##dependentField(s)
+		
+		Defines the relationship between prerequisite and dependent fields
+
+		To specify that more than one dependent field depends on a prerequisite field, delimit them with
+			ITConstants.FIELD_DEPENDENCY_DELIM
+		To specify more than one fieldDependencies set, delimit them with ITConstants.PROPERTY_INSTANCE_DELIM
+     	If a set's prerequisite field has so many dependent fields that listing them is impractical, use
+     		ITConstants.FIELD_DEPENDENCY_GLOBAL_FLAG
+     	Each set will be converted to an instance of the FieldDependencySet class at run time
+
+		For example, until paymentMethod is populated, paymentTerms does not contain the correct choices.
+		Also, if the payment method is credit card, the credit card fields are not present until
+		paymentMethod is populated.  Therefore, we can say that paymentTerms and the credit card fields
+		are dependent upon.  The definition of field dependency sets ensures that the GUI will be populated
+		with test data in the correct order, and relieves the author of the test data of the responsibility of
+		worrying about field order while populating the test data file.  NOTE, however, that in the absence of
+		field dependency declarations, the GUI fields are populated in the order in which they are specified
+		in the test data file.
+		
+		For example, the following 'global' set will result in the editionSelection field's being populated
+			before any other fields on the page:
+        		fieldDependencies = editionSelection##*
+        		
+        Example of multiple field dependency sets:
+			fieldDependencies	=paymentMethod##paymentTerms&&creditCardHolderName&&creditCardYear&&creditCardType&&creditCardNumber&&creditCardMonth @@ \
+								 taxExemptOrg##taxExemptionNumber @@ \
+								 enterDiffShippingAddr##diffShippingStreet&&diffShippingCity&&diffShippingState&&diffShippingPostalCode&&diffShippingCountry @@
+
+        Implementation notes:
+        	A global set cannot contain any fields after the *
+    		When the prerequisite field in a global set is referenced in another set, results are undefined
+    		When there are more than one global set, the order in which the GUI is populated with the prerequisite
+      			fields is unpredictable
+			When there are more than one dependent field in a set, the order of the dependent fields
+    			(delimited by &&) DOES NOT imply any further dependency - the dependent fields can be specified in
+    			any order, and the order in which the GUI is populated with the dependent fields is unpredictable
+			When there are more than one set, the order of the sets (delimited by @@) DOES NOT imply any further
+    			dependency - the sets can be specified in any order, and the order in which they are processed is
+    			unpredictable, WITH THE EXCEPTION that global sets are guaranteed to be processed first
+			When a field is referenced in more than one set, results are undefined
+			"chained" dependencies are not directly supported.  For example, the results of the following
+    			are undefined:
+      				fieldDependencies = field1##field2 @@ field2##field3
+    			When such a dependency relationship exists, it should be specified thusly:
+      				fieldDependencies = field1##* @@ field2##field3
+
+  
+------------------------
+
+
+Zero or more lines of field metadata, each of which represents a GUI element that will be referred to in test code
+	or test data; each line will be converted to an instance of the Field class at run time.
+	
+	Format:
+		fieldName	=fieldMetadata
+	
+		fieldName is a user-defined value, and is used as a reference in Page metadata files and test code
+		
+		fieldMetadata is a string of Field metadata
+		
+		(See the Field metadata documentation for more information about the Field class.)
+	
+	Lines of field metadata	can be specified in any	order.
+	
+	Each line of field metadata must contain a unique fieldName

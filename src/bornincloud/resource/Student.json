@@ -1,0 +1,59 @@
+{
+    "offeringId": "FSN360-STD1",
+    "offeringPLC": "FSN360",
+    "offeringLegalName": "Autodesk® Fusion 360 Student",
+    "offeringShortName": "Fusion 360 Student",
+    "offeringClass": "Sales",
+    "offeringTemplate": "FSN360-TEMPLATE",
+    "offeringStartDate": "2014-01-01T12:00:00Z",
+    "offeringEndDate": "2015-12-31T12:00:00Z",
+    "offeringBillingRecurrence": "N/A",
+    "offeringBillingCycle": "N/A",
+    "offeringUsageType": "EDU",
+    "featureList": [
+        {
+            "offeringId": "FSN360-STD1",
+            "featureId": "urn:autodesk.com:services:fusion360",
+            "featureName": "Fusion 360",
+            "featureType": "CLP",
+            "featureNumDays": "1095",
+            "featureLicensingModel": "STD#1",
+            "parentFeatureId": null,
+            "featureAddToEntsTable": "true",
+            "qty": null
+        },
+        {
+            "offeringId": "FSN360-STD1",
+            "featureId": "urn:autodesk.com:services:a360",
+            "featureName": "Collaboration",
+            "featureType": "",
+            "featureNumDays": "1095",
+            "featureLicensingModel": "STD#1",
+            "parentFeatureId": "urn:autodesk.com:services:fusion360",
+            "featureAddToEntsTable": "true",
+            "qty": null
+        },
+        {
+            "offeringId": "FSN360-STD1",
+            "featureId": "bicsupport",
+            "featureName": "Basic Support",
+            "featureType": "SPT",
+            "featureNumDays": "1095",
+            "featureLicensingModel": "STD#1",
+            "parentFeatureId": null,
+            "featureAddToEntsTable": "true",
+            "qty": null
+        },
+        {
+            "offeringId": "FSN360-STD1",
+            "featureId": "urn:autodesk.com:services:raas",
+            "featureName": "Rendering",
+            "featureType": "",
+            "featureNumDays": "1095",
+            "featureLicensingModel": "CMP#1",
+            "parentFeatureId": null,
+            "featureAddToEntsTable": "true",
+            "qty": null
+        }
+    ]
+}

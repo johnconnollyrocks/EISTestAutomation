@@ -1,0 +1,37 @@
+{
+    "shopper": {
+        "jsonRef": "shopper",
+        "firstName": "Bob",
+        "lastName": "Ricardo",
+        "email": "shopper@BlueSnap.com",
+        "phone": "15303218264",
+        "billingInfo": {
+            "firstName": "Bob",
+            "lastName": "Ricardo",
+            "streetAddress": "18 Cotati Ct",
+            "city": "Hollywood",
+            "stateProvince": "CA",
+            "postalCode": "94561",
+            "country": "us"
+        },
+        "paymentProfiles": [
+            {
+                "jsonRef": "paymentProfile",
+                "creditCardInfo": {
+                    "jsonRef": "creditCardInfo",
+                    "last4Digits": "1111",
+                    "cardType": "VISA"
+                },
+                "billingInfo": {
+                    "firstName": "Bob",
+                    "lastName": "Ricardo",
+                    "streetAddress": "18 Cotati Ct",
+                    "city": "Hollywood",
+                    "stateProvince": "CA",
+                    "postalCode": "94561",
+                    "country": "us"
+                }
+            }
+        ]
+    }
+}

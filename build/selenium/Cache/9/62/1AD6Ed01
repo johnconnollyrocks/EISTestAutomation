@@ -1,0 +1,656 @@
+
+<aside class="secondary addon-reviews c">
+      <div>
+        <span class="stars stars-4" title="Rated 4 out of 5 stars">Rated 4 out of 5 stars</span>
+
+      Average
+    </div>
+      <div>
+    <ul class="grouped_ratings" data-total="16">
+                <li class="c">  <span class="stars stars-5" title="Rated 5 out of 5 stars">Rated 5 out of 5 stars</span>
+
+        <div class="rating_bar" data-num-reviews="10">
+          <span class="bar" style="width:62.0%">
+            <span class="num_ratings">10</span>
+          </span>
+        </div>
+      </li>
+                <li class="c">  <span class="stars stars-4" title="Rated 4 out of 5 stars">Rated 4 out of 5 stars</span>
+
+        <div class="rating_bar" data-num-reviews="2">
+          <span class="bar" style="width:12.0%">
+            <span class="num_ratings">2</span>
+          </span>
+        </div>
+      </li>
+                <li class="c">  <span class="stars stars-3" title="Rated 3 out of 5 stars">Rated 3 out of 5 stars</span>
+
+        <div class="rating_bar" data-num-reviews="2">
+          <span class="bar" style="width:12.0%">
+            <span class="num_ratings">2</span>
+          </span>
+        </div>
+      </li>
+                <li class="c">  <span class="stars stars-2" title="Rated 2 out of 5 stars">Rated 2 out of 5 stars</span>
+
+        <div class="rating_bar" data-num-reviews="1">
+          <span class="bar" style="width:6.0%">
+            <span class="num_ratings">1</span>
+          </span>
+        </div>
+      </li>
+                <li class="c">  <span class="stars stars-1" title="Rated 1 out of 5 stars">Rated 1 out of 5 stars</span>
+
+        <div class="rating_bar" data-num-reviews="1">
+          <span class="bar" style="width:6.0%">
+            <span class="num_ratings">1</span>
+          </span>
+        </div>
+      </li>
+        </ul>
+  </div>
+      <div>
+      <a class="button" id="add-review" href="/en-US/firefox/addon/firepath/reviews/add">Write a review</a>
+    </div>
+    <a id="report-abuse" href="/en-US/developers/docs/policies/contact"
+     class="abuse-image">Report Abuse</a>
+</aside>
+
+<section id="reviews" class="primary island c">
+  <h2>Reviews</h2>
+                  <div class="review">
+        <h3>
+                      <span class="stars stars-5" title="Rated 5 out of 5 stars">Rated 5 out of 5 stars</span>
+
+        </h3>
+        <p class="byline">
+          by <a href="/en-US/firefox/user/hansonite/" title="Hannes Kepplinger">Hannes Kepplinger</a> on June 29, 2013          &middot;
+          <a class="permalink"
+             href="/en-US/firefox/addon/firepath/reviews/482474/">permalink</a>
+                      &middot;
+            <a class="translate" rel="nofollow" target="_blank"
+               href="/en-US/firefox/addon/firepath/reviews/482474/translate/en-US">translate</a>
+                  </p>
+        <p class="description">FirePath saved my day. After trial and error several tools to retrieve the XPath I&#39;ve ended up with FirePath. <br>I can use the XPath directly to scrap the data with the HtmlAgilityPack.<br><br>Good job, Pierre. Well done ! Merci beaucoup</p>
+              </div>
+          <div class="review">
+        <h3>
+                      <span class="stars stars-5" title="Rated 5 out of 5 stars">Rated 5 out of 5 stars</span>
+
+        </h3>
+        <p class="byline">
+          by <a href="/en-US/firefox/user/urbanaut/" title="Bill">Bill</a> on April 26, 2012          &middot;
+          <a class="permalink"
+             href="/en-US/firefox/addon/firepath/reviews/347384/">permalink</a>
+                      &middot;
+            <a class="translate" rel="nofollow" target="_blank"
+               href="/en-US/firefox/addon/firepath/reviews/347384/translate/en-US">translate</a>
+                  </p>
+        <p class="description">FirePath is great, I use it almost everyday in Quality Assurance testing.</p>
+              </div>
+          <div class="review">
+        <h3>
+                      <span class="stars stars-1" title="Rated 1 out of 5 stars">Rated 1 out of 5 stars</span>
+
+        </h3>
+        <p class="byline">
+          by <a href="/en-US/firefox/user/Urkman/" title="Urkman">Urkman</a> on April  3, 2012          &middot;
+          <a class="permalink"
+             href="/en-US/firefox/addon/firepath/reviews/344033/">permalink</a>
+                      &middot;
+            <a class="translate" rel="nofollow" target="_blank"
+               href="/en-US/firefox/addon/firepath/reviews/344033/translate/en-US">translate</a>
+                  </p>
+        <p class="description">This was a great PlugIn, but it is no longer working correct with FIreBug 1.9.x.<br>And there is no answer to this problem in the IssueTracker.<br>So I think, the PlugIn is dead :(</p>
+              </div>
+              <p>
+        <a class="more-info" href="/en-US/firefox/addon/firepath/reviews/">
+          See all 16 user reviews        </a>
+      </p>
+      
+</section>
+
+<aside id="related" class="secondary metadata c">
+            <h3>Related Categories</h3>
+      <ul>
+                <li>
+          <a href="/en-US/firefox/extensions/web-development/">
+            Web Development
+          </a>
+        </li>
+              </ul>
+        <div class="clearboth">
+  <h3 class="compact-bottom">Tags</h3>
+
+  <div id="tagbox">
+    
+  <ul class="addon-tags nojs" id="addonid-11900">
+          <li id="taglink-171" class="tag">
+      <a href="/en-US/firefox/tag/css" class="tagitem">
+      css
+    </a>
+  </li>
+          <li id="taglink-37" class="tag">
+      <a href="/en-US/firefox/tag/firebug" class="tagitem">
+      firebug
+    </a>
+  </li>
+          <li id="taglink-762" class="tag">
+      <a href="/en-US/firefox/tag/jquery" class="tagitem">
+      jquery
+    </a>
+  </li>
+          <li id="taglink-30779" class="tag">
+      <a href="/en-US/firefox/tag/sizzle" class="tagitem">
+      sizzle
+    </a>
+  </li>
+          <li id="taglink-1144" class="tag">
+      <a href="/en-US/firefox/tag/xpath" class="tagitem">
+      xpath
+    </a>
+  </li>
+      </ul>
+
+  </div>
+</div>
+
+</aside>
+
+  <section class="primary island c">
+          <section id="recommendations-grid">
+        <h2 class="compact-bottom">Often used with&hellip;</h2>
+        <ul class="listing-grid c cols-3">
+    <section>
+      <li>
+      <div class="addon hovercard">
+    <div class="icon">
+      <a href="/en-US/firefox/addon/open-long-url/?src=dp-dl-oftenusedwith">
+              <img src="https://addons.cdn.mozilla.net/media//img/addon-icons/default-32.png" alt="">
+            </a>
+    </div>
+    <div class="summary">
+      <a href="/en-US/firefox/addon/open-long-url/?src=dp-dl-oftenusedwith">
+        <h3>Open Long Url</h3>
+                                </a>
+        <div class="vital">
+          
+<span class="rating">
+              <span class="stars stars-5" title="Rated 5 out of 5 stars">Rated 5 out of 5 stars</span>
+
+      <a href="/en-US/firefox/addon/open-long-url/#reviews">(7)</a>
+      </span>
+      </div>
+
+          </div>
+  <div class="more">
+    
+<div class="install-shell">
+<div class="install "
+       data-addon="132"
+  data-icon="https://addons.cdn.mozilla.net/media//img/addon-icons/default-32.png"
+  data-developers="/en-US/firefox/addon/open-long-url/developers"
+  data-versions="/en-US/firefox/addon/132/versions/"
+  data-name="Open Long Url"
+  
+  data-min="1.0"
+  data-max="3.6.*"
+  data-is-compatible="true"
+  data-is-compatible-app="false"
+  data-compat-overrides="[]"
+>
+  <p class="install-button">
+                            <a class="button  download "
+  data-hash="sha256:3440aac953a30bfd346cc695b3591164d90a90641100ce2d9c48dd5e9a1c864e"
+      href="/firefox/downloads/latest/132/addon-132-latest.xpi?src=dp-hc-oftenusedwith"
+  >
+      <b></b>
+    <span>
+      Download Now
+          </span>
+  </a>
+      </p>
+</div> 
+
+      <div class="d2c-reasons-popup popup">
+      <p>This add-on is not compatible with your version of Firefox because of the following:</p>
+      <ul></ul>
+    </div>
+  
+</div> 
+    <span class="addon-summary">
+      Adds an option to your File menu to allow you to open long, multi-line...
+    </span>
+    <div class="byline">
+      by <a href="/en-US/firefox/user/jeremy-gillick/" title="Jeremy Gillick">Jeremy Gillick</a>    </div>
+          <div class="vitals">
+          <div class="vital">
+                  <span class="adu">
+                    213 users        </span>
+            </div>
+
+      </div>
+      </div>
+</div>
+    </li>
+      <li>
+      <div class="addon hovercard">
+    <div class="icon">
+      <a href="/en-US/firefox/addon/loremipsum-content-generator/?src=dp-dl-oftenusedwith">
+              <img src="https://addons.cdn.mozilla.net/media//img/addon-icons/default-32.png" alt="">
+            </a>
+    </div>
+    <div class="summary">
+      <a href="/en-US/firefox/addon/loremipsum-content-generator/?src=dp-dl-oftenusedwith">
+        <h3>LoremIpsum Content Generator</h3>
+                                </a>
+        <div class="vital">
+          
+<span class="rating">
+              <span class="stars stars-4" title="Rated 4 out of 5 stars">Rated 4 out of 5 stars</span>
+
+      <a href="/en-US/firefox/addon/loremipsum-content-generator/#reviews">(6)</a>
+      </span>
+      </div>
+
+          </div>
+  <div class="more">
+    
+<div class="install-shell">
+<div class="install "
+       data-addon="198"
+  data-icon="https://addons.cdn.mozilla.net/media//img/addon-icons/default-32.png"
+  data-developers="/en-US/firefox/addon/loremipsum-content-generator/developers"
+  data-versions="/en-US/firefox/addon/198/versions/"
+  data-name="LoremIpsum Content Generator"
+  
+  data-min="1.0"
+  data-max="3.6.*"
+  data-is-compatible="true"
+  data-is-compatible-app="false"
+  data-compat-overrides="[]"
+>
+  <p class="install-button">
+                            <a class="button  download "
+  data-hash="sha256:6541ab71d2328b86ba4c58c94d703cba76b5d7daa387ef1ec8f77db154f75f27"
+      href="/firefox/downloads/latest/198/addon-198-latest.xpi?src=dp-hc-oftenusedwith"
+  >
+      <b></b>
+    <span>
+      Download Now
+          </span>
+  </a>
+      </p>
+</div> 
+
+      <div class="d2c-reasons-popup popup">
+      <p>This add-on is not compatible with your version of Firefox because of the following:</p>
+      <ul></ul>
+    </div>
+  
+</div> 
+    <span class="addon-summary">
+      Uses latin-like words to create filler...
+    </span>
+    <div class="byline">
+      by <a href="/en-US/firefox/user/jeremy-gillick/" title="Jeremy Gillick">Jeremy Gillick</a>    </div>
+          <div class="vitals">
+          <div class="vital">
+                  <span class="adu">
+                    331 users        </span>
+            </div>
+
+      </div>
+      </div>
+</div>
+    </li>
+      <li>
+      <div class="addon hovercard">
+    <div class="icon">
+      <a href="/en-US/firefox/addon/named-anchors/?src=dp-dl-oftenusedwith">
+              <img src="https://addons.cdn.mozilla.net/media//img/addon-icons/default-32.png" alt="">
+            </a>
+    </div>
+    <div class="summary">
+      <a href="/en-US/firefox/addon/named-anchors/?src=dp-dl-oftenusedwith">
+        <h3>Named anchors</h3>
+                              <div class="category more-info">Bookmarks</div>
+                        </a>
+        <div class="vital">
+          
+<span class="rating">
+              <span class="stars stars-5" title="Rated 5 out of 5 stars">Rated 5 out of 5 stars</span>
+
+      <a href="/en-US/firefox/addon/named-anchors/#reviews">(1)</a>
+      </span>
+      </div>
+
+          </div>
+  <div class="more">
+    
+<div class="install-shell">
+<div class="install "
+       data-addon="304"
+  data-icon="https://addons.cdn.mozilla.net/media//img/addon-icons/default-32.png"
+  data-developers="/en-US/firefox/addon/named-anchors/developers"
+  data-versions="/en-US/firefox/addon/304/versions/"
+  data-name="Named anchors"
+  
+  data-min="0.9"
+  data-max="2.0.0.*"
+  data-is-compatible="true"
+  data-is-compatible-app="false"
+  data-compat-overrides="[]"
+>
+  <p class="install-button">
+                            <a class="button  download "
+  data-hash="sha256:513f0207c8601e956220d9cca8c13b3470747010a00c525377fcf2a8d8c04b9e"
+      href="/firefox/downloads/latest/304/addon-304-latest.xpi?src=dp-hc-oftenusedwith"
+  >
+      <b></b>
+    <span>
+      Download Now
+          </span>
+  </a>
+      </p>
+</div> 
+
+      <div class="d2c-reasons-popup popup">
+      <p>This add-on is not compatible with your version of Firefox because of the following:</p>
+      <ul></ul>
+    </div>
+  
+</div> 
+    <span class="addon-summary">
+      Adds a new tab to Page Info with information about the named anchors in the current document.<br><br>Visit my <a href="http://outgoing.mozilla.org/v1/1ba9d1a96c010e1f736eaefff15f3ec7348f90ce/http%3A//extensions.sanjer.nl/" rel="nofollow">Named Anchors site</a> for recent versions and news.
+    </span>
+    <div class="byline">
+      by <a href="/en-US/firefox/user/jeroen-peters/" title="Jeroen Peters">Jeroen Peters</a>    </div>
+          <div class="vitals">
+          <div class="vital">
+                  <span class="adu">
+                    30 users        </span>
+            </div>
+
+      </div>
+      </div>
+</div>
+    </li>
+      <li>
+      <div class="addon hovercard">
+    <div class="icon">
+      <a href="/en-US/firefox/addon/rss-editor/?src=dp-dl-oftenusedwith">
+              <img src="https://addons.cdn.mozilla.net/media//img/addon-icons/default-32.png" alt="">
+            </a>
+    </div>
+    <div class="summary">
+      <a href="/en-US/firefox/addon/rss-editor/?src=dp-dl-oftenusedwith">
+        <h3>RSS Editor</h3>
+                              <div class="category more-info">Web Development</div>
+                        </a>
+        <div class="vital">
+          
+<span class="rating">
+              <span class="stars stars-4" title="Rated 4 out of 5 stars">Rated 4 out of 5 stars</span>
+
+      <a href="/en-US/firefox/addon/rss-editor/#reviews">(12)</a>
+      </span>
+      </div>
+
+          </div>
+  <div class="more">
+    
+<div class="install-shell">
+<div class="install "
+       data-addon="344"
+  data-icon="https://addons.cdn.mozilla.net/media//img/addon-icons/default-32.png"
+  data-developers="/en-US/firefox/addon/rss-editor/developers"
+  data-versions="/en-US/firefox/addon/344/versions/"
+  data-name="RSS Editor"
+  
+  data-min="1.0"
+  data-max="3.0a1"
+  data-is-compatible="true"
+  data-is-compatible-app="false"
+  data-compat-overrides="[]"
+>
+  <p class="install-button">
+                            <a class="button  download "
+  data-hash="sha256:daead851fe52a1d0b2a01c4bfab4b12c3976dc5ffc4f97dbfa32fe46a2664069"
+      href="/firefox/downloads/latest/344/addon-344-latest.xpi?src=dp-hc-oftenusedwith"
+  >
+      <b></b>
+    <span>
+      Download Now
+          </span>
+  </a>
+      </p>
+</div> 
+
+      <div class="d2c-reasons-popup popup">
+      <p>This add-on is not compatible with your version of Firefox because of the following:</p>
+      <ul></ul>
+    </div>
+  
+</div> 
+    <span class="addon-summary">
+      Desktop RSS editor for casual editing of RSS 2.0...
+    </span>
+    <div class="byline">
+      by <a href="/en-US/firefox/user/leung-wing-chung/" title="Leung Wing Chung">Leung Wing Chung</a>    </div>
+          <div class="vitals">
+          <div class="vital">
+                  <span class="adu">
+                    133 users        </span>
+            </div>
+
+      </div>
+      </div>
+</div>
+    </li>
+      <li>
+      <div class="addon hovercard">
+    <div class="icon">
+      <a href="/en-US/firefox/addon/unhide-fields/?src=dp-dl-oftenusedwith">
+              <img src="https://addons.cdn.mozilla.net/media//img/addon-icons/default-32.png" alt="">
+            </a>
+    </div>
+    <div class="summary">
+      <a href="/en-US/firefox/addon/unhide-fields/?src=dp-dl-oftenusedwith">
+        <h3>UnHide fields</h3>
+                              <div class="category more-info">Web Development</div>
+                        </a>
+        <div class="vital">
+          
+<span class="rating">
+              <span class="stars stars-3" title="Rated 3 out of 5 stars">Rated 3 out of 5 stars</span>
+
+      <a href="/en-US/firefox/addon/unhide-fields/#reviews">(11)</a>
+      </span>
+      </div>
+
+          </div>
+  <div class="more">
+    
+<div class="install-shell">
+<div class="install "
+       data-addon="2685"
+  data-icon="https://addons.cdn.mozilla.net/media//img/addon-icons/default-32.png"
+  data-developers="/en-US/firefox/addon/unhide-fields/developers"
+  data-versions="/en-US/firefox/addon/2685/versions/"
+  data-name="UnHide fields"
+  
+  data-min="1.0"
+  data-max="3.0.*"
+  data-is-compatible="true"
+  data-is-compatible-app="false"
+  data-compat-overrides="[]"
+>
+  <p class="install-button">
+                            <a class="button  download "
+  data-hash="sha256:fd41177ce74568bbab0f6144a69dad81840cef8df9cab2a3c9e18b0566a4c81f"
+      href="/firefox/downloads/latest/2685/addon-2685-latest.xpi?src=dp-hc-oftenusedwith"
+  >
+      <b></b>
+    <span>
+      Download Now
+          </span>
+  </a>
+      </p>
+</div> 
+
+      <div class="d2c-reasons-popup popup">
+      <p>This add-on is not compatible with your version of Firefox because of the following:</p>
+      <ul></ul>
+    </div>
+  
+</div> 
+    <span class="addon-summary">
+      this extension allow you to view and edit hidden fields...
+    </span>
+    <div class="byline">
+      by <a href="/en-US/firefox/user/ido/" title="iDo">iDo</a>    </div>
+          <div class="vitals">
+          <div class="vital">
+                  <span class="adu">
+                    102 users        </span>
+            </div>
+
+      </div>
+      </div>
+</div>
+    </li>
+      <li>
+      <div class="addon hovercard">
+    <div class="icon">
+      <a href="/en-US/firefox/addon/histprop/?src=dp-dl-oftenusedwith">
+              <img src="https://addons.cdn.mozilla.net/img/uploads/addon_icons/3/3325-32.png?modified=1304375946" alt="">
+            </a>
+    </div>
+    <div class="summary">
+      <a href="/en-US/firefox/addon/histprop/?src=dp-dl-oftenusedwith">
+        <h3>HistProp</h3>
+                              <div class="category more-info">Appearance</div>
+                        </a>
+        <div class="vital">
+          
+<span class="rating">
+              <span class="stars stars-3" title="Rated 3 out of 5 stars">Rated 3 out of 5 stars</span>
+
+      <a href="/en-US/firefox/addon/histprop/#reviews">(2)</a>
+      </span>
+      </div>
+
+          </div>
+  <div class="more">
+    
+<div class="install-shell">
+<div class="install "
+       data-addon="3325"
+  data-icon="https://addons.cdn.mozilla.net/img/uploads/addon_icons/3/3325-32.png?modified=1304375946"
+  data-developers="/en-US/firefox/addon/histprop/developers"
+  data-versions="/en-US/firefox/addon/3325/versions/"
+  data-name="HistProp"
+  
+  data-min="1.0"
+  data-max="3.6.*"
+  data-is-compatible="true"
+  data-is-compatible-app="false"
+  data-compat-overrides="[]"
+>
+  <p class="install-button">
+                            <a class="button  download "
+  data-hash="sha256:667c2351f8ece909c9f327d3f9c6c7f38cdaff420e138255f1ee26c2b45f74d2"
+      href="/firefox/downloads/latest/3325/addon-3325-latest.xpi?src=dp-hc-oftenusedwith"
+  >
+      <b></b>
+    <span>
+      Download Now
+          </span>
+  </a>
+      </p>
+</div> 
+
+      <div class="d2c-reasons-popup popup">
+      <p>This add-on is not compatible with your version of Firefox because of the following:</p>
+      <ul></ul>
+    </div>
+  
+</div> 
+    <span class="addon-summary">
+      Adds a Properties item to the browser's History sidebar context menu.
+    </span>
+    <div class="byline">
+      by <a href="/en-US/firefox/user/andrewsh/" title="Andrew Shadura">Andrew Shadura</a>    </div>
+          <div class="vitals">
+          <div class="vital">
+                  <span class="adu">
+                    75 users        </span>
+            </div>
+
+      </div>
+      </div>
+</div>
+    </li>
+    </section>
+</ul>
+      </section>
+              <section id="collections-grid">
+        <h2>Part of these Collections</h2>
+        <ul class="listing-grid c cols-3">
+    <section>
+      <li>
+      <div class="hovercard collection addon">
+        <a href="/en-US/firefox/collections/adammuntner/webappsec/">
+          <div class="icon">
+                          <img src="https://addons.cdn.mozilla.net/img/uploads/collection_icons/1/1039.png?m=1395133050" alt="">
+                      </div>
+          <div class="summary">
+            <h3>Web Application Security Penetration Testing</h3>
+            <p class="desc">Web hacking tools for Firefox Plugins are maintained by their authors. We maintain the list, but can not guarantee the trustworthiness of plugins. Maintained by Gotham Digital Science</p>
+          </div>
+        </a>
+        <div class="more">
+                    <span>81</span> add-ons          &middot;
+                    <span>744</span> followers        </div>
+      </div>
+    </li>
+      <li>
+      <div class="hovercard collection addon">
+        <a href="/en-US/firefox/collections/ashai/firebug-extensions/">
+          <div class="icon">
+                          <img src="https://addons.cdn.mozilla.net/img/uploads/collection_icons/20/20011.png?m=1382149974" alt="">
+                      </div>
+          <div class="summary">
+            <h3>Firebug Extensions</h3>
+            <p class="desc">This collection includes ALL extensions avaible for Firebug and be updated frequently. Updates not listed on addons.mozilla.org will be shown in a blog-entry soon.</p>
+          </div>
+        </a>
+        <div class="more">
+                    <span>46</span> add-ons          &middot;
+                    <span>321</span> followers        </div>
+      </div>
+    </li>
+      <li>
+      <div class="hovercard collection addon">
+        <a href="/en-US/firefox/collections/byrned/pentesting/">
+          <div class="icon">
+                          <img src="https://addons.cdn.mozilla.net/media/img/icons/collection.png" alt="">
+                      </div>
+          <div class="summary">
+            <h3>David&#39;s Pen Testing (Security) Collection</h3>
+            <p class="desc">These are not tools to hack a website. These are tools that someone already skilled at manual penetration testing will find useful. Keywords: hacker, hacking, security, pen test,</p>
+          </div>
+        </a>
+        <div class="more">
+                    <span>129</span> add-ons          &middot;
+                    <span>71</span> followers        </div>
+      </div>
+    </li>
+    </section>
+</ul>
+
+      </section>
+            </section>
+
+ 

@@ -1,0 +1,2685 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+            <title>Firebug :: Versions :: Add-ons for Firefox</title>
+
+    <link rel="shortcut icon" type="image/x-icon"
+          href="https://addons.cdn.mozilla.net/media/img/favicon.ico">
+
+    <link  rel="alternate" type="application/rss+xml"
+       title="RSS" href="/en-US/firefox/addon/firebug/versions/format:rss">
+
+        <link title="Firefox Add-ons"
+          rel="search" type="application/opensearchdescription+xml"
+          href="/en-US/firefox/opensearch.xml" />
+
+          <link href="//mozorg.cdn.mozilla.net/media/css/tabzilla-min.css" rel="stylesheet" />
+              <link rel="stylesheet" media="all" href="https://addons.cdn.mozilla.net/media/css/zamboni/impala-min.css?build=8c23634" />
+      <!--[if lt IE 9]>
+        <script src="https://addons.cdn.mozilla.net/media/js/lib/iepp.min.js?b=ac79528-53879682"></script>
+      <![endif]-->
+      <!--[if lte IE 9]>
+        <link rel="stylesheet" href="https://addons.cdn.mozilla.net/media/css/legacy/ie9.css?b=ac79528-53879682">
+      <![endif]-->
+    
+        <noscript><link rel="stylesheet" href="https://addons.cdn.mozilla.net/media/css/impala/nojs.css?b=ac79528-53879682"></noscript>
+
+    
+    
+    <script src="https://addons.cdn.mozilla.net/media/js/preload-min.js?build=ac79528-53879682"></script>
+  </head>
+  <body class="html-ltr firefox moz-header-slim versions gutter is-impala"
+        data-app="firefox"
+        data-appname="Firefox"
+        data-appid="1"
+        data-min-beta-version="3.7"
+        data-nightly-version="29.0"
+        data-anonymous="true"
+        data-readonly="false"
+        data-media-url="https://addons.cdn.mozilla.net/media/"
+        data-collect-timings="/services/timing/record:0.1"
+        >
+
+    <div id="tabzilla-wrapper">
+      <div id="page" class="c">
+                            <div id="global-header-tab">
+            <a href="//www.mozilla.org/" id="tabzilla">Mozilla</a>
+          </div>
+          <div class="amo-header">
+            <nav id="aux-nav" role="navigation" class="menu-nav c">
+              <ul>
+                                    <li class="account anonymous nomenu login legacy">
+            <a href="/en-US/firefox/users/register">Register</a> or <a href="/en-US/firefox/users/login?to=%2Fen-US%2Ffirefox%2Faddon%2Ffirebug%2Fversions%2F">Log in</a>      </li>
+
+                                                  <li>
+                    <a href="#" id="other-apps" title="Find add-ons for other applications">Other Applications</a>
+                    <ul class="other-apps">
+                                                                                                                      <li id="app-thunderbird" class="thunderbird">
+                            <a href="/en-US/thunderbird">Thunderbird</a>
+                          </li>
+                                                                                                <li id="app-android" class="android">
+                            <a href="/en-US/android">Firefox for Android</a>
+                          </li>
+                                                                                                                                              <li id="app-seamonkey" class="seamonkey">
+                            <a href="/en-US/seamonkey">SeaMonkey</a>
+                          </li>
+                                                                  </ul>
+                  </li>
+                              </ul>
+            </nav>
+            <div class="header-search" role="search">
+                                                                  <form id="search" action="/en-US/firefox/search/">
+  <input id="search-q" type="text" name="q" autocomplete="off" title=""
+         class="text placeholder"
+         placeholder="search for add-ons"
+         value="">
+        <input id="id_appver" name="appver" type="hidden" />
+    <input id="id_platform" name="platform" type="hidden" />
+    <button class="search-button" type="submit" title="Search"
+         src="https://addons.cdn.mozilla.net/media/img/zamboni/global/btn-search.png?b=ac79528-53879682"></button>
+      <div id="site-search-suggestions"
+         data-cat="all"
+         data-src="/en-US/firefox/search/suggestions"></div>
+  </form>                                          </div>
+            <div id="masthead">
+                            <h1 class="site-title">
+  <a href="/en-US/firefox/" title="Return to the Firefox Add-ons homepage">
+  <img alt="Firefox" src="https://addons.cdn.mozilla.net/media/img/app-icons/med/firefox.png?b=ac79528-53879682">
+  Add-ons
+</a>
+</h1>              
+
+<nav id="site-nav" class="menu-nav c">
+  <ul>
+      <li id="extensions">
+    <a href="/en-US/firefox/extensions/">Extensions</a>
+    <ul class="two-col">
+              <li><em><a href="/en-US/firefox/extensions/?sort=featured">Featured</a></em></li>
+              <li><em><a href="/en-US/firefox/extensions/?sort=users">Most Popular</a></em></li>
+              <li><em><a href="/en-US/firefox/extensions/?sort=rating">Top Rated</a></em></li>
+                  <li><a href="/en-US/firefox/extensions/alerts-updates/">Alerts &amp; Updates</a></li>
+            <li><a href="/en-US/firefox/extensions/appearance/">Appearance</a></li>
+            <li><a href="/en-US/firefox/extensions/bookmarks/">Bookmarks</a></li>
+            <li><a href="/en-US/firefox/extensions/download-management/">Download Management</a></li>
+            <li><a href="/en-US/firefox/extensions/feeds-news-blogging/">Feeds, News &amp; Blogging</a></li>
+            <li><a href="/en-US/firefox/extensions/games-entertainment/">Games &amp; Entertainment</a></li>
+            <li><a href="/en-US/firefox/extensions/language-support/">Language Support</a></li>
+            <li><a href="/en-US/firefox/extensions/photos-music-videos/">Photos, Music &amp; Videos</a></li>
+            <li><a href="/en-US/firefox/extensions/privacy-security/">Privacy &amp; Security</a></li>
+            <li><a href="/en-US/firefox/extensions/search-tools/">Search Tools</a></li>
+            <li><a href="/en-US/firefox/extensions/shopping/">Shopping</a></li>
+            <li><a href="/en-US/firefox/extensions/social-communication/">Social &amp; Communication</a></li>
+            <li><a href="/en-US/firefox/extensions/tabs/">Tabs</a></li>
+            <li><a href="/en-US/firefox/extensions/web-development/">Web Development</a></li>
+            <li><a href="/en-US/firefox/extensions/other/">Other</a></li>
+          </ul>
+  </li>
+
+    
+        <li id="themes">
+      <a href="/en-US/firefox/themes/">Themes</a>
+              <ul class="two-col">
+                      <li><em><a href="/en-US/firefox/themes/?sort=popular">Most Popular</a></em></li>
+                      <li><em><a href="/en-US/firefox/themes/?sort=rating">Top Rated</a></em></li>
+                      <li><em><a href="/en-US/firefox/themes/?sort=created">Newest</a></em></li>
+                                <li><a href="https://addons.mozilla.org/firefox/themes/abstract">Abstract</a></li>
+                      <li><a href="https://addons.mozilla.org/firefox/themes/causes">Causes</a></li>
+                      <li><a href="https://addons.mozilla.org/firefox/themes/fashion">Fashion</a></li>
+                      <li><a href="https://addons.mozilla.org/firefox/themes/film-and-tv">Film and TV</a></li>
+                      <li><a href="https://addons.mozilla.org/firefox/themes/firefox">Firefox</a></li>
+                      <li><a href="https://addons.mozilla.org/firefox/themes/foxkeh">Foxkeh</a></li>
+                      <li><a href="https://addons.mozilla.org/firefox/themes/holiday">Holiday</a></li>
+                      <li><a href="https://addons.mozilla.org/firefox/themes/music">Music</a></li>
+                      <li><a href="https://addons.mozilla.org/firefox/themes/nature">Nature</a></li>
+                      <li><a href="https://addons.mozilla.org/firefox/themes/other">Other</a></li>
+                      <li><a href="https://addons.mozilla.org/firefox/themes/scenery">Scenery</a></li>
+                      <li><a href="https://addons.mozilla.org/firefox/themes/seasonal">Seasonal</a></li>
+                      <li><a href="https://addons.mozilla.org/firefox/themes/solid">Solid</a></li>
+                      <li><a href="https://addons.mozilla.org/firefox/themes/sports">Sports</a></li>
+                      <li><a href="https://addons.mozilla.org/firefox/themes/websites">Websites</a></li>
+                  </ul>
+        <div>
+          <a class="complete-themes" href="/en-US/firefox/complete-themes/">
+            Want more customization? Try <b>Complete Themes</b>          </a>
+        </div>
+          </li>
+
+        <li id="collections">
+            <a href="/en-US/firefox/collections/">Collections</a>
+      <ul>
+                  <li><em><a href="/en-US/firefox/collections/?sort=featured">Featured</a></em></li>
+                  <li><em><a href="/en-US/firefox/collections/?sort=users">Most Followers</a></em></li>
+                  <li><em><a href="/en-US/firefox/collections/?sort=created">Newest</a></em></li>
+                <hr>
+        <li><a href="/en-US/firefox/collections/mine/">
+          Collections I've Made</a></li>
+        <li><a href="/en-US/firefox/collections/following/">
+          Collections I'm Following</a></li>
+                <li><a href="/en-US/firefox/collections/mine/favorites">
+          My Favorite Add-ons</a></li>
+      </ul>
+          </li>
+    <li id="more">
+      <a href="#">More&hellip;</a>
+      <ul>
+                  <li class="more-mobile"><a href="/en-US/android">
+            Add-ons for Mobile</a></li>
+                <li class="more-lang"><a href="/en-US/firefox/language-tools/">
+          Dictionaries & Language Packs</a></li>
+        <li><a href="/en-US/firefox/search-tools/">Search Tools</a></li>
+        <li><a href="/en-US/developers/">Developer Hub</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                          </div>
+                                                      <div class="site-balloon" id="site-nonfx">
+                  <p>
+                    To try the thousands of add-ons available here, download <a href="http://mozilla.org/firefox/?src=amo">Mozilla Firefox</a>, a fast, free way to surf the Web!                  </p>
+                  <a href="#" class="close">Close</a>
+                </div>
+                            <div class="site-balloon" id="site-welcome">
+                                <h3>Welcome to Firefox Add-ons.</h3>
+                <p>
+                                      Choose from thousands of extra features and styles to make Firefox your own.                                  </p>
+                <a href="#" class="close">Close</a>
+              </div>
+              <div class="site-balloon" id="mobile-banner">
+                <h3>On the go?</h3>
+                <p>
+                  Check out our <a class="mobile-link" href="#">Mobile Add-ons site</a>.                </p>
+                <a href="#" class="close">Close</a>
+              </div>
+                      </div>
+        
+                                                                  <section class="primary">
+  <header>
+    <nav id="breadcrumbs">
+  <ol>
+      <li>
+                  <a href="/en-US/firefox/" class="home" title="Add-ons for Firefox">Add-ons for Firefox</a>
+              </li>
+      <li>
+                  <a href="/en-US/firefox/extensions/">Extensions</a>
+              </li>
+      <li>
+                  <a href="/en-US/firefox/addon/firebug/">Firebug</a>
+              </li>
+      <li>
+          <span>Versions</span>
+        </li>
+    </ol>
+</nav>
+
+        <hgroup>
+      <h1>Firebug Version History</h1>
+                      <h3><b>145</b> versions</h3>
+          </hgroup>
+  </header>
+  <div class="island hero c listing">
+    <div class="warning highlight">
+      <h2>Be careful with old versions!</h2>
+      <p>These versions are displayed for reference and testing purposes. You should always use the <a href="/en-US/firefox/addon/firebug/">latest version</a> of an add-on.</p>
+    </div>
+    <div class="items">
+              <div class="version item" id="version-2.0b7">
+  <div class="info">
+    <h3><a href="/en-US/firefox/addon/firebug/versions/2.0b7"
+           title="Permanent link to this version">
+      Version 2.0b7</a>
+      <span class="meta">
+        <time datetime="2014-05-23T17:49:49Z">
+                    Released May 23, 2014
+        </time>
+                  <span class="filesize">
+            3.4 MB
+          </span>
+              </span>
+              <span class="meta compat">
+                    Works with
+                      Firefox 30.0a1 and later        </span>
+          </h3>
+
+    <div class="desc prose" >
+      
+    </div>
+
+    <ul class="source">
+                  <li>
+                      Source code released under <a target="_blank" href="http://www.opensource.org/licenses/bsd-license.php">BSD License</a>                  </li>
+        <li>
+          <a class="license-faq" href="/en-US/faq#license">
+            What's this?</a>
+        </li>
+              <li>
+        <a class="source-code"
+           href="/en-US/firefox/files/browse/260068/">
+          View the source</a>
+      </li>
+        </ul>
+
+  </div>
+  <div class="action">
+    
+<div class="install-shell">
+<div class="install unreviewed beta"
+       data-addon="1843"
+  data-icon="https://addons.cdn.mozilla.net/img/uploads/addon_icons/1/1843-32.png?modified=1399032268"
+  data-developers="/en-US/firefox/addon/firebug/developers"
+  data-versions="/en-US/firefox/addon/1843/versions/"
+  data-name="Firebug"
+  
+  data-min="30.0a1"
+  data-max="32.0"
+  data-is-compatible="true"
+  data-is-compatible-app="true"
+  data-compat-overrides="[]"
+>
+  <p class="install-button">
+                            <a class="button  download caution "
+  data-hash="sha256:d31fa4e66c154777e86cf30a46ffcabc30e1a3b073d2419c654c748f4558d2d3"
+      href="/en-US/firefox/addon/firebug/"
+    data-realurl="https://addons.mozilla.org/firefox/downloads/file/260068/firebug-2.0b7-fx.xpi?src=version-history"
+  >
+      <b></b>
+    <span>
+      Download Now
+          </span>
+  </a>
+      </p>
+</div> 
+
+      <div class="d2c-reasons-popup popup">
+      <p>This add-on is not compatible with your version of Firefox because of the following:</p>
+      <ul></ul>
+    </div>
+  
+</div> 
+  </div>
+</div>
+              <div class="version item" id="version-2.0b6">
+  <div class="info">
+    <h3><a href="/en-US/firefox/addon/firebug/versions/2.0b6"
+           title="Permanent link to this version">
+      Version 2.0b6</a>
+      <span class="meta">
+        <time datetime="2014-05-16T23:32:03Z">
+                    Released May 16, 2014
+        </time>
+                  <span class="filesize">
+            3.4 MB
+          </span>
+              </span>
+              <span class="meta compat">
+                    Works with
+                      Firefox 30.0a1 and later        </span>
+          </h3>
+
+    <div class="desc prose" >
+      
+    </div>
+
+    <ul class="source">
+                  <li>
+                      Source code released under <a target="_blank" href="http://www.opensource.org/licenses/bsd-license.php">BSD License</a>                  </li>
+        <li>
+          <a class="license-faq" href="/en-US/faq#license">
+            What's this?</a>
+        </li>
+              <li>
+        <a class="source-code"
+           href="/en-US/firefox/files/browse/259166/">
+          View the source</a>
+      </li>
+        </ul>
+
+  </div>
+  <div class="action">
+    
+<div class="install-shell">
+<div class="install unreviewed beta"
+       data-addon="1843"
+  data-icon="https://addons.cdn.mozilla.net/img/uploads/addon_icons/1/1843-32.png?modified=1399032268"
+  data-developers="/en-US/firefox/addon/firebug/developers"
+  data-versions="/en-US/firefox/addon/1843/versions/"
+  data-name="Firebug"
+  
+  data-min="30.0a1"
+  data-max="32.0"
+  data-is-compatible="true"
+  data-is-compatible-app="true"
+  data-compat-overrides="[]"
+>
+  <p class="install-button">
+                            <a class="button  download caution "
+  data-hash="sha256:e45421642cf1c9dda36bc006df5910b88dd2ce0ae6bc47104941649da0b6ce1a"
+      href="/en-US/firefox/addon/firebug/"
+    data-realurl="https://addons.mozilla.org/firefox/downloads/file/259166/firebug-2.0b6-fx.xpi?src=version-history"
+  >
+      <b></b>
+    <span>
+      Download Now
+          </span>
+  </a>
+      </p>
+</div> 
+
+      <div class="d2c-reasons-popup popup">
+      <p>This add-on is not compatible with your version of Firefox because of the following:</p>
+      <ul></ul>
+    </div>
+  
+</div> 
+  </div>
+</div>
+              <div class="version item" id="version-2.0b5">
+  <div class="info">
+    <h3><a href="/en-US/firefox/addon/firebug/versions/2.0b5"
+           title="Permanent link to this version">
+      Version 2.0b5</a>
+      <span class="meta">
+        <time datetime="2014-05-09T13:06:44Z">
+                    Released May  9, 2014
+        </time>
+                  <span class="filesize">
+            3.3 MB
+          </span>
+              </span>
+              <span class="meta compat">
+                    Works with
+                      Firefox 30.0a1 and later        </span>
+          </h3>
+
+    <div class="desc prose" >
+      <a rel="nofollow" href="http://outgoing.mozilla.org/v1/2e1f7c0dde03d4e63f8737294a6e1cb62652e2dcbe730e637044dd901cb4f960/http%3A//blog.getfirebug.com/2014/05/09/firebug-2-0-beta-5/">http://blog.getfirebug.com/2014/05/09/firebug-2-0-beta-5/</a> ‎
+    </div>
+
+    <ul class="source">
+                  <li>
+                      Source code released under <a target="_blank" href="http://www.opensource.org/licenses/bsd-license.php">BSD License</a>                  </li>
+        <li>
+          <a class="license-faq" href="/en-US/faq#license">
+            What's this?</a>
+        </li>
+              <li>
+        <a class="source-code"
+           href="/en-US/firefox/files/browse/257938/">
+          View the source</a>
+      </li>
+        </ul>
+
+  </div>
+  <div class="action">
+    
+<div class="install-shell">
+<div class="install unreviewed beta"
+       data-addon="1843"
+  data-icon="https://addons.cdn.mozilla.net/img/uploads/addon_icons/1/1843-32.png?modified=1399032268"
+  data-developers="/en-US/firefox/addon/firebug/developers"
+  data-versions="/en-US/firefox/addon/1843/versions/"
+  data-name="Firebug"
+  
+  data-min="30.0a1"
+  data-max="32.0"
+  data-is-compatible="true"
+  data-is-compatible-app="true"
+  data-compat-overrides="[]"
+>
+  <p class="install-button">
+                            <a class="button  download caution "
+  data-hash="sha256:8a35ca4a3a63a90c39611e50ebc50ca217769c694c7c5a012ce0dbfd8a48dafa"
+      href="/en-US/firefox/addon/firebug/"
+    data-realurl="https://addons.mozilla.org/firefox/downloads/file/257938/firebug-2.0b5-fx.xpi?src=version-history"
+  >
+      <b></b>
+    <span>
+      Download Now
+          </span>
+  </a>
+      </p>
+</div> 
+
+      <div class="d2c-reasons-popup popup">
+      <p>This add-on is not compatible with your version of Firefox because of the following:</p>
+      <ul></ul>
+    </div>
+  
+</div> 
+  </div>
+</div>
+              <div class="version item" id="version-2.0b4">
+  <div class="info">
+    <h3><a href="/en-US/firefox/addon/firebug/versions/2.0b4"
+           title="Permanent link to this version">
+      Version 2.0b4</a>
+      <span class="meta">
+        <time datetime="2014-05-02T12:26:33Z">
+                    Released May  2, 2014
+        </time>
+                  <span class="filesize">
+            3.3 MB
+          </span>
+              </span>
+              <span class="meta compat">
+                    Works with
+                      Firefox 30.0a1 and later        </span>
+          </h3>
+
+    <div class="desc prose" >
+      <a rel="nofollow" href="http://outgoing.mozilla.org/v1/c97192b38a1dc218bbdf1dfb8d72325e0998be57737e495d25ed411d9f9b3ce2/http%3A//blog.getfirebug.com/2014/05/02/firebug-2-0-beta-4/">http://blog.getfirebug.com/2014/05/02/firebug-2-0-beta-4/</a> ‎
+    </div>
+
+    <ul class="source">
+                  <li>
+                      Source code released under <a target="_blank" href="http://www.opensource.org/licenses/bsd-license.php">BSD License</a>                  </li>
+        <li>
+          <a class="license-faq" href="/en-US/faq#license">
+            What's this?</a>
+        </li>
+              <li>
+        <a class="source-code"
+           href="/en-US/firefox/files/browse/256698/">
+          View the source</a>
+      </li>
+        </ul>
+
+  </div>
+  <div class="action">
+    
+<div class="install-shell">
+<div class="install unreviewed beta"
+       data-addon="1843"
+  data-icon="https://addons.cdn.mozilla.net/img/uploads/addon_icons/1/1843-32.png?modified=1399032268"
+  data-developers="/en-US/firefox/addon/firebug/developers"
+  data-versions="/en-US/firefox/addon/1843/versions/"
+  data-name="Firebug"
+  
+  data-min="30.0a1"
+  data-max="32.0"
+  data-is-compatible="true"
+  data-is-compatible-app="true"
+  data-compat-overrides="[]"
+>
+  <p class="install-button">
+                            <a class="button  download caution "
+  data-hash="sha256:98c88bfe08a1bef845b712e7f3b24df538e8ffaeca33c500d41908177f36cd4e"
+      href="/en-US/firefox/addon/firebug/"
+    data-realurl="https://addons.mozilla.org/firefox/downloads/file/256698/firebug-2.0b4-fx.xpi?src=version-history"
+  >
+      <b></b>
+    <span>
+      Download Now
+          </span>
+  </a>
+      </p>
+</div> 
+
+      <div class="d2c-reasons-popup popup">
+      <p>This add-on is not compatible with your version of Firefox because of the following:</p>
+      <ul></ul>
+    </div>
+  
+</div> 
+  </div>
+</div>
+              <div class="version item" id="version-2.0b3">
+  <div class="info">
+    <h3><a href="/en-US/firefox/addon/firebug/versions/2.0b3"
+           title="Permanent link to this version">
+      Version 2.0b3</a>
+      <span class="meta">
+        <time datetime="2014-04-25T11:31:45Z">
+                    Released April 25, 2014
+        </time>
+                  <span class="filesize">
+            3.3 MB
+          </span>
+              </span>
+              <span class="meta compat">
+                    Works with
+                      Firefox 30.0a1 and later        </span>
+          </h3>
+
+    <div class="desc prose" >
+      
+    </div>
+
+    <ul class="source">
+                  <li>
+                      Source code released under <a target="_blank" href="http://www.opensource.org/licenses/bsd-license.php">BSD License</a>                  </li>
+        <li>
+          <a class="license-faq" href="/en-US/faq#license">
+            What's this?</a>
+        </li>
+              <li>
+        <a class="source-code"
+           href="/en-US/firefox/files/browse/255438/">
+          View the source</a>
+      </li>
+        </ul>
+
+  </div>
+  <div class="action">
+    
+<div class="install-shell">
+<div class="install unreviewed beta"
+       data-addon="1843"
+  data-icon="https://addons.cdn.mozilla.net/img/uploads/addon_icons/1/1843-32.png?modified=1399032268"
+  data-developers="/en-US/firefox/addon/firebug/developers"
+  data-versions="/en-US/firefox/addon/1843/versions/"
+  data-name="Firebug"
+  
+  data-min="30.0a1"
+  data-max="31.0"
+  data-is-compatible="true"
+  data-is-compatible-app="true"
+  data-compat-overrides="[]"
+>
+  <p class="install-button">
+                            <a class="button  download caution "
+  data-hash="sha256:f09d1fa044d3b3f8f15e5127f809592ce22e64b8f1210e43fe9511f37a573197"
+      href="/en-US/firefox/addon/firebug/"
+    data-realurl="https://addons.mozilla.org/firefox/downloads/file/255438/firebug-2.0b3-fx.xpi?src=version-history"
+  >
+      <b></b>
+    <span>
+      Download Now
+          </span>
+  </a>
+      </p>
+</div> 
+
+      <div class="d2c-reasons-popup popup">
+      <p>This add-on is not compatible with your version of Firefox because of the following:</p>
+      <ul></ul>
+    </div>
+  
+</div> 
+  </div>
+</div>
+              <div class="version item" id="version-2.0b2">
+  <div class="info">
+    <h3><a href="/en-US/firefox/addon/firebug/versions/2.0b2"
+           title="Permanent link to this version">
+      Version 2.0b2</a>
+      <span class="meta">
+        <time datetime="2014-04-17T12:50:13Z">
+                    Released April 17, 2014
+        </time>
+                  <span class="filesize">
+            3.3 MB
+          </span>
+              </span>
+              <span class="meta compat">
+                    Works with
+                      Firefox 30.0a1 and later        </span>
+          </h3>
+
+    <div class="desc prose" >
+      
+    </div>
+
+    <ul class="source">
+                  <li>
+                      Source code released under <a target="_blank" href="http://www.opensource.org/licenses/bsd-license.php">BSD License</a>                  </li>
+        <li>
+          <a class="license-faq" href="/en-US/faq#license">
+            What's this?</a>
+        </li>
+              <li>
+        <a class="source-code"
+           href="/en-US/firefox/files/browse/254430/">
+          View the source</a>
+      </li>
+        </ul>
+
+  </div>
+  <div class="action">
+    
+<div class="install-shell">
+<div class="install unreviewed beta"
+       data-addon="1843"
+  data-icon="https://addons.cdn.mozilla.net/img/uploads/addon_icons/1/1843-32.png?modified=1399032268"
+  data-developers="/en-US/firefox/addon/firebug/developers"
+  data-versions="/en-US/firefox/addon/1843/versions/"
+  data-name="Firebug"
+  
+  data-min="30.0a1"
+  data-max="31.0"
+  data-is-compatible="true"
+  data-is-compatible-app="true"
+  data-compat-overrides="[]"
+>
+  <p class="install-button">
+                            <a class="button  download caution "
+  data-hash="sha256:8cda73bbe314373effc632662a954e1f2526a5c9c6bfeb2d0b23a57741cd08ee"
+      href="/en-US/firefox/addon/firebug/"
+    data-realurl="https://addons.mozilla.org/firefox/downloads/file/254430/firebug-2.0b2-fx.xpi?src=version-history"
+  >
+      <b></b>
+    <span>
+      Download Now
+          </span>
+  </a>
+      </p>
+</div> 
+
+      <div class="d2c-reasons-popup popup">
+      <p>This add-on is not compatible with your version of Firefox because of the following:</p>
+      <ul></ul>
+    </div>
+  
+</div> 
+  </div>
+</div>
+              <div class="version item" id="version-2.0b1">
+  <div class="info">
+    <h3><a href="/en-US/firefox/addon/firebug/versions/2.0b1"
+           title="Permanent link to this version">
+      Version 2.0b1</a>
+      <span class="meta">
+        <time datetime="2014-04-11T14:08:25Z">
+                    Released April 11, 2014
+        </time>
+                  <span class="filesize">
+            3.3 MB
+          </span>
+              </span>
+              <span class="meta compat">
+                    Works with
+                      Firefox 30.0a1 and later        </span>
+          </h3>
+
+    <div class="desc prose" >
+      
+    </div>
+
+    <ul class="source">
+                  <li>
+                      Source code released under <a target="_blank" href="http://www.opensource.org/licenses/bsd-license.php">BSD License</a>                  </li>
+        <li>
+          <a class="license-faq" href="/en-US/faq#license">
+            What's this?</a>
+        </li>
+              <li>
+        <a class="source-code"
+           href="/en-US/firefox/files/browse/253608/">
+          View the source</a>
+      </li>
+        </ul>
+
+  </div>
+  <div class="action">
+    
+<div class="install-shell">
+<div class="install unreviewed beta"
+       data-addon="1843"
+  data-icon="https://addons.cdn.mozilla.net/img/uploads/addon_icons/1/1843-32.png?modified=1399032268"
+  data-developers="/en-US/firefox/addon/firebug/developers"
+  data-versions="/en-US/firefox/addon/1843/versions/"
+  data-name="Firebug"
+  
+  data-min="30.0a1"
+  data-max="31.0"
+  data-is-compatible="true"
+  data-is-compatible-app="true"
+  data-compat-overrides="[]"
+>
+  <p class="install-button">
+                            <a class="button  download caution "
+  data-hash="sha256:7ee3813bc22c04323c31fb621a30f894684a6db21566e10f80a49fd04b880d4b"
+      href="/en-US/firefox/addon/firebug/"
+    data-realurl="https://addons.mozilla.org/firefox/downloads/file/253608/firebug-2.0b1-fx.xpi?src=version-history"
+  >
+      <b></b>
+    <span>
+      Download Now
+          </span>
+  </a>
+      </p>
+</div> 
+
+      <div class="d2c-reasons-popup popup">
+      <p>This add-on is not compatible with your version of Firefox because of the following:</p>
+      <ul></ul>
+    </div>
+  
+</div> 
+  </div>
+</div>
+              <div class="version item" id="version-1.12.8b1">
+  <div class="info">
+    <h3><a href="/en-US/firefox/addon/firebug/versions/1.12.8b1"
+           title="Permanent link to this version">
+      Version 1.12.8b1</a>
+      <span class="meta">
+        <time datetime="2014-04-11T09:37:05Z">
+                    Released April 11, 2014
+        </time>
+                  <span class="filesize">
+            2.3 MB
+          </span>
+              </span>
+              <span class="meta compat">
+                    Works with
+                      Firefox 23.0 and later        </span>
+          </h3>
+
+    <div class="desc prose" >
+      <a rel="nofollow" href="http://outgoing.mozilla.org/v1/053d723bad865475263d46b015cc6b25b5c85c032f47d13b0cba163d50e71847/https%3A//blog.getfirebug.com/2014/04/11/firebug-1-12-8/">https://blog.getfirebug.com/2014/04/11/firebug-1-12-8/</a>
+    </div>
+
+    <ul class="source">
+                  <li>
+                      Source code released under <a target="_blank" href="http://www.opensource.org/licenses/bsd-license.php">BSD License</a>                  </li>
+        <li>
+          <a class="license-faq" href="/en-US/faq#license">
+            What's this?</a>
+        </li>
+              <li>
+        <a class="source-code"
+           href="/en-US/firefox/files/browse/253590/">
+          View the source</a>
+      </li>
+        </ul>
+
+  </div>
+  <div class="action">
+    
+<div class="install-shell">
+<div class="install unreviewed beta"
+       data-addon="1843"
+  data-icon="https://addons.cdn.mozilla.net/img/uploads/addon_icons/1/1843-32.png?modified=1399032268"
+  data-developers="/en-US/firefox/addon/firebug/developers"
+  data-versions="/en-US/firefox/addon/1843/versions/"
+  data-name="Firebug"
+  
+  data-min="23.0"
+  data-max="30.0"
+  data-is-compatible="true"
+  data-is-compatible-app="true"
+  data-compat-overrides="[]"
+>
+  <p class="install-button">
+                            <a class="button  download caution "
+  data-hash="sha256:35487d1b5bbade128dd230364b3619e7f0e6942fcb802a1896236e035d6fb32f"
+      href="/en-US/firefox/addon/firebug/"
+    data-realurl="https://addons.mozilla.org/firefox/downloads/file/253590/firebug-1.12.8b1-fx.xpi?src=version-history"
+  >
+      <b></b>
+    <span>
+      Download Now
+          </span>
+  </a>
+      </p>
+</div> 
+
+      <div class="d2c-reasons-popup popup">
+      <p>This add-on is not compatible with your version of Firefox because of the following:</p>
+      <ul></ul>
+    </div>
+  
+</div> 
+  </div>
+</div>
+              <div class="version item" id="version-1.12.8">
+  <div class="info">
+    <h3><a href="/en-US/firefox/addon/firebug/versions/1.12.8"
+           title="Permanent link to this version">
+      Version 1.12.8</a>
+      <span class="meta">
+        <time datetime="2014-04-02T13:15:17Z">
+                    Released April  2, 2014
+        </time>
+                  <span class="filesize">
+            2.3 MB
+          </span>
+              </span>
+              <span class="meta compat">
+                    Works with
+                      Firefox 23.0 and later        </span>
+          </h3>
+
+    <div class="desc prose" >
+      
+    </div>
+
+    <ul class="source">
+                  <li>
+                      Source code released under <a target="_blank" href="http://www.opensource.org/licenses/bsd-license.php">BSD License</a>                  </li>
+        <li>
+          <a class="license-faq" href="/en-US/faq#license">
+            What's this?</a>
+        </li>
+              <li>
+        <a class="source-code"
+           href="/en-US/firefox/files/browse/252406/">
+          View the source</a>
+      </li>
+        </ul>
+
+  </div>
+  <div class="action">
+    
+<div class="install-shell">
+<div class="install "
+       data-addon="1843"
+  data-icon="https://addons.cdn.mozilla.net/img/uploads/addon_icons/1/1843-32.png?modified=1399032268"
+  data-developers="/en-US/firefox/addon/firebug/developers"
+  data-versions="/en-US/firefox/addon/1843/versions/"
+  data-name="Firebug"
+  
+  data-min="23.0"
+  data-max="30.0"
+  data-is-compatible="true"
+  data-is-compatible-app="true"
+  data-compat-overrides="[]"
+>
+  <p class="install-button">
+                            <a class="button  download "
+  data-hash="sha256:810829c6607d36a15f2fed0a4b4d96fe6bcdab0ca05c660015e0bbf7f282c3fa"
+      href="https://addons.mozilla.org/firefox/downloads/file/252406/firebug-1.12.8-fx.xpi?src=version-history"
+  >
+      <b></b>
+    <span>
+      Download Now
+          </span>
+  </a>
+      </p>
+</div> 
+
+      <div class="d2c-reasons-popup popup">
+      <p>This add-on is not compatible with your version of Firefox because of the following:</p>
+      <ul></ul>
+    </div>
+  
+</div> 
+  </div>
+</div>
+              <div class="version item" id="version-1.12.7b1">
+  <div class="info">
+    <h3><a href="/en-US/firefox/addon/firebug/versions/1.12.7b1"
+           title="Permanent link to this version">
+      Version 1.12.7b1</a>
+      <span class="meta">
+        <time datetime="2014-03-05T07:17:17Z">
+                    Released March  4, 2014
+        </time>
+                  <span class="filesize">
+            2.3 MB
+          </span>
+              </span>
+              <span class="meta compat">
+                    Works with
+                      Firefox 23.0 and later        </span>
+          </h3>
+
+    <div class="desc prose" >
+      <a href="http://outgoing.mozilla.org/v1/097f2966f3e889972b3e22479de58be63701427c37e0354b2d53df57e001dc38/http%3A//blog.getfirebug.com/2014/03/05/firebug-1-12-7/" rel="nofollow">http://blog.getfirebug.com/2014/03/05/firebug-1-12-7/</a>
+    </div>
+
+    <ul class="source">
+                  <li>
+                      Source code released under <a target="_blank" href="http://www.opensource.org/licenses/bsd-license.php">BSD License</a>                  </li>
+        <li>
+          <a class="license-faq" href="/en-US/faq#license">
+            What's this?</a>
+        </li>
+              <li>
+        <a class="source-code"
+           href="/en-US/firefox/files/browse/247266/">
+          View the source</a>
+      </li>
+        </ul>
+
+  </div>
+  <div class="action">
+    
+<div class="install-shell">
+<div class="install unreviewed beta"
+       data-addon="1843"
+  data-icon="https://addons.cdn.mozilla.net/img/uploads/addon_icons/1/1843-32.png?modified=1399032268"
+  data-developers="/en-US/firefox/addon/firebug/developers"
+  data-versions="/en-US/firefox/addon/1843/versions/"
+  data-name="Firebug"
+  
+  data-min="23.0"
+  data-max="29.0"
+  data-is-compatible="true"
+  data-is-compatible-app="true"
+  data-compat-overrides="[]"
+>
+  <p class="install-button">
+                            <a class="button  download caution "
+  data-hash="sha256:89aa69a282f4c0cf4ae8c93af1549ec185895f0b9109a399011e2544b73eed8a"
+      href="/en-US/firefox/addon/firebug/"
+    data-realurl="https://addons.mozilla.org/firefox/downloads/file/247266/firebug-1.12.7b1-fx.xpi?src=version-history"
+  >
+      <b></b>
+    <span>
+      Download Now
+          </span>
+  </a>
+      </p>
+</div> 
+
+      <div class="d2c-reasons-popup popup">
+      <p>This add-on is not compatible with your version of Firefox because of the following:</p>
+      <ul></ul>
+    </div>
+  
+</div> 
+  </div>
+</div>
+              <div class="version item" id="version-1.12.7">
+  <div class="info">
+    <h3><a href="/en-US/firefox/addon/firebug/versions/1.12.7"
+           title="Permanent link to this version">
+      Version 1.12.7</a>
+      <span class="meta">
+        <time datetime="2014-03-03T17:54:28Z">
+                    Released March  3, 2014
+        </time>
+                  <span class="filesize">
+            2.3 MB
+          </span>
+              </span>
+              <span class="meta compat">
+                    Works with
+                      Firefox 23.0 and later        </span>
+          </h3>
+
+    <div class="desc prose" >
+      <a href="http://outgoing.mozilla.org/v1/097f2966f3e889972b3e22479de58be63701427c37e0354b2d53df57e001dc38/http%3A//blog.getfirebug.com/2014/03/05/firebug-1-12-7/" rel="nofollow">http://blog.getfirebug.com/2014/03/05/firebug-1-12-7/</a>
+    </div>
+
+    <ul class="source">
+                  <li>
+                      Source code released under <a target="_blank" href="http://www.opensource.org/licenses/bsd-license.php">BSD License</a>                  </li>
+        <li>
+          <a class="license-faq" href="/en-US/faq#license">
+            What's this?</a>
+        </li>
+              <li>
+        <a class="source-code"
+           href="/en-US/firefox/files/browse/247028/">
+          View the source</a>
+      </li>
+        </ul>
+
+  </div>
+  <div class="action">
+    
+<div class="install-shell">
+<div class="install "
+       data-addon="1843"
+  data-icon="https://addons.cdn.mozilla.net/img/uploads/addon_icons/1/1843-32.png?modified=1399032268"
+  data-developers="/en-US/firefox/addon/firebug/developers"
+  data-versions="/en-US/firefox/addon/1843/versions/"
+  data-name="Firebug"
+  
+  data-min="23.0"
+  data-max="29.0"
+  data-is-compatible="true"
+  data-is-compatible-app="true"
+  data-compat-overrides="[]"
+>
+  <p class="install-button">
+                            <a class="button  download "
+  data-hash="sha256:6abb664226ea577880c8be6b7913314a88d08753289720494e3e161fffea55bf"
+      href="https://addons.mozilla.org/firefox/downloads/file/247028/firebug-1.12.7-fx.xpi?src=version-history"
+  >
+      <b></b>
+    <span>
+      Download Now
+          </span>
+  </a>
+      </p>
+</div> 
+
+      <div class="d2c-reasons-popup popup">
+      <p>This add-on is not compatible with your version of Firefox because of the following:</p>
+      <ul></ul>
+    </div>
+  
+</div> 
+  </div>
+</div>
+              <div class="version item" id="version-1.12.6b1">
+  <div class="info">
+    <h3><a href="/en-US/firefox/addon/firebug/versions/1.12.6b1"
+           title="Permanent link to this version">
+      Version 1.12.6b1</a>
+      <span class="meta">
+        <time datetime="2014-01-20T11:40:48Z">
+                    Released January 20, 2014
+        </time>
+                  <span class="filesize">
+            2.2 MB
+          </span>
+              </span>
+              <span class="meta compat">
+                    Works with
+                      Firefox 23.0 and later        </span>
+          </h3>
+
+    <div class="desc prose" >
+      <a href="http://outgoing.mozilla.org/v1/b7d12f911ac129121ae978debcfb6b54142c5bc0dd3db67f6a5586118fd0b20c/https%3A//blog.getfirebug.com/2014/01/20/firebug-1-12-6/" rel="nofollow">https://blog.getfirebug.com/2014/01/20/firebug-1-12-6/</a>
+    </div>
+
+    <ul class="source">
+                  <li>
+                      Source code released under <a target="_blank" href="http://www.opensource.org/licenses/bsd-license.php">BSD License</a>                  </li>
+        <li>
+          <a class="license-faq" href="/en-US/faq#license">
+            What's this?</a>
+        </li>
+              <li>
+        <a class="source-code"
+           href="/en-US/firefox/files/browse/240179/">
+          View the source</a>
+      </li>
+        </ul>
+
+  </div>
+  <div class="action">
+    
+<div class="install-shell">
+<div class="install unreviewed beta"
+       data-addon="1843"
+  data-icon="https://addons.cdn.mozilla.net/img/uploads/addon_icons/1/1843-32.png?modified=1399032268"
+  data-developers="/en-US/firefox/addon/firebug/developers"
+  data-versions="/en-US/firefox/addon/1843/versions/"
+  data-name="Firebug"
+  
+  data-min="23.0"
+  data-max="29.0"
+  data-is-compatible="true"
+  data-is-compatible-app="true"
+  data-compat-overrides="[]"
+>
+  <p class="install-button">
+                            <a class="button  download caution "
+  data-hash="sha256:72cbb4f5d97926a8da93f2ef8b1744bda3929f99cbcce8c817b9723bf27c9e71"
+      href="/en-US/firefox/addon/firebug/"
+    data-realurl="https://addons.mozilla.org/firefox/downloads/file/240179/firebug-1.12.6b1-fx.xpi?src=version-history"
+  >
+      <b></b>
+    <span>
+      Download Now
+          </span>
+  </a>
+      </p>
+</div> 
+
+      <div class="d2c-reasons-popup popup">
+      <p>This add-on is not compatible with your version of Firefox because of the following:</p>
+      <ul></ul>
+    </div>
+  
+</div> 
+  </div>
+</div>
+              <div class="version item" id="version-1.12.6">
+  <div class="info">
+    <h3><a href="/en-US/firefox/addon/firebug/versions/1.12.6"
+           title="Permanent link to this version">
+      Version 1.12.6</a>
+      <span class="meta">
+        <time datetime="2014-01-15T13:56:47Z">
+                    Released January 15, 2014
+        </time>
+                  <span class="filesize">
+            2.2 MB
+          </span>
+              </span>
+              <span class="meta compat">
+                    Works with
+                      Firefox 23.0 and later        </span>
+          </h3>
+
+    <div class="desc prose" >
+      <a href="http://outgoing.mozilla.org/v1/b7d12f911ac129121ae978debcfb6b54142c5bc0dd3db67f6a5586118fd0b20c/https%3A//blog.getfirebug.com/2014/01/20/firebug-1-12-6/" rel="nofollow">https://blog.getfirebug.com/2014/01/20/firebug-1-12-6/</a>
+    </div>
+
+    <ul class="source">
+                  <li>
+                      Source code released under <a target="_blank" href="http://www.opensource.org/licenses/bsd-license.php">BSD License</a>                  </li>
+        <li>
+          <a class="license-faq" href="/en-US/faq#license">
+            What's this?</a>
+        </li>
+              <li>
+        <a class="source-code"
+           href="/en-US/firefox/files/browse/239602/">
+          View the source</a>
+      </li>
+        </ul>
+
+  </div>
+  <div class="action">
+    
+<div class="install-shell">
+<div class="install "
+       data-addon="1843"
+  data-icon="https://addons.cdn.mozilla.net/img/uploads/addon_icons/1/1843-32.png?modified=1399032268"
+  data-developers="/en-US/firefox/addon/firebug/developers"
+  data-versions="/en-US/firefox/addon/1843/versions/"
+  data-name="Firebug"
+  
+  data-min="23.0"
+  data-max="29.0"
+  data-is-compatible="true"
+  data-is-compatible-app="true"
+  data-compat-overrides="[]"
+>
+  <p class="install-button">
+                            <a class="button  download "
+  data-hash="sha256:5a54d321a2dcd8331a238f1676a5b309bfcc483b8137f35c49a5dda3cf64f2f1"
+      href="https://addons.mozilla.org/firefox/downloads/file/239602/firebug-1.12.6-fx.xpi?src=version-history"
+  >
+      <b></b>
+    <span>
+      Download Now
+          </span>
+  </a>
+      </p>
+</div> 
+
+      <div class="d2c-reasons-popup popup">
+      <p>This add-on is not compatible with your version of Firefox because of the following:</p>
+      <ul></ul>
+    </div>
+  
+</div> 
+  </div>
+</div>
+              <div class="version item" id="version-1.12.5b1">
+  <div class="info">
+    <h3><a href="/en-US/firefox/addon/firebug/versions/1.12.5b1"
+           title="Permanent link to this version">
+      Version 1.12.5b1</a>
+      <span class="meta">
+        <time datetime="2013-11-21T10:06:44Z">
+                    Released November 21, 2013
+        </time>
+                  <span class="filesize">
+            2.2 MB
+          </span>
+              </span>
+              <span class="meta compat">
+                    Works with
+                      Firefox 23.0 and later        </span>
+          </h3>
+
+    <div class="desc prose" >
+      <a href="http://outgoing.mozilla.org/v1/a42b9773ea435d236ae778332bbcab569ba8415887809cefef473ca54e8ea3ee/http%3A//blog.getfirebug.com/2013/11/21/firebug-1-12-5/" rel="nofollow">http://blog.getfirebug.com/2013/11/21/firebug-1-12-5/</a>
+    </div>
+
+    <ul class="source">
+                  <li>
+                      Source code released under <a target="_blank" href="http://www.opensource.org/licenses/bsd-license.php">BSD License</a>                  </li>
+        <li>
+          <a class="license-faq" href="/en-US/faq#license">
+            What's this?</a>
+        </li>
+              <li>
+        <a class="source-code"
+           href="/en-US/firefox/files/browse/234538/">
+          View the source</a>
+      </li>
+        </ul>
+
+  </div>
+  <div class="action">
+    
+<div class="install-shell">
+<div class="install unreviewed beta"
+       data-addon="1843"
+  data-icon="https://addons.cdn.mozilla.net/img/uploads/addon_icons/1/1843-32.png?modified=1399032268"
+  data-developers="/en-US/firefox/addon/firebug/developers"
+  data-versions="/en-US/firefox/addon/1843/versions/"
+  data-name="Firebug"
+  
+  data-min="23.0"
+  data-max="26.0"
+  data-is-compatible="true"
+  data-is-compatible-app="true"
+  data-compat-overrides="[]"
+>
+  <p class="install-button">
+                            <a class="button  download caution "
+  data-hash="sha256:2c6e8327ef8bbc26fc766f6f2c36a9b5e2dec4bbf13a8f5d7cca34780f0999c9"
+      href="/en-US/firefox/addon/firebug/"
+    data-realurl="https://addons.mozilla.org/firefox/downloads/file/234538/firebug-1.12.5b1-fx.xpi?src=version-history"
+  >
+      <b></b>
+    <span>
+      Download Now
+          </span>
+  </a>
+      </p>
+</div> 
+
+      <div class="d2c-reasons-popup popup">
+      <p>This add-on is not compatible with your version of Firefox because of the following:</p>
+      <ul></ul>
+    </div>
+  
+</div> 
+  </div>
+</div>
+              <div class="version item" id="version-1.12.5">
+  <div class="info">
+    <h3><a href="/en-US/firefox/addon/firebug/versions/1.12.5"
+           title="Permanent link to this version">
+      Version 1.12.5</a>
+      <span class="meta">
+        <time datetime="2013-11-20T14:26:23Z">
+                    Released November 20, 2013
+        </time>
+                  <span class="filesize">
+            2.2 MB
+          </span>
+              </span>
+              <span class="meta compat">
+                    Works with
+                      Firefox 23.0 and later        </span>
+          </h3>
+
+    <div class="desc prose" >
+      <a href="http://outgoing.mozilla.org/v1/a42b9773ea435d236ae778332bbcab569ba8415887809cefef473ca54e8ea3ee/http%3A//blog.getfirebug.com/2013/11/21/firebug-1-12-5/" rel="nofollow">http://blog.getfirebug.com/2013/11/21/firebug-1-12-5/</a>
+    </div>
+
+    <ul class="source">
+                  <li>
+                      Source code released under <a target="_blank" href="http://www.opensource.org/licenses/bsd-license.php">BSD License</a>                  </li>
+        <li>
+          <a class="license-faq" href="/en-US/faq#license">
+            What's this?</a>
+        </li>
+              <li>
+        <a class="source-code"
+           href="/en-US/firefox/files/browse/234474/">
+          View the source</a>
+      </li>
+        </ul>
+
+  </div>
+  <div class="action">
+    
+<div class="install-shell">
+<div class="install "
+       data-addon="1843"
+  data-icon="https://addons.cdn.mozilla.net/img/uploads/addon_icons/1/1843-32.png?modified=1399032268"
+  data-developers="/en-US/firefox/addon/firebug/developers"
+  data-versions="/en-US/firefox/addon/1843/versions/"
+  data-name="Firebug"
+  
+  data-min="23.0"
+  data-max="26.0"
+  data-is-compatible="true"
+  data-is-compatible-app="true"
+  data-compat-overrides="[]"
+>
+  <p class="install-button">
+                            <a class="button  download "
+  data-hash="sha256:5b691f93f167e2d025ee803201ea20ca6a876e90f29fc431b474175d00b46747"
+      href="https://addons.mozilla.org/firefox/downloads/file/234474/firebug-1.12.5-fx.xpi?src=version-history"
+  >
+      <b></b>
+    <span>
+      Download Now
+          </span>
+  </a>
+      </p>
+</div> 
+
+      <div class="d2c-reasons-popup popup">
+      <p>This add-on is not compatible with your version of Firefox because of the following:</p>
+      <ul></ul>
+    </div>
+  
+</div> 
+  </div>
+</div>
+              <div class="version item" id="version-1.12.4b1">
+  <div class="info">
+    <h3><a href="/en-US/firefox/addon/firebug/versions/1.12.4b1"
+           title="Permanent link to this version">
+      Version 1.12.4b1</a>
+      <span class="meta">
+        <time datetime="2013-10-21T11:52:47Z">
+                    Released October 21, 2013
+        </time>
+                  <span class="filesize">
+            2.2 MB
+          </span>
+              </span>
+              <span class="meta compat">
+                    Works with
+                      Firefox 23.0 and later        </span>
+          </h3>
+
+    <div class="desc prose" >
+      <a href="http://outgoing.mozilla.org/v1/1daeccf29fc28405ce0996029ac2bb902acb1907a9d7dd7c509e950eb4dc56ee/https%3A//blog.getfirebug.com/2013/10/21/firebug-1-12-4/" rel="nofollow">https://blog.getfirebug.com/2013/10/21/firebug-1-12-4/</a>
+    </div>
+
+    <ul class="source">
+                  <li>
+                      Source code released under <a target="_blank" href="http://www.opensource.org/licenses/bsd-license.php">BSD License</a>                  </li>
+        <li>
+          <a class="license-faq" href="/en-US/faq#license">
+            What's this?</a>
+        </li>
+              <li>
+        <a class="source-code"
+           href="/en-US/firefox/files/browse/231378/">
+          View the source</a>
+      </li>
+        </ul>
+
+  </div>
+  <div class="action">
+    
+<div class="install-shell">
+<div class="install unreviewed beta"
+       data-addon="1843"
+  data-icon="https://addons.cdn.mozilla.net/img/uploads/addon_icons/1/1843-32.png?modified=1399032268"
+  data-developers="/en-US/firefox/addon/firebug/developers"
+  data-versions="/en-US/firefox/addon/1843/versions/"
+  data-name="Firebug"
+  
+  data-min="23.0"
+  data-max="26.0"
+  data-is-compatible="true"
+  data-is-compatible-app="true"
+  data-compat-overrides="[]"
+>
+  <p class="install-button">
+                            <a class="button  download caution "
+  data-hash="sha256:33733d17b9a27b74bd68e83c25bd7c1a011e795d3f38a63ce590d0bc81eadb77"
+      href="/en-US/firefox/addon/firebug/"
+    data-realurl="https://addons.mozilla.org/firefox/downloads/file/231378/firebug-1.12.4b1-fx.xpi?src=version-history"
+  >
+      <b></b>
+    <span>
+      Download Now
+          </span>
+  </a>
+      </p>
+</div> 
+
+      <div class="d2c-reasons-popup popup">
+      <p>This add-on is not compatible with your version of Firefox because of the following:</p>
+      <ul></ul>
+    </div>
+  
+</div> 
+  </div>
+</div>
+              <div class="version item" id="version-1.12.4">
+  <div class="info">
+    <h3><a href="/en-US/firefox/addon/firebug/versions/1.12.4"
+           title="Permanent link to this version">
+      Version 1.12.4</a>
+      <span class="meta">
+        <time datetime="2013-10-17T16:54:11Z">
+                    Released October 17, 2013
+        </time>
+                  <span class="filesize">
+            2.2 MB
+          </span>
+              </span>
+              <span class="meta compat">
+                    Works with
+                      Firefox 23.0 and later        </span>
+          </h3>
+
+    <div class="desc prose" >
+      <a href="http://outgoing.mozilla.org/v1/1daeccf29fc28405ce0996029ac2bb902acb1907a9d7dd7c509e950eb4dc56ee/https%3A//blog.getfirebug.com/2013/10/21/firebug-1-12-4/" rel="nofollow">https://blog.getfirebug.com/2013/10/21/firebug-1-12-4/</a>
+    </div>
+
+    <ul class="source">
+                  <li>
+                      Source code released under <a target="_blank" href="http://www.opensource.org/licenses/bsd-license.php">BSD License</a>                  </li>
+        <li>
+          <a class="license-faq" href="/en-US/faq#license">
+            What's this?</a>
+        </li>
+              <li>
+        <a class="source-code"
+           href="/en-US/firefox/files/browse/231063/">
+          View the source</a>
+      </li>
+        </ul>
+
+  </div>
+  <div class="action">
+    
+<div class="install-shell">
+<div class="install "
+       data-addon="1843"
+  data-icon="https://addons.cdn.mozilla.net/img/uploads/addon_icons/1/1843-32.png?modified=1399032268"
+  data-developers="/en-US/firefox/addon/firebug/developers"
+  data-versions="/en-US/firefox/addon/1843/versions/"
+  data-name="Firebug"
+  
+  data-min="23.0"
+  data-max="26.0"
+  data-is-compatible="true"
+  data-is-compatible-app="true"
+  data-compat-overrides="[]"
+>
+  <p class="install-button">
+                            <a class="button  download "
+  data-hash="sha256:44a0aa81c07a4e801f859de46403fce6a7c4075024ae95702634666edfbe4d93"
+      href="https://addons.mozilla.org/firefox/downloads/file/231063/firebug-1.12.4-fx.xpi?src=version-history"
+  >
+      <b></b>
+    <span>
+      Download Now
+          </span>
+  </a>
+      </p>
+</div> 
+
+      <div class="d2c-reasons-popup popup">
+      <p>This add-on is not compatible with your version of Firefox because of the following:</p>
+      <ul></ul>
+    </div>
+  
+</div> 
+  </div>
+</div>
+              <div class="version item" id="version-1.12.3b1">
+  <div class="info">
+    <h3><a href="/en-US/firefox/addon/firebug/versions/1.12.3b1"
+           title="Permanent link to this version">
+      Version 1.12.3b1</a>
+      <span class="meta">
+        <time datetime="2013-10-06T11:19:26Z">
+                    Released October  6, 2013
+        </time>
+                  <span class="filesize">
+            2.2 MB
+          </span>
+              </span>
+              <span class="meta compat">
+                    Works with
+                      Firefox 23.0 and later        </span>
+          </h3>
+
+    <div class="desc prose" >
+      
+    </div>
+
+    <ul class="source">
+                  <li>
+                      Source code released under <a target="_blank" href="http://www.opensource.org/licenses/bsd-license.php">BSD License</a>                  </li>
+        <li>
+          <a class="license-faq" href="/en-US/faq#license">
+            What's this?</a>
+        </li>
+              <li>
+        <a class="source-code"
+           href="/en-US/firefox/files/browse/229963/">
+          View the source</a>
+      </li>
+        </ul>
+
+  </div>
+  <div class="action">
+    
+<div class="install-shell">
+<div class="install unreviewed beta"
+       data-addon="1843"
+  data-icon="https://addons.cdn.mozilla.net/img/uploads/addon_icons/1/1843-32.png?modified=1399032268"
+  data-developers="/en-US/firefox/addon/firebug/developers"
+  data-versions="/en-US/firefox/addon/1843/versions/"
+  data-name="Firebug"
+  
+  data-min="23.0"
+  data-max="26.0"
+  data-is-compatible="true"
+  data-is-compatible-app="true"
+  data-compat-overrides="[]"
+>
+  <p class="install-button">
+                            <a class="button  download caution "
+  data-hash="sha256:288bef1b6123723f2f396787b7e14c1e4322fcf5ea83a2db00b9132a14ffbd53"
+      href="/en-US/firefox/addon/firebug/"
+    data-realurl="https://addons.mozilla.org/firefox/downloads/file/229963/firebug-1.12.3b1-fx.xpi?src=version-history"
+  >
+      <b></b>
+    <span>
+      Download Now
+          </span>
+  </a>
+      </p>
+</div> 
+
+      <div class="d2c-reasons-popup popup">
+      <p>This add-on is not compatible with your version of Firefox because of the following:</p>
+      <ul></ul>
+    </div>
+  
+</div> 
+  </div>
+</div>
+              <div class="version item" id="version-1.12.3">
+  <div class="info">
+    <h3><a href="/en-US/firefox/addon/firebug/versions/1.12.3"
+           title="Permanent link to this version">
+      Version 1.12.3</a>
+      <span class="meta">
+        <time datetime="2013-10-02T11:25:36Z">
+                    Released October  2, 2013
+        </time>
+                  <span class="filesize">
+            2.2 MB
+          </span>
+              </span>
+              <span class="meta compat">
+                    Works with
+                      Firefox 23.0 and later        </span>
+          </h3>
+
+    <div class="desc prose" >
+      
+    </div>
+
+    <ul class="source">
+                  <li>
+                      Source code released under <a target="_blank" href="http://www.opensource.org/licenses/bsd-license.php">BSD License</a>                  </li>
+        <li>
+          <a class="license-faq" href="/en-US/faq#license">
+            What's this?</a>
+        </li>
+              <li>
+        <a class="source-code"
+           href="/en-US/firefox/files/browse/229584/">
+          View the source</a>
+      </li>
+        </ul>
+
+  </div>
+  <div class="action">
+    
+<div class="install-shell">
+<div class="install "
+       data-addon="1843"
+  data-icon="https://addons.cdn.mozilla.net/img/uploads/addon_icons/1/1843-32.png?modified=1399032268"
+  data-developers="/en-US/firefox/addon/firebug/developers"
+  data-versions="/en-US/firefox/addon/1843/versions/"
+  data-name="Firebug"
+  
+  data-min="23.0"
+  data-max="26.0"
+  data-is-compatible="true"
+  data-is-compatible-app="true"
+  data-compat-overrides="[]"
+>
+  <p class="install-button">
+                            <a class="button  download "
+  data-hash="sha256:5e591a44f2428ce4381b25413af3152c2fe3ed8892ac2816f70a4c5152d5fd4a"
+      href="https://addons.mozilla.org/firefox/downloads/file/229584/firebug-1.12.3-fx.xpi?src=version-history"
+  >
+      <b></b>
+    <span>
+      Download Now
+          </span>
+  </a>
+      </p>
+</div> 
+
+      <div class="d2c-reasons-popup popup">
+      <p>This add-on is not compatible with your version of Firefox because of the following:</p>
+      <ul></ul>
+    </div>
+  
+</div> 
+  </div>
+</div>
+              <div class="version item" id="version-1.12.2b1">
+  <div class="info">
+    <h3><a href="/en-US/firefox/addon/firebug/versions/1.12.2b1"
+           title="Permanent link to this version">
+      Version 1.12.2b1</a>
+      <span class="meta">
+        <time datetime="2013-09-26T06:11:39Z">
+                    Released September 25, 2013
+        </time>
+                  <span class="filesize">
+            2.2 MB
+          </span>
+              </span>
+              <span class="meta compat">
+                    Works with
+                      Firefox 23.0 and later        </span>
+          </h3>
+
+    <div class="desc prose" >
+      
+    </div>
+
+    <ul class="source">
+                  <li>
+                      Source code released under <a target="_blank" href="http://www.opensource.org/licenses/bsd-license.php">BSD License</a>                  </li>
+        <li>
+          <a class="license-faq" href="/en-US/faq#license">
+            What's this?</a>
+        </li>
+              <li>
+        <a class="source-code"
+           href="/en-US/firefox/files/browse/228994/">
+          View the source</a>
+      </li>
+        </ul>
+
+  </div>
+  <div class="action">
+    
+<div class="install-shell">
+<div class="install unreviewed beta"
+       data-addon="1843"
+  data-icon="https://addons.cdn.mozilla.net/img/uploads/addon_icons/1/1843-32.png?modified=1399032268"
+  data-developers="/en-US/firefox/addon/firebug/developers"
+  data-versions="/en-US/firefox/addon/1843/versions/"
+  data-name="Firebug"
+  
+  data-min="23.0"
+  data-max="26.0"
+  data-is-compatible="true"
+  data-is-compatible-app="true"
+  data-compat-overrides="[]"
+>
+  <p class="install-button">
+                            <a class="button  download caution "
+  data-hash="sha256:bd34c6b9da1dc40680dba5fef10f2094d4a33ab556101400ffcb105afe5d636a"
+      href="/en-US/firefox/addon/firebug/"
+    data-realurl="https://addons.mozilla.org/firefox/downloads/file/228994/firebug-1.12.2b1-fx.xpi?src=version-history"
+  >
+      <b></b>
+    <span>
+      Download Now
+          </span>
+  </a>
+      </p>
+</div> 
+
+      <div class="d2c-reasons-popup popup">
+      <p>This add-on is not compatible with your version of Firefox because of the following:</p>
+      <ul></ul>
+    </div>
+  
+</div> 
+  </div>
+</div>
+              <div class="version item" id="version-1.12.2">
+  <div class="info">
+    <h3><a href="/en-US/firefox/addon/firebug/versions/1.12.2"
+           title="Permanent link to this version">
+      Version 1.12.2</a>
+      <span class="meta">
+        <time datetime="2013-09-19T15:18:16Z">
+                    Released September 19, 2013
+        </time>
+                  <span class="filesize">
+            2.2 MB
+          </span>
+              </span>
+              <span class="meta compat">
+                    Works with
+                      Firefox 23.0 and later        </span>
+          </h3>
+
+    <div class="desc prose" >
+      
+    </div>
+
+    <ul class="source">
+                  <li>
+                      Source code released under <a target="_blank" href="http://www.opensource.org/licenses/bsd-license.php">BSD License</a>                  </li>
+        <li>
+          <a class="license-faq" href="/en-US/faq#license">
+            What's this?</a>
+        </li>
+              <li>
+        <a class="source-code"
+           href="/en-US/firefox/files/browse/228407/">
+          View the source</a>
+      </li>
+        </ul>
+
+  </div>
+  <div class="action">
+    
+<div class="install-shell">
+<div class="install "
+       data-addon="1843"
+  data-icon="https://addons.cdn.mozilla.net/img/uploads/addon_icons/1/1843-32.png?modified=1399032268"
+  data-developers="/en-US/firefox/addon/firebug/developers"
+  data-versions="/en-US/firefox/addon/1843/versions/"
+  data-name="Firebug"
+  
+  data-min="23.0"
+  data-max="26.0"
+  data-is-compatible="true"
+  data-is-compatible-app="true"
+  data-compat-overrides="[]"
+>
+  <p class="install-button">
+                            <a class="button  download "
+  data-hash="sha256:095c8ee3461ccad924df5c4a46dad39715e1165ad50af8f7bbf49e6d1826d8f7"
+      href="https://addons.mozilla.org/firefox/downloads/file/228407/firebug-1.12.2-fx.xpi?src=version-history"
+  >
+      <b></b>
+    <span>
+      Download Now
+          </span>
+  </a>
+      </p>
+</div> 
+
+      <div class="d2c-reasons-popup popup">
+      <p>This add-on is not compatible with your version of Firefox because of the following:</p>
+      <ul></ul>
+    </div>
+  
+</div> 
+  </div>
+</div>
+              <div class="version item" id="version-1.12.1b1">
+  <div class="info">
+    <h3><a href="/en-US/firefox/addon/firebug/versions/1.12.1b1"
+           title="Permanent link to this version">
+      Version 1.12.1b1</a>
+      <span class="meta">
+        <time datetime="2013-09-04T07:07:21Z">
+                    Released September  4, 2013
+        </time>
+                  <span class="filesize">
+            2.2 MB
+          </span>
+              </span>
+              <span class="meta compat">
+                    Works with
+                      Firefox 23.0 and later        </span>
+          </h3>
+
+    <div class="desc prose" >
+      
+    </div>
+
+    <ul class="source">
+                  <li>
+                      Source code released under <a target="_blank" href="http://www.opensource.org/licenses/bsd-license.php">BSD License</a>                  </li>
+        <li>
+          <a class="license-faq" href="/en-US/faq#license">
+            What's this?</a>
+        </li>
+              <li>
+        <a class="source-code"
+           href="/en-US/firefox/files/browse/226771/">
+          View the source</a>
+      </li>
+        </ul>
+
+  </div>
+  <div class="action">
+    
+<div class="install-shell">
+<div class="install unreviewed beta"
+       data-addon="1843"
+  data-icon="https://addons.cdn.mozilla.net/img/uploads/addon_icons/1/1843-32.png?modified=1399032268"
+  data-developers="/en-US/firefox/addon/firebug/developers"
+  data-versions="/en-US/firefox/addon/1843/versions/"
+  data-name="Firebug"
+  
+  data-min="23.0"
+  data-max="26.0"
+  data-is-compatible="true"
+  data-is-compatible-app="true"
+  data-compat-overrides="[]"
+>
+  <p class="install-button">
+                            <a class="button  download caution "
+  data-hash="sha256:220364e68a5257ea556087c04becd1c1026251aac415d57ee38cb945bc70adeb"
+      href="/en-US/firefox/addon/firebug/"
+    data-realurl="https://addons.mozilla.org/firefox/downloads/file/226771/firebug-1.12.1b1-fx.xpi?src=version-history"
+  >
+      <b></b>
+    <span>
+      Download Now
+          </span>
+  </a>
+      </p>
+</div> 
+
+      <div class="d2c-reasons-popup popup">
+      <p>This add-on is not compatible with your version of Firefox because of the following:</p>
+      <ul></ul>
+    </div>
+  
+</div> 
+  </div>
+</div>
+              <div class="version item" id="version-1.12.1">
+  <div class="info">
+    <h3><a href="/en-US/firefox/addon/firebug/versions/1.12.1"
+           title="Permanent link to this version">
+      Version 1.12.1</a>
+      <span class="meta">
+        <time datetime="2013-08-29T08:38:10Z">
+                    Released August 29, 2013
+        </time>
+                  <span class="filesize">
+            2.2 MB
+          </span>
+              </span>
+              <span class="meta compat">
+                    Works with
+                      Firefox 23.0 and later        </span>
+          </h3>
+
+    <div class="desc prose" >
+      
+    </div>
+
+    <ul class="source">
+                  <li>
+                      Source code released under <a target="_blank" href="http://www.opensource.org/licenses/bsd-license.php">BSD License</a>                  </li>
+        <li>
+          <a class="license-faq" href="/en-US/faq#license">
+            What's this?</a>
+        </li>
+              <li>
+        <a class="source-code"
+           href="/en-US/firefox/files/browse/226271/">
+          View the source</a>
+      </li>
+        </ul>
+
+  </div>
+  <div class="action">
+    
+<div class="install-shell">
+<div class="install "
+       data-addon="1843"
+  data-icon="https://addons.cdn.mozilla.net/img/uploads/addon_icons/1/1843-32.png?modified=1399032268"
+  data-developers="/en-US/firefox/addon/firebug/developers"
+  data-versions="/en-US/firefox/addon/1843/versions/"
+  data-name="Firebug"
+  
+  data-min="23.0"
+  data-max="26.0"
+  data-is-compatible="true"
+  data-is-compatible-app="true"
+  data-compat-overrides="[]"
+>
+  <p class="install-button">
+                            <a class="button  download "
+  data-hash="sha256:d70980d4de3cc6a58ffa2c510a5f26a98ccfde3cca0b37f86b331f54c60d79af"
+      href="https://addons.mozilla.org/firefox/downloads/file/226271/firebug-1.12.1-fx.xpi?src=version-history"
+  >
+      <b></b>
+    <span>
+      Download Now
+          </span>
+  </a>
+      </p>
+</div> 
+
+      <div class="d2c-reasons-popup popup">
+      <p>This add-on is not compatible with your version of Firefox because of the following:</p>
+      <ul></ul>
+    </div>
+  
+</div> 
+  </div>
+</div>
+              <div class="version item" id="version-1.12.0b7">
+  <div class="info">
+    <h3><a href="/en-US/firefox/addon/firebug/versions/1.12.0b7"
+           title="Permanent link to this version">
+      Version 1.12.0b7</a>
+      <span class="meta">
+        <time datetime="2013-08-21T18:22:10Z">
+                    Released August 21, 2013
+        </time>
+                  <span class="filesize">
+            2.3 MB
+          </span>
+              </span>
+              <span class="meta compat">
+                    Works with
+                      Firefox 23.0 and later        </span>
+          </h3>
+
+    <div class="desc prose" >
+      
+    </div>
+
+    <ul class="source">
+                  <li>
+                      Source code released under <a target="_blank" href="http://www.opensource.org/licenses/bsd-license.php">BSD License</a>                  </li>
+        <li>
+          <a class="license-faq" href="/en-US/faq#license">
+            What's this?</a>
+        </li>
+              <li>
+        <a class="source-code"
+           href="/en-US/firefox/files/browse/225567/">
+          View the source</a>
+      </li>
+        </ul>
+
+  </div>
+  <div class="action">
+    
+<div class="install-shell">
+<div class="install unreviewed beta"
+       data-addon="1843"
+  data-icon="https://addons.cdn.mozilla.net/img/uploads/addon_icons/1/1843-32.png?modified=1399032268"
+  data-developers="/en-US/firefox/addon/firebug/developers"
+  data-versions="/en-US/firefox/addon/1843/versions/"
+  data-name="Firebug"
+  
+  data-min="23.0"
+  data-max="26.0"
+  data-is-compatible="true"
+  data-is-compatible-app="true"
+  data-compat-overrides="[]"
+>
+  <p class="install-button">
+                            <a class="button  download caution "
+  data-hash="sha256:fce87d5e3911e824e3b86ad86277484624a4c25f7eb92442dca01fb0b94cabfc"
+      href="/en-US/firefox/addon/firebug/"
+    data-realurl="https://addons.mozilla.org/firefox/downloads/file/225567/firebug-1.12.0b7-fx.xpi?src=version-history"
+  >
+      <b></b>
+    <span>
+      Download Now
+          </span>
+  </a>
+      </p>
+</div> 
+
+      <div class="d2c-reasons-popup popup">
+      <p>This add-on is not compatible with your version of Firefox because of the following:</p>
+      <ul></ul>
+    </div>
+  
+</div> 
+  </div>
+</div>
+              <div class="version item" id="version-1.12.0">
+  <div class="info">
+    <h3><a href="/en-US/firefox/addon/firebug/versions/1.12.0"
+           title="Permanent link to this version">
+      Version 1.12.0</a>
+      <span class="meta">
+        <time datetime="2013-08-14T13:29:09Z">
+                    Released August 14, 2013
+        </time>
+                  <span class="filesize">
+            2.3 MB
+          </span>
+              </span>
+              <span class="meta compat">
+                    Works with
+                      Firefox 23.0 and later        </span>
+          </h3>
+
+    <div class="desc prose" >
+      
+    </div>
+
+    <ul class="source">
+                  <li>
+                      Source code released under <a target="_blank" href="http://www.opensource.org/licenses/bsd-license.php">BSD License</a>                  </li>
+        <li>
+          <a class="license-faq" href="/en-US/faq#license">
+            What's this?</a>
+        </li>
+              <li>
+        <a class="source-code"
+           href="/en-US/firefox/files/browse/224842/">
+          View the source</a>
+      </li>
+        </ul>
+
+  </div>
+  <div class="action">
+    
+<div class="install-shell">
+<div class="install "
+       data-addon="1843"
+  data-icon="https://addons.cdn.mozilla.net/img/uploads/addon_icons/1/1843-32.png?modified=1399032268"
+  data-developers="/en-US/firefox/addon/firebug/developers"
+  data-versions="/en-US/firefox/addon/1843/versions/"
+  data-name="Firebug"
+  
+  data-min="23.0"
+  data-max="26.0"
+  data-is-compatible="true"
+  data-is-compatible-app="true"
+  data-compat-overrides="[]"
+>
+  <p class="install-button">
+                            <a class="button  download "
+  data-hash="sha256:3c4833e28c2f692184862c3507d11a84cfdda14ef2816f17f13a39c6ca7e5031"
+      href="https://addons.mozilla.org/firefox/downloads/file/224842/firebug-1.12.0-fx.xpi?src=version-history"
+  >
+      <b></b>
+    <span>
+      Download Now
+          </span>
+  </a>
+      </p>
+</div> 
+
+      <div class="d2c-reasons-popup popup">
+      <p>This add-on is not compatible with your version of Firefox because of the following:</p>
+      <ul></ul>
+    </div>
+  
+</div> 
+  </div>
+</div>
+              <div class="version item" id="version-1.12.0b6">
+  <div class="info">
+    <h3><a href="/en-US/firefox/addon/firebug/versions/1.12.0b6"
+           title="Permanent link to this version">
+      Version 1.12.0b6</a>
+      <span class="meta">
+        <time datetime="2013-08-08T11:05:02Z">
+                    Released August  8, 2013
+        </time>
+                  <span class="filesize">
+            2.3 MB
+          </span>
+              </span>
+              <span class="meta compat">
+                    Works with
+                      Firefox 22.0 and later        </span>
+          </h3>
+
+    <div class="desc prose" >
+      <a href="http://outgoing.mozilla.org/v1/cb5ae73d2a6456d3c82beaf05f760b83deb97a7ce9398f9a43e81fb7caff2056/http%3A//blog.getfirebug.com/2013/08/08/firebug-1-12-beta-6/" rel="nofollow">http://blog.getfirebug.com/2013/08/08/firebug-1-12-beta-6/</a>
+    </div>
+
+    <ul class="source">
+                  <li>
+                      Source code released under <a target="_blank" href="http://www.opensource.org/licenses/bsd-license.php">BSD License</a>                  </li>
+        <li>
+          <a class="license-faq" href="/en-US/faq#license">
+            What's this?</a>
+        </li>
+              <li>
+        <a class="source-code"
+           href="/en-US/firefox/files/browse/224322/">
+          View the source</a>
+      </li>
+        </ul>
+
+  </div>
+  <div class="action">
+    
+<div class="install-shell">
+<div class="install unreviewed beta"
+       data-addon="1843"
+  data-icon="https://addons.cdn.mozilla.net/img/uploads/addon_icons/1/1843-32.png?modified=1399032268"
+  data-developers="/en-US/firefox/addon/firebug/developers"
+  data-versions="/en-US/firefox/addon/1843/versions/"
+  data-name="Firebug"
+  
+  data-min="22.0"
+  data-max="26.0"
+  data-is-compatible="true"
+  data-is-compatible-app="true"
+  data-compat-overrides="[]"
+>
+  <p class="install-button">
+                            <a class="button  download caution "
+  data-hash="sha256:d82d2f4875e6ed7471b0013a01f155e84b79d6300c19c03fe5e816120e385b09"
+      href="/en-US/firefox/addon/firebug/"
+    data-realurl="https://addons.mozilla.org/firefox/downloads/file/224322/firebug-1.12.0b6-fx.xpi?src=version-history"
+  >
+      <b></b>
+    <span>
+      Download Now
+          </span>
+  </a>
+      </p>
+</div> 
+
+      <div class="d2c-reasons-popup popup">
+      <p>This add-on is not compatible with your version of Firefox because of the following:</p>
+      <ul></ul>
+    </div>
+  
+</div> 
+  </div>
+</div>
+              <div class="version item" id="version-1.12.0b5">
+  <div class="info">
+    <h3><a href="/en-US/firefox/addon/firebug/versions/1.12.0b5"
+           title="Permanent link to this version">
+      Version 1.12.0b5</a>
+      <span class="meta">
+        <time datetime="2013-07-26T15:19:58Z">
+                    Released July 26, 2013
+        </time>
+                  <span class="filesize">
+            2.3 MB
+          </span>
+              </span>
+              <span class="meta compat">
+                    Works with
+                      Firefox 22.0 and later        </span>
+          </h3>
+
+    <div class="desc prose" >
+      <a href="http://outgoing.mozilla.org/v1/c5b5f358de9c3c2d2a9d08629afdfbb6aadc10403ae8600723a0ad5f239093fa/https%3A//blog.getfirebug.com/2013/07/26/firebug-1-12-beta-5/" rel="nofollow">https://blog.getfirebug.com/2013/07/26/firebug-1-12-beta-5/</a>
+    </div>
+
+    <ul class="source">
+                  <li>
+                      Source code released under <a target="_blank" href="http://www.opensource.org/licenses/bsd-license.php">BSD License</a>                  </li>
+        <li>
+          <a class="license-faq" href="/en-US/faq#license">
+            What's this?</a>
+        </li>
+              <li>
+        <a class="source-code"
+           href="/en-US/firefox/files/browse/223142/">
+          View the source</a>
+      </li>
+        </ul>
+
+  </div>
+  <div class="action">
+    
+<div class="install-shell">
+<div class="install unreviewed beta"
+       data-addon="1843"
+  data-icon="https://addons.cdn.mozilla.net/img/uploads/addon_icons/1/1843-32.png?modified=1399032268"
+  data-developers="/en-US/firefox/addon/firebug/developers"
+  data-versions="/en-US/firefox/addon/1843/versions/"
+  data-name="Firebug"
+  
+  data-min="22.0"
+  data-max="25.0"
+  data-is-compatible="true"
+  data-is-compatible-app="true"
+  data-compat-overrides="[]"
+>
+  <p class="install-button">
+                            <a class="button  download caution "
+  data-hash="sha256:6ef1bf5dd57c66f8e60cbd27efdbb9d7b8948a1d21392ff7099ebc7225d560b3"
+      href="/en-US/firefox/addon/firebug/"
+    data-realurl="https://addons.mozilla.org/firefox/downloads/file/223142/firebug-1.12.0b5-fx.xpi?src=version-history"
+  >
+      <b></b>
+    <span>
+      Download Now
+          </span>
+  </a>
+      </p>
+</div> 
+
+      <div class="d2c-reasons-popup popup">
+      <p>This add-on is not compatible with your version of Firefox because of the following:</p>
+      <ul></ul>
+    </div>
+  
+</div> 
+  </div>
+</div>
+              <div class="version item" id="version-1.12.0b4">
+  <div class="info">
+    <h3><a href="/en-US/firefox/addon/firebug/versions/1.12.0b4"
+           title="Permanent link to this version">
+      Version 1.12.0b4</a>
+      <span class="meta">
+        <time datetime="2013-07-19T13:36:31Z">
+                    Released July 19, 2013
+        </time>
+                  <span class="filesize">
+            2.2 MB
+          </span>
+              </span>
+              <span class="meta compat">
+                    Works with
+                      Firefox 22.0 and later        </span>
+          </h3>
+
+    <div class="desc prose" >
+      <a href="http://outgoing.mozilla.org/v1/bddece944d0b1e8274434cd4dbc7f9cbe1390097e90a70f3b81e5c44bb02e61e/http%3A//blog.getfirebug.com/2013/07/19/firebug-1-12-beta-4/" rel="nofollow">http://blog.getfirebug.com/2013/07/19/firebug-1-12-beta-4/</a>
+    </div>
+
+    <ul class="source">
+                  <li>
+                      Source code released under <a target="_blank" href="http://www.opensource.org/licenses/bsd-license.php">BSD License</a>                  </li>
+        <li>
+          <a class="license-faq" href="/en-US/faq#license">
+            What's this?</a>
+        </li>
+              <li>
+        <a class="source-code"
+           href="/en-US/firefox/files/browse/222152/">
+          View the source</a>
+      </li>
+        </ul>
+
+  </div>
+  <div class="action">
+    
+<div class="install-shell">
+<div class="install unreviewed beta"
+       data-addon="1843"
+  data-icon="https://addons.cdn.mozilla.net/img/uploads/addon_icons/1/1843-32.png?modified=1399032268"
+  data-developers="/en-US/firefox/addon/firebug/developers"
+  data-versions="/en-US/firefox/addon/1843/versions/"
+  data-name="Firebug"
+  
+  data-min="22.0"
+  data-max="25.0"
+  data-is-compatible="true"
+  data-is-compatible-app="true"
+  data-compat-overrides="[]"
+>
+  <p class="install-button">
+                            <a class="button  download caution "
+  data-hash="sha256:e641fe569ca20262a91b6c73666cd715b9dd41ff1dd1dda8d89718e72547e328"
+      href="/en-US/firefox/addon/firebug/"
+    data-realurl="https://addons.mozilla.org/firefox/downloads/file/222152/firebug-1.12.0b4-fx.xpi?src=version-history"
+  >
+      <b></b>
+    <span>
+      Download Now
+          </span>
+  </a>
+      </p>
+</div> 
+
+      <div class="d2c-reasons-popup popup">
+      <p>This add-on is not compatible with your version of Firefox because of the following:</p>
+      <ul></ul>
+    </div>
+  
+</div> 
+  </div>
+</div>
+              <div class="version item" id="version-1.12.0b3">
+  <div class="info">
+    <h3><a href="/en-US/firefox/addon/firebug/versions/1.12.0b3"
+           title="Permanent link to this version">
+      Version 1.12.0b3</a>
+      <span class="meta">
+        <time datetime="2013-07-12T14:16:51Z">
+                    Released July 12, 2013
+        </time>
+                  <span class="filesize">
+            2.2 MB
+          </span>
+              </span>
+              <span class="meta compat">
+                    Works with
+                      Firefox 22.0 and later        </span>
+          </h3>
+
+    <div class="desc prose" >
+      <a href="http://outgoing.mozilla.org/v1/b2155179e3a4c37d84af11c9301a3f6c5c297bfe18752407e7d762311ef092d9/http%3A//blog.getfirebug.com/2013/07/12/firebug-1-12-beta-3/" rel="nofollow">http://blog.getfirebug.com/2013/07/12/firebug-1-12-beta-3/</a>
+    </div>
+
+    <ul class="source">
+                  <li>
+                      Source code released under <a target="_blank" href="http://www.opensource.org/licenses/bsd-license.php">BSD License</a>                  </li>
+        <li>
+          <a class="license-faq" href="/en-US/faq#license">
+            What's this?</a>
+        </li>
+              <li>
+        <a class="source-code"
+           href="/en-US/firefox/files/browse/220734/">
+          View the source</a>
+      </li>
+        </ul>
+
+  </div>
+  <div class="action">
+    
+<div class="install-shell">
+<div class="install unreviewed beta"
+       data-addon="1843"
+  data-icon="https://addons.cdn.mozilla.net/img/uploads/addon_icons/1/1843-32.png?modified=1399032268"
+  data-developers="/en-US/firefox/addon/firebug/developers"
+  data-versions="/en-US/firefox/addon/1843/versions/"
+  data-name="Firebug"
+  
+  data-min="22.0"
+  data-max="25.0"
+  data-is-compatible="true"
+  data-is-compatible-app="true"
+  data-compat-overrides="[]"
+>
+  <p class="install-button">
+                            <a class="button  download caution "
+  data-hash="sha256:36d348e9752b9f009a06ea54b2d157633313cd376873ad24bbabafdd40ebded4"
+      href="/en-US/firefox/addon/firebug/"
+    data-realurl="https://addons.mozilla.org/firefox/downloads/file/220734/firebug-1.12.0b3-fx.xpi?src=version-history"
+  >
+      <b></b>
+    <span>
+      Download Now
+          </span>
+  </a>
+      </p>
+</div> 
+
+      <div class="d2c-reasons-popup popup">
+      <p>This add-on is not compatible with your version of Firefox because of the following:</p>
+      <ul></ul>
+    </div>
+  
+</div> 
+  </div>
+</div>
+              <div class="version item" id="version-1.12.0b2">
+  <div class="info">
+    <h3><a href="/en-US/firefox/addon/firebug/versions/1.12.0b2"
+           title="Permanent link to this version">
+      Version 1.12.0b2</a>
+      <span class="meta">
+        <time datetime="2013-07-05T13:10:24Z">
+                    Released July  5, 2013
+        </time>
+                  <span class="filesize">
+            2.2 MB
+          </span>
+              </span>
+              <span class="meta compat">
+                    Works with
+                      Firefox 22.0 and later        </span>
+          </h3>
+
+    <div class="desc prose" >
+      <a href="http://outgoing.mozilla.org/v1/cf6b072e9af2428ba874f8c277c912721f310a38dc865a5953aeff7effdf132f/http%3A//blog.getfirebug.com/2013/07/05/firebug-1-12-beta-2/" rel="nofollow">http://blog.getfirebug.com/2013/07/05/firebug-1-12-beta-2/</a>
+    </div>
+
+    <ul class="source">
+                  <li>
+                      Source code released under <a target="_blank" href="http://www.opensource.org/licenses/bsd-license.php">BSD License</a>                  </li>
+        <li>
+          <a class="license-faq" href="/en-US/faq#license">
+            What's this?</a>
+        </li>
+              <li>
+        <a class="source-code"
+           href="/en-US/firefox/files/browse/219404/">
+          View the source</a>
+      </li>
+        </ul>
+
+  </div>
+  <div class="action">
+    
+<div class="install-shell">
+<div class="install unreviewed beta"
+       data-addon="1843"
+  data-icon="https://addons.cdn.mozilla.net/img/uploads/addon_icons/1/1843-32.png?modified=1399032268"
+  data-developers="/en-US/firefox/addon/firebug/developers"
+  data-versions="/en-US/firefox/addon/1843/versions/"
+  data-name="Firebug"
+  
+  data-min="22.0"
+  data-max="25.0"
+  data-is-compatible="true"
+  data-is-compatible-app="true"
+  data-compat-overrides="[]"
+>
+  <p class="install-button">
+                            <a class="button  download caution "
+  data-hash="sha256:b3ab10cb9a0678d8eee8f5def4833a0869a52871e0cd8fb7b6ec620b6c22be39"
+      href="/en-US/firefox/addon/firebug/"
+    data-realurl="https://addons.mozilla.org/firefox/downloads/file/219404/firebug-1.12.0b2-fx.xpi?src=version-history"
+  >
+      <b></b>
+    <span>
+      Download Now
+          </span>
+  </a>
+      </p>
+</div> 
+
+      <div class="d2c-reasons-popup popup">
+      <p>This add-on is not compatible with your version of Firefox because of the following:</p>
+      <ul></ul>
+    </div>
+  
+</div> 
+  </div>
+</div>
+          </div>
+      <nav class="paginator c pjax-trigger">
+    <p class="num">
+            Page <a href="/en-US/firefox/addon/firebug/versions/?page=1">1</a> of <a href="/en-US/firefox/addon/firebug/versions/?page=5">5</a>    </p>
+    <p class="rel">
+      <a href="#"
+         title="Jump to first page"
+         class="jump disabled">
+        &#x25C2;&#x25C2;</a>
+      <a href="#"
+         class="button prev disabled">
+        &#x25C2; Previous</a>
+      <a href="/en-US/firefox/addon/firebug/versions/?page=2"
+         class="button next">
+        Next &#x25B8;</a>
+      <a href="/en-US/firefox/addon/firebug/versions/?page=5"
+         class="jump">
+        &#x25B8;&#x25B8;</a>
+    </p>
+    <p class="pos">
+            Showing <b>1</b>&ndash;<b>30</b> of <b>145</b>    </p>
+  </nav>
+
+  </div>
+</section>
+              </div>
+      <div id="tooltip">
+        <span></span>
+      </div>
+      <div id="popup-staging">
+        <div id="sharing-popup" class="popup">
+  <div class="share-networks share-content">
+    <ul>
+              <li class="digg">
+          <span class="share-link">
+            <a class="uniquify" target="_self">
+              Digg this!
+            </a>
+          </span>
+          <span class="share-count">
+          </span>
+        </li>
+              <li class="facebook">
+          <span class="share-link">
+            <a class="uniquify" target="_self">
+              Post to Facebook
+            </a>
+          </span>
+          <span class="share-count">
+          </span>
+        </li>
+              <li class="delicious">
+          <span class="share-link">
+            <a class="uniquify" target="_self">
+              Add to Delicious
+            </a>
+          </span>
+          <span class="share-count">
+          </span>
+        </li>
+              <li class="myspace">
+          <span class="share-link">
+            <a class="uniquify" target="_self">
+              Post to MySpace
+            </a>
+          </span>
+          <span class="share-count">
+          </span>
+        </li>
+              <li class="friendfeed">
+          <span class="share-link">
+            <a class="uniquify" target="_self">
+              Share on FriendFeed
+            </a>
+          </span>
+          <span class="share-count">
+          </span>
+        </li>
+              <li class="twitter">
+          <span class="share-link">
+            <a class="uniquify" target="_self">
+              Post to Twitter
+            </a>
+          </span>
+          <span class="share-count">
+          </span>
+        </li>
+          </ul>
+  </div></div>
+        <div id="add-to-collection" class="popup">
+          <div class="collection-add-login">
+            <p>To create your own collections, you must have a Mozilla Add-ons account.</p>
+            <p class="register-button">
+              <a class="button" href="/en-US/firefox/users/register">Create an Add-ons Account</a>
+            </p>
+            <p>
+              or <a href="/en-US/firefox/users/login?to=%2Fen-US%2Ffirefox%2Faddon%2Ffirebug%2Fversions%2F">log in to your current account</a>            </p>
+          </div>
+        </div>
+                      </div>
+    </div>
+          <div id="footer" role="contentinfo">
+        <div class="section">
+                      <img class="footerlogo" src="https://addons.cdn.mozilla.net/media/img/zamboni/footer-logo-med.png?b=ac79528-53879682" alt="">
+                                <div id="social-footer">
+  <ul>
+    <li>get to know <b>add-ons</b></li>
+    <li><a href="/en-US/about">About</a></li>
+    <li><a href="http://blog.mozilla.com/addons">Blog</a></li>
+    <li class="footer-devhub-link"><a href="/en-US/developers/">Developer Hub</a></li>
+    <li><a href="/en-US/faq">FAQ</a></li>
+    <li><a href="https://forums.addons.mozilla.org">Forum</a></li>
+  </ul>
+</div>
+<div id="footer-content">
+        <form class="languages go" id="lang_form" method="get" action="">
+      <label for="language">Other languages</label>
+      <select id="language" name="lang" dir="ltr">
+        <option value="af" >
+            Afrikaans
+          </option><option value="ar" >
+            عربي
+          </option><option value="bg" >
+            Български
+          </option><option value="bn-bd" >
+            বাংলা (বাংলাদেশ)
+          </option><option value="ca" >
+            Català
+          </option><option value="cs" >
+            Čeština
+          </option><option value="da" >
+            Dansk
+          </option><option value="de" >
+            Deutsch
+          </option><option value="el" >
+            Ελληνικά
+          </option><option value="en-us" selected>
+            English (US)
+          </option><option value="es" >
+            Español
+          </option><option value="eu" >
+            Euskara
+          </option><option value="fa" >
+            فارسی
+          </option><option value="fi" >
+            suomi
+          </option><option value="fr" >
+            Français
+          </option><option value="ga-ie" >
+            Gaeilge
+          </option><option value="he" >
+            עברית
+          </option><option value="hu" >
+            magyar
+          </option><option value="id" >
+            Bahasa Indonesia
+          </option><option value="it" >
+            Italiano
+          </option><option value="ja" >
+            日本語
+          </option><option value="ko" >
+            한국어
+          </option><option value="mk" >
+            Македонски
+          </option><option value="mn" >
+            Монгол
+          </option><option value="nl" >
+            Nederlands
+          </option><option value="pl" >
+            Polski
+          </option><option value="pt-br" >
+            Português (do Brasil)
+          </option><option value="pt-pt" >
+            Português (Europeu)
+          </option><option value="ro" >
+            română
+          </option><option value="ru" >
+            Русский
+          </option><option value="sk" >
+            slovenčina
+          </option><option value="sl" >
+            Slovenščina
+          </option><option value="sq" >
+            Shqip
+          </option><option value="sv-se" >
+            Svenska
+          </option><option value="uk" >
+            Українська
+          </option><option value="vi" >
+            Tiếng Việt
+          </option><option value="zh-cn" >
+            中文 (简体)
+          </option><option value="zh-tw" >
+            正體中文 (繁體)
+          </option>      </select>
+            <noscript><button type="submit">Go</button></noscript>
+    </form>
+    <div id="copyright">
+  <p id="footer-links">
+          <a href="http://www.mozilla.org/privacy-policy.html">
+        Privacy Policy
+      </a> &nbsp;|&nbsp;
+      <a href="http://www.mozilla.org/about/legal.html">
+        Legal Notices
+      </a> &nbsp;|&nbsp;
+      <a href="http://www.mozilla.org/legal/fraud-report/index.html">
+        Report Trademark Abuse
+      </a>
+            &nbsp;|&nbsp;<a class="mobile-link" href="#">View Mobile Site</a>
+        </p>
+  <p>
+    Except where otherwise <a href="http://www.mozilla.org/about/legal.html#site">noted</a>, content on this site is licensed under the <br /> <a href="http://creativecommons.org/licenses/by-sa/3.0/"> Creative Commons Attribution Share-Alike License v3.0 </a> or any later version.  </p>
+</div></div>
+                  </div>       </div>                   <script src="https://addons.cdn.mozilla.net/en-US/firefox/jsi18n.js?b=ac79528-53879682"></script>
+                  <script src="https://addons.cdn.mozilla.net/media/js/impala-min.js?build=ac79528-53879682"></script>
+      <script async defer src="https://addons.cdn.mozilla.net/en-US/firefox/addons/buttons.js?b=ac79528-53879682"></script>
+              <script src="//mozorg.cdn.mozilla.net/en-US/tabzilla/tabzilla.js"></script>
+              </body>
+</html>

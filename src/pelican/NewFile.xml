@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<purchaseOrder version="1.0" appFamilyId="9999"
+	creationTime="09/22/2014 22:54:36 UTC" lastModified="09/22/2014 22:54:36 UTC"
+	id="44672" fulfillmentStatus="FULFILLED">
+	<buyerUser id="1293" />
+	<orderState>CHARGED</orderState>
+	<lineItems>
+		<lineItem>
+			<subscriptionPlan>
+				<subscriptionPlanPurchaseRequest
+					offerExternalKey="FSN360-PRO-A" currencyId="4" />
+				<subscriptionPlanPurchaseResponse
+					subscriptionId="39679" subscriptionOfferId="1004" unitPrice="1200.00"
+					currencyName="USD" planName="Fusion 360 Pro" nextBillingDate="09/22/2015 22:54:36 UTC"
+					eventGroupId="44548" timestamp="09/22/2014 22:54:37 UTC" />
+			</subscriptionPlan>
+		</lineItem>
+	</lineItems>
+	<payment currencyId="4" configId="1002">
+		<creditCard>
+			<billToStreetAddress>082606 Main St</billToStreetAddress>
+			<billToZipCode>90210</billToZipCode>
+			<creditCardNumber>XXXXXXXXXXXX4444</creditCardNumber>
+			<creditCardType>VISA</creditCardType>
+			<expDate></expDate>
+			<securityCode></securityCode>
+			<firstName>Bob</firstName>
+			<surname>Lee</surname>
+			<city>Los Angeles</city>
+			<stateProvince>CA</stateProvince>
+			<countryCode>US</countryCode>
+		</creditCard>
+	</payment>
+	<transactions>
+		<transaction id="45541" type="SALE">
+			<gatewayResponse txnDate="09/22/2014 22:54:36 UTC"
+				billingCountry="US" billingPostalCode="90210" billingStateProvince="CA"
+				billingCity="Los Angeles" state="APPROVED" amountCharged="1200.00"
+				amountChargedCurrencyId="4" amountChargedCurrencyISOCode="USD"
+				configId="1002" paymentType="CREDIT_CARD" paymentMethod="VISA"
+				detailName="Recorder" amountChargedInUsd="1200.00"
+				exchangeRateToUsd="1" gatewayPaymentInstrumentId="107" />
+		</transaction>
+	</transactions>
+	<allowedCommands>
+		<command>REFUND</command>
+		<command>CHARGEBACK</command>
+		<command>DISPUTE</command>
+	</allowedCommands>
+</purchaseOrder>

@@ -1,0 +1,129 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Pelican Web Services Test Suite v1"   preserve-order="true">
+ <listeners>
+     <listener class-name="org.uncommons.reportng.HTMLReporter" /> 
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />    
+  </listeners>
+
+  <test name="TEST CREATE SUBSCRIPTION TESTS">	
+	   <method-selectors>
+     		<method-selector>
+       			<script language="beanshell"><![CDATA[groupToRun=System.getProperty("groupsToRun");       			
+         		groups.containsKey(groupToRun);
+       			]]></script>
+     		</method-selector>
+     	</method-selectors>     	 
+		<classes>
+			<class name="pelican.testCreateSubscription" />
+		</classes>
+	</test>     	
+	
+	<test name="FIND SUBSCRIPTION BY ID">	
+	   <method-selectors>
+     		<method-selector>
+       			<script language="beanshell"><![CDATA[groupToRun=System.getProperty("groupsToRun");       			
+         		groups.containsKey(groupToRun);
+       			]]></script>
+     		</method-selector>
+     	</method-selectors>     	 
+		<classes>
+			<class name="pelican.GetSubscriptionByID" />
+		</classes>
+	</test>
+	
+	<test name="SUBMIT PURCHASER ORDER API TESTS">
+	   <method-selectors>
+     		<method-selector>
+       			<script language="beanshell"><![CDATA[groupToRun=System.getProperty("groupsToRun");       			
+         		groups.containsKey(groupToRun);
+       			]]></script>
+     		</method-selector>
+     	</method-selectors>     	 
+		<classes>
+			<class name="pelican.SubmitPurchaseOrder" />
+		</classes>
+	</test>
+	<test name="GET PURCHASE ORDERS API TESTS">	
+	   <method-selectors>
+     		<method-selector>
+       			<script language="beanshell"><![CDATA[groupToRun=System.getProperty("groupsToRun");       			
+         		groups.containsKey(groupToRun);
+       			]]></script>
+     		</method-selector>
+     	</method-selectors>     	 
+		<classes>
+			<class name="pelican.GetPurchaseOrders" />
+		</classes>
+	</test>
+	<test name="GET ITEMINSTANCES API TESTS">
+	
+	   <method-selectors>
+     		<method-selector>
+       			<script language="beanshell"><![CDATA[groupToRun=System.getProperty("groupsToRun");       			
+         		groups.containsKey(groupToRun);
+       			]]></script>
+     		</method-selector>
+     	</method-selectors>     	 
+		<classes>
+			<class name="pelican.GetItemInstances" />
+		</classes>
+	</test>
+	
+	<test name="FIND SUBSCRIPTION PLANS TESTS">
+	
+	   <method-selectors>
+     		<method-selector>
+       			<script language="beanshell"><![CDATA[groupToRun=System.getProperty("groupsToRun");       			
+         		groups.containsKey(groupToRun);
+       			]]></script>
+     		</method-selector>
+     	</method-selectors>     	 
+		<classes>
+			<class name="pelican.testFindSubscriptionPlansAPI" />
+		</classes>
+	</test>
+	
+	<test name="GET CATALOG TESTS">	
+	   <method-selectors>
+     		<method-selector>
+       			<script language="beanshell"><![CDATA[groupToRun=System.getProperty("groupsToRun");       			
+         		groups.containsKey(groupToRun);
+       			]]></script>
+     		</method-selector>
+     	</method-selectors>     	 
+		<classes>
+			<class name="pelican.testGetCatalogAPI" />			
+		</classes>	
+	</test>	
+	
+	<test name="TEST CANCEL SUBSCRIPTION TESTS">
+	
+	   <method-selectors>
+     		<method-selector>
+       			<script language="beanshell"><![CDATA[groupToRun=System.getProperty("groupsToRun");       			
+         		groups.containsKey(groupToRun);
+       			]]></script>
+     		</method-selector>
+     	</method-selectors>     	 
+		<classes>
+			<class name="pelican.testCancelSubscriptions" />
+		</classes>
+	</test>
+		
+	<test name="TEST RESTART SUBSCRIPTION TESTS">	
+	   <method-selectors>
+     		<method-selector>
+       			<script language="beanshell"><![CDATA[groupToRun=System.getProperty("groupsToRun");       			
+         		groups.containsKey(groupToRun);
+       			]]></script>
+     		</method-selector>
+     	</method-selectors>     	 
+		<classes>
+			<class name="pelican.testRestartSubscriptions" />
+		</classes>
+	</test>
+	
+	     	    
+		
+	
+</suite>

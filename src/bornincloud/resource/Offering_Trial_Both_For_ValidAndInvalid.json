@@ -1,0 +1,58 @@
+{
+    "statusCode": "OFFSYS-1000",
+    "statusMessage": "Completedsuccessfully.Returningactiveofferingsandignoringinvalidofferings",
+    "offerings": [
+        {
+            "offeringId": "FSN360-TRIAL",
+            "offeringPLC": "FSN360",
+            "offeringLegalName": "Autodesk®Fusion360Trial",
+            "offeringShortName": "Fusion360Trial",
+            "offeringClass": "Sales",
+            "offeringTemplate": "FSN360-TEMPLATE",
+            "offeringStartDate": "2014-01-01T12:00:00Z",
+            "offeringEndDate": "2015-12-31T12:00:00Z",
+            "offeringBillingRecurrence": "N/A",
+            "offeringBillingCycle": "N/A",
+            "offeringUsageType": "TRL",
+            "featureList": [
+                {
+                    "offeringId": "FSN360-TRIAL",
+                    "featureId": "urn:autodesk.com:services:fusion360",
+                    "featureName": "Fusion360",
+                    "featureType": "CLP",
+                    "featureNumDays": "30",
+                    "featureLicensingModel": "TRL#1",
+                    "featureAddToEntsTable": "true"
+                },
+                {
+                    "offeringId": "FSN360-TRIAL",
+                    "featureId": "urn:autodesk.com:services:a360",
+                    "featureName": "Collaboration",
+                    "featureType": "",
+                    "featureNumDays": "30",
+                    "featureLicensingModel": "TRL#1",
+                    "parentFeatureId": "urn:autodesk.com:services:fusion360",
+                    "featureAddToEntsTable": "true"
+                },
+                {
+                    "offeringId": "FSN360-TRIAL",
+                    "featureId": "bicsupport",
+                    "featureName": "BasicSupport",
+                    "featureType": "SPT",
+                    "featureNumDays": "30",
+                    "featureLicensingModel": "TRL#1",
+                    "featureAddToEntsTable": "true"
+                },
+                {
+                    "offeringId": "FSN360-TRIAL",
+                    "featureId": "urn:autodesk.com:services:raas",
+                    "featureName": "Rendering",
+                    "featureType": "",
+                    "featureNumDays": "30",
+                    "featureLicensingModel": "CMP#1",
+                    "featureAddToEntsTable": "true"
+                }
+            ]
+        }
+    ]
+}

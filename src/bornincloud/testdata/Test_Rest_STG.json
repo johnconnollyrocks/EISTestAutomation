@@ -1,0 +1,488 @@
+{
+    "httpRequest": "https://ent-stg.autodesk.com/service/entitlements/v1/user/",
+    "httpRequest_Offering": "https://ent-stg.autodesk.com/service/offerings/v1/offeringId/",
+    "buucRequest": "https://buuc-stg.autodesk.com/service/chargeport/v1/chargeevent/",
+    "jsonMimeType": "application/json",
+    "mutualAuthCert": "localtesting-stg.pfx",
+    "mutualAuthPass": "localtesting!@3",
+    "mutualAuthCertBuuc": "buuc-stg.pfx",
+    "mutualAuthPassBuuc": "BuucStg!@#",
+    "ippRequest":"http://internal-adsk-bic-stg-payport-59308983.us-east-1.elb.amazonaws.com/services/v1/user/",
+    "ccurl":"http://quattro-int-stg-vip.autodesk.com/quattro/services/ConvergentCharging",
+    "testParameters": [
+       {
+            "testName": "Test_IPP_PortalCreateUser_PayportAddPaymentProfile_Method",
+            "content": "{ \"user\": { \"paymentProfile\": { \"creditCardInfo\": { \"encryptedCardNumber\": \"#stgVISANumber#\", \"encryptedCVV\": \"#stgVISACVV#\", \"expMonth\": \"11\", \"expYear\": \"2018\", \"cardType\": \"VISA\" }, \"billingInfo\": { \"firstName\": \"TestUservisa\", \"lastName\": \"TestNamevisa\", \"streetAddress\": \"1 Main St\", \"city\": \"San Francisco\", \"stateProvince\": \"CA\", \"country\": \"US\", \"postalCode\": \"94501\" } }, \"email\": \"shopper@BlueSnap.com\", \"ip\": \"132.123.24.8\" } }##{ \"user\": { \"paymentProfile\": { \"creditCardInfo\": { \"encryptedCardNumber\": \"#stgMCNumber#\", \"encryptedCVV\": \"#stgMCCVV#\", \"expMonth\": \"11\", \"expYear\": \"2017\", \"cardType\": \"MASTERCARD\" }, \"billingInfo\": { \"firstName\": \"TestUserMC\", \"lastName\": \"TestNameMC\", \"streetAddress\": \"2 Main St\", \"city\": \"Sunnyvale\", \"stateProvince\": \"CA\", \"country\": \"US\", \"postalCode\": \"94086\" } }, \"email\": \"shopper@BlueSnap.com\", \"ip\": \"132.123.24.8\" } }",
+            "expectedJsonData": "{\"shopper\":{\"firstName\":\"TestUservisa\",\"lastName\":\"TestNamevisa\",\"email\":\"shopper@BlueSnap.com\",\"preferredCurrency\":\"USD\",\"billingInfo\":{\"ucmSynced\":false,\"firstName\":\"TestUservisa\",\"lastName\":\"TestNamevisa\",\"streetAddress\":\"1 Main St\",\"city\":\"San Francisco\",\"stateProvince\":\"CA\",\"country\":\"us\",\"postalCode\":\"94501\"},\"paymentProfiles\":[{\"creditCardInfo\":{\"last4Digits\":\"1111\",\"cardType\":\"VISA\",\"formattedCardType\":\"Visa\"},\"billingInfo\":{\"ucmSynced\":false,\"firstName\":\"TestUservisa\",\"lastName\":\"TestNamevisa\",\"streetAddress\":\"1 Main St\",\"city\":\"San Francisco\",\"stateProvince\":\"CA\",\"country\":\"us\",\"postalCode\":\"94501\"}}],\"lastModifiedPaymentProfile\":{\"creditCardInfo\":{\"last4Digits\":\"1111\",\"cardType\":\"VISA\",\"formattedCardType\":\"Visa\"},\"billingInfo\":{\"ucmSynced\":false,\"firstName\":\"TestUservisa\",\"lastName\":\"TestNamevisa\",\"streetAddress\":\"1 Main St\",\"city\":\"San Francisco\",\"stateProvince\":\"CA\",\"country\":\"us\",\"postalCode\":\"94501\"}}}}@@@shopper##{\"creditCardInfo\":{\"last4Digits\":\"5100\",\"cardType\":\"MASTERCARD\",\"expMonth\":\"11\",\"expYear\":\"2017\",\"formattedCardType\":\"MasterCard\"},\"billingInfo\":{\"ucmSynced\":false,\"firstName\":\"TestUserMC\",\"lastName\":\"TestNameMC\",\"streetAddress\":\"2MainSt\",\"city\":\"Sunnyvale\",\"stateProvince\":\"CA\",\"country\":\"US\",\"postalCode\":\"94086\"}@@@credit##{\"creditCardInfo\":{\"last4Digits\":\"1111\",\"cardType\":\"VISA\",\"expMonth\":\"11\",\"expYear\":\"2018\",\"formattedCardType\":\"Visa\"},\"billingInfo\":{\"ucmSynced\":false,\"firstName\":\"TestUservisa\",\"lastName\":\"TestNamevisa\",\"streetAddress\":\"1MainSt\",\"city\":\"SanFrancisco\",\"stateProvince\":\"CA\",\"country\":\"US\",\"postalCode\":\"94501\"}@@@{\"creditCardInfo\":{\"last4Digits\":\"5100\",\"cardType\":\"MASTERCARD\",\"expMonth\":\"11\",\"expYear\":\"2017\",\"formattedCardType\":\"MasterCard\"},\"billingInfo\":{\"ucmSynced\":false,\"firstName\":\"TestUserMC\",\"lastName\":\"TestNameMC\",\"streetAddress\":\"2MainSt\",\"city\":\"Sunnyvale\",\"stateProvince\":\"CA\",\"country\":\"US\",\"postalCode\":\"94086\"}"
+        },
+        
+       {
+            "testName": "Test_REST_Payport_Support_Offer_Quantity_Canada_Method",
+            "userId": "tax",
+            "offTable1": "DC020500,MAYALT-A-BASIC,300##DC020500,MAYALT-A-ADV,400##DC020500,FSN360-BASE-A,330##DC020500,FSN360-A-PRO,900",
+            "offTable2": "Calgary,AB,CA,T2P 1B5#Vancouver,BC,CA,V5Z 1M9#Winnipeg,MB,CA,R3G 0W4#Fredericton,NB,CA,E3B 3E3#Happy Valley-Goose Bay,NL,CA,A0P 1S0#Hay River,NT,CA,X0E 1G1#Bedford,NS,CA,B4A 4A5#Arctic Bay,NU,CA,X0A 0A0#Greater Sudbury,ON,CA,P3E 5M7#Charlottetown,PE,CA,C1A 6Y1#Wendake,QC,CA,G0A 4V0#Saskatoon,SK,CA,S7H 2A4#Whitehorse,YT,CA,Y1A 2S3",
+            "content": "{\"tax\": {\"offers\": [{\"externalKey\": \"#EXTERNAL_KEY#\",\"amount\": \"#AMOUNT#\",\"taxCode\": \"#TAX_CODE#\",\"quantity\": \"#QUANTITY#\",\"type\": \"CURRENCY\"} ], \"billingInfo\": {\"streetAddress\": \"#STREET_ADDRESS#\",\"city\": \"#CITY#\",\"stateProvince\": \"#STATE_PROVINCE#\",\"country\": \"#COUNTRY#\",\"postalCode\": \"#POSTAL_CODE#\" }, \"currency\": \"USD\" }}"
+        },
+    	{
+            "testName": "Test_REST_Payport_Support_Offer_Quantity_Method",
+            "userId": "tax",
+            "offTable1": "DC020500,MAYALT-BASIC-A##SW052000,FSN360-BASE-A",
+            "offTable2": "NASHVILLE,TN,US,37217#Chicago,IL,US,60601#New York,NY,US,10001#Freeport,ME,US,04032",
+            "content": "{\"tax\": {\"offers\": [{\"externalKey\": \"#EXTERNAL_KEY#\",\"amount\": \"40\",\"taxCode\": \"#TAX_CODE#\",\"quantity\": \"#QUANTITY#\",\"type\": \"CURRENCY\"} ], \"billingInfo\": {\"streetAddress\": \"#STREET_ADDRESS#\",\"city\": \"#CITY#\",\"stateProvince\": \"#STATE_PROVINCE#\",\"country\": \"#COUNTRY#\",\"postalCode\": \"#POSTAL_CODE#\" }, \"currency\": \"USD\" }}"
+        },
+        {
+            "testName": "Test_UCM_GETBilling_Address_PP_empty_Method",
+            "tempURL": "http://internal-adsk-bic-stg-ipp-251693697.us-east-1.elb.amazonaws.com/services/v1/",
+            "userId": "initializer?grantToken=abcd&userId=CVQ7JSEQAAAE&country=US&offeringId=FSN360-TRIAL",  
+            "expectedJsonData": "paymentProfiles\":[]"
+        },
+        {
+            "testName": "Test_UCM_GETBilling_Address_contains_3PP_Method",
+            "tempURL": "http://tibappst-vip.autodesk.com:4098/rest/v1/party/identitylookup",  
+            "content": "{\"LookupRequest\":{\"IdentityType\":\"EIDMGUID\",\"Identity\":\"201409260018385\"}}",  
+            "expectedJsonData": "3"
+        },
+        {
+            "testName": "Test_UCM_GETBilling_Address_PP_use_countrycode_US_Method",
+            "tempURL": "http://internal-adsk-bic-stg-ipp-251693697.us-east-1.elb.amazonaws.com/services/v1/",
+            "userId": "initializer?grantToken=abcd&userId=2CKSNKWEBSVH&country=US&offeringId=FSN360-TRIAL",  
+            "expectedJsonData": "CA"
+        },
+        {
+            "testName": "Test_UCM_GETBilling_Address_PP_use_countrycode_CA_Method",
+            "tempURL": "http://internal-adsk-bic-stg-ipp-251693697.us-east-1.elb.amazonaws.com/services/v1/",
+            "userId": "initializer?grantToken=abcd&userId=2CKSNKWEBSVH&country=CA&offeringId=FSN360-TRIAL",  
+            "expectedJsonData": "CA"
+        },
+   		{
+            "testName": "Test_IPP_REST_Do_Refunds_VISA_Method",
+            "userId": "KWTHNSZW2JCK/purchase",  
+            "content": "{\"purchase\": {\"webInfo\": {\"userAgent\": \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; GTB6.3; .NET CLR 2.0.50727)\",\"remoteHost\": \"bzq-219-121-253.static.bezeqint.net.reinventhosting.com\"},\"user\": {\"paymentProfile\": {\"creditCardInfo\": {\"last4Digits\": \"1111\",\"cardType\": \"VISA\"}},\"ip\": \"132.123.24.8\"},\"offers\": [{\"externalKey\": \"FSN360-BASE-M\",\"amount\": \"40\",\"taxCode\": \"SW052000\"}],\"currency\": \"USD\"}}",  
+            "expectedJsonData": "state\": \"AUTHORIZED",
+            "expectedJsonDataRefund": "state\": \"REFUNDED"
+        },
+        {
+            "testName": "Test_IPP_REST_Do_Refunds_MASTERCARD_Method",
+            "userId": "GUU2NP4H2FHB/purchase",  
+            "content": "{\"purchase\": {\"webInfo\": {\"userAgent\": \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; GTB6.3; .NET CLR 2.0.50727)\",\"remoteHost\": \"bzq-219-121-253.static.bezeqint.net.reinventhosting.com\"},\"user\": {\"paymentProfile\": {\"creditCardInfo\": {\"last4Digits\": \"5100\",\"cardType\": \"MASTERCARD\"}},\"ip\": \"132.123.24.8\"},\"offers\": [{\"externalKey\": \"FSN360-BASE-M\",\"amount\": \"40\",\"taxCode\": \"SW052000\"}],\"currency\": \"USD\"}}",  
+            "expectedJsonData": "state\": \"AUTHORIZED",
+            "expectedJsonDataRefund": "state\": \"REFUNDED"
+        },
+        {
+            "testName": "Test_IPP_REST_Do_Refunds_Multiple_VISA_Method",
+            "userId": "CVQ7JSEQAAAE/purchase",  
+            "content": "{\"purchase\": {\"webInfo\": {\"userAgent\": \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; GTB6.3; .NET CLR 2.0.50727)\",\"remoteHost\": \"bzq-219-121-253.static.bezeqint.net.reinventhosting.com\"},\"user\": {\"paymentProfile\": {\"creditCardInfo\": {\"last4Digits\": \"1111\",\"cardType\": \"VISA\"}},\"ip\": \"132.123.24.8\"},\"offers\": [{\"externalKey\": \"FSN360-BASE-M\",\"amount\": \"40\",\"taxCode\": \"SW052000\"}],\"currency\": \"USD\"}}",    
+            "expectedJsonData": "state\": \"AUTHORIZED",
+            "expectedJsonDataRefund": "state\": \"REFUNDED"
+        },
+        {
+            "testName": "Test_IPP_REST_Do_Refunds_Multiple_MASTERCARD_Method",
+            "userId": "CVQ7JSEQAAAE/purchase",  
+            "content": "{\"purchase\": {\"webInfo\": {\"userAgent\": \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; GTB6.3; .NET CLR 2.0.50727)\",\"remoteHost\": \"bzq-219-121-253.static.bezeqint.net.reinventhosting.com\"},\"user\": {\"paymentProfile\": {\"creditCardInfo\": {\"last4Digits\": \"5100\",\"cardType\": \"MASTERCARD\"}},\"ip\": \"132.123.24.8\"},\"offers\": [{\"externalKey\": \"FSN360-BASE-M\",\"amount\": \"40\",\"taxCode\": \"SW052000\"}],\"currency\": \"USD\"}}",  
+            "expectedJsonData": "state\": \"AUTHORIZED",
+            "expectedJsonDataRefund": "state\": \"REFUNDED"
+        },
+        {
+            "testName": "Test_REST_GetEntitlement_ContextId_Method",
+            "userId": "AutoScriptGet",
+            "expectedJsonData": "{\"statusCode\":\"ENTSYS-1000\",\"statusMessage\":\"Completed successfully\",\"entitlements\":[{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"0484b211-a333-4a78-8fd3-3e24dd34d661\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"entitlementEndDate\":\"2020-04-16T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"FSN360\",\"featureName\":\"Fusion 360 Core Product\",\"featureType\":\"CP\",\"featureLicensingModel\":\"TRL#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true},{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"54e9a3c6-f4f6-43f2-96f3-071a439d0d49\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"entitlementEndDate\":\"2020-04-16T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"RenderingWS\",\"featureName\":\"Rendering\",\"featureType\":\"CS\",\"featureLicensingModel\":\"CMP#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true},{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"4fd6e4ea-757a-47d3-a6cd-173feb87cc87\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"ID3\",\"featureName\":\"HB\",\"featureType\":\"CP\",\"featureLicensingModel\":\"OPN#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true},{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"7c73d3f7-b357-4435-a164-af8e118ce465\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"ID1\",\"featureName\":\"Import\",\"featureType\":\"AO\",\"featureLicensingModel\":\"OPN#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true}]}",
+            "contextId": "27d99232-3535-44e0-bf0b-b4a1005f8295"            
+        },  
+        {
+            "testName": "Test_REST_GetEntitlement_ExpiredFalse_Method",
+            "userId": "AutoScriptGet",
+            "expectedJsonData": "{\"statusCode\":\"ENTSYS-1000\",\"statusMessage\":\"Completed successfully\",\"entitlements\":[{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"0484b211-a333-4a78-8fd3-3e24dd34d661\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"entitlementEndDate\":\"2020-04-16T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"FSN360\",\"featureName\":\"Fusion 360 Core Product\",\"featureType\":\"CP\",\"featureLicensingModel\":\"TRL#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true},{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"4fd6e4ea-757a-47d3-a6cd-173feb87cc87\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"ID3\",\"featureName\":\"HB\",\"featureType\":\"CP\",\"featureLicensingModel\":\"OPN#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true},{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"54e9a3c6-f4f6-43f2-96f3-071a439d0d49\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"entitlementEndDate\":\"2020-04-16T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"RenderingWS\",\"featureName\":\"Rendering\",\"featureType\":\"CS\",\"featureLicensingModel\":\"CMP#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true},{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"7c73d3f7-b357-4435-a164-af8e118ce465\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"ID1\",\"featureName\":\"Import\",\"featureType\":\"AO\",\"featureLicensingModel\":\"OPN#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true}]}"
+            
+        }, 
+        {
+            "testName": "Test_REST_GetEntitlement_ExpiredFalseandFeatureId_Method",
+            "userId": "AutoScriptGet",
+            "expectedJsonData": "{\"statusCode\":\"ENTSYS-1000\",\"statusMessage\":\"Completed successfully\",\"entitlements\":[{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"0484b211-a333-4a78-8fd3-3e24dd34d661\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"entitlementEndDate\":\"2020-04-16T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"FSN360\",\"featureName\":\"Fusion 360 Core Product\",\"featureType\":\"CP\",\"featureLicensingModel\":\"TRL#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true},{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"4fd6e4ea-757a-47d3-a6cd-173feb87cc87\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"ID3\",\"featureName\":\"HB\",\"featureType\":\"CP\",\"featureLicensingModel\":\"OPN#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true},{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"54e9a3c6-f4f6-43f2-96f3-071a439d0d49\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"entitlementEndDate\":\"2020-04-16T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"RenderingWS\",\"featureName\":\"Rendering\",\"featureType\":\"CS\",\"featureLicensingModel\":\"CMP#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true},{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"7c73d3f7-b357-4435-a164-af8e118ce465\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"ID1\",\"featureName\":\"Import\",\"featureType\":\"AO\",\"featureLicensingModel\":\"OPN#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true}]}"
+            
+            
+        }, 							
+        {
+            "testName": "Test_REST_GetEntitlement_ExpiredFalseandOfferingId_Method",
+            "userId": "AutoScriptGet",
+            "expectedJsonData":"{\"statusCode\":\"ENTSYS-1000\",\"statusMessage\":\"Completed successfully\",\"entitlements\":[{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"0484b211-a333-4a78-8fd3-3e24dd34d661\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"entitlementEndDate\":\"2020-04-16T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"FSN360\",\"featureName\":\"Fusion 360 Core Product\",\"featureType\":\"CP\",\"featureLicensingModel\":\"TRL#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true},{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"54e9a3c6-f4f6-43f2-96f3-071a439d0d49\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"entitlementEndDate\":\"2020-04-16T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"RenderingWS\",\"featureName\":\"Rendering\",\"featureType\":\"CS\",\"featureLicensingModel\":\"CMP#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true},{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"4fd6e4ea-757a-47d3-a6cd-173feb87cc87\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"ID3\",\"featureName\":\"HB\",\"featureType\":\"CP\",\"featureLicensingModel\":\"OPN#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true},{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"7c73d3f7-b357-4435-a164-af8e118ce465\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"ID1\",\"featureName\":\"Import\",\"featureType\":\"AO\",\"featureLicensingModel\":\"OPN#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true}]}"
+             
+            
+        }, 
+        {
+            "testName": "Test_REST_GetEntitlement_ExpiredFalseandOfferingIdandFeatureId_Method",
+            "userId": "AutoScriptGet",
+            "expectedJsonData": "{\"statusCode\":\"ENTSYS-1000\",\"statusMessage\":\"Completed successfully\",\"entitlements\":[{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"4fd6e4ea-757a-47d3-a6cd-173feb87cc87\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"ID3\",\"featureName\":\"HB\",\"featureType\":\"CP\",\"featureLicensingModel\":\"OPN#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true}]}"
+            
+            
+        }, 
+        {
+            "testName": "Test_REST_GetEntitlement_ExpiredTrue_Method",
+            "userId": "AutoScriptGet",
+            "expectedJsonData": "{\"statusCode\":\"ENTSYS-1000\",\"statusMessage\":\"Completed successfully\",\"entitlements\":[{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"0484b211-a333-4a78-8fd3-3e24dd34d661\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"entitlementEndDate\":\"2020-04-16T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"FSN360\",\"featureName\":\"Fusion 360 Core Product\",\"featureType\":\"CP\",\"featureLicensingModel\":\"TRL#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true},{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"4fd6e4ea-757a-47d3-a6cd-173feb87cc87\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"ID3\",\"featureName\":\"HB\",\"featureType\":\"CP\",\"featureLicensingModel\":\"OPN#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true},{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"54e9a3c6-f4f6-43f2-96f3-071a439d0d49\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"entitlementEndDate\":\"2020-04-16T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"RenderingWS\",\"featureName\":\"Rendering\",\"featureType\":\"CS\",\"featureLicensingModel\":\"CMP#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true},{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"744181f4-dcfe-43d4-915c-1bd869e14bc2\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"entitlementEndDate\":\"2014-03-16T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"ID2\",\"featureName\":\"Export\",\"featureType\":\"AO\",\"featureLicensingModel\":\"TRL#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":false},{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"7c73d3f7-b357-4435-a164-af8e118ce465\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"ID1\",\"featureName\":\"Import\",\"featureType\":\"AO\",\"featureLicensingModel\":\"OPN#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true}]}"
+            
+            
+        }, 
+        {
+            "testName": "Test_REST_GetEntitlement_ExpiredTrueandFeatureId_Method",
+            "userId": "AutoScriptGet",
+            "expectedJsonData": "{\"statusCode\":\"ENTSYS-1000\",\"statusMessage\":\"Completed successfully\",\"entitlements\":[{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"0484b211-a333-4a78-8fd3-3e24dd34d661\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"entitlementEndDate\":\"2020-04-16T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"FSN360\",\"featureName\":\"Fusion 360 Core Product\",\"featureType\":\"CP\",\"featureLicensingModel\":\"TRL#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true},{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"4fd6e4ea-757a-47d3-a6cd-173feb87cc87\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"ID3\",\"featureName\":\"HB\",\"featureType\":\"CP\",\"featureLicensingModel\":\"OPN#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true},{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"54e9a3c6-f4f6-43f2-96f3-071a439d0d49\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"entitlementEndDate\":\"2020-04-16T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"RenderingWS\",\"featureName\":\"Rendering\",\"featureType\":\"CS\",\"featureLicensingModel\":\"CMP#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true},{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"744181f4-dcfe-43d4-915c-1bd869e14bc2\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"entitlementEndDate\":\"2014-03-16T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"ID2\",\"featureName\":\"Export\",\"featureType\":\"AO\",\"featureLicensingModel\":\"TRL#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":false},{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"7c73d3f7-b357-4435-a164-af8e118ce465\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"ID1\",\"featureName\":\"Import\",\"featureType\":\"AO\",\"featureLicensingModel\":\"OPN#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true}]}"
+            
+            
+        }, 
+        {
+            "testName": "Test_REST_GetEntitlement_ExpiredTrueandOfferingId_Method",
+            "userId": "AutoScriptGet",
+            "expectedJsonData": "{\"statusCode\":\"ENTSYS-1000\",\"statusMessage\":\"Completed successfully\",\"entitlements\":[{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"0484b211-a333-4a78-8fd3-3e24dd34d661\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"entitlementEndDate\":\"2020-04-16T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"FSN360\",\"featureName\":\"Fusion 360 Core Product\",\"featureType\":\"CP\",\"featureLicensingModel\":\"TRL#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true},{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"54e9a3c6-f4f6-43f2-96f3-071a439d0d49\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"entitlementEndDate\":\"2020-04-16T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"RenderingWS\",\"featureName\":\"Rendering\",\"featureType\":\"CS\",\"featureLicensingModel\":\"CMP#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true},{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"744181f4-dcfe-43d4-915c-1bd869e14bc2\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"entitlementEndDate\":\"2014-03-16T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"ID2\",\"featureName\":\"Export\",\"featureType\":\"AO\",\"featureLicensingModel\":\"TRL#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":false},{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"4fd6e4ea-757a-47d3-a6cd-173feb87cc87\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"ID3\",\"featureName\":\"HB\",\"featureType\":\"CP\",\"featureLicensingModel\":\"OPN#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true},{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"7c73d3f7-b357-4435-a164-af8e118ce465\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"ID1\",\"featureName\":\"Import\",\"featureType\":\"AO\",\"featureLicensingModel\":\"OPN#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true}]}"
+            
+            
+        }, 
+        {
+            "testName": "Test_REST_GetEntitlement_ExpiredTrueandOfferingIdandFeatureId_Method",
+            "userId": "AutoScriptGet",
+            "expectedJsonData": "{\"statusCode\":\"ENTSYS-1000\",\"statusMessage\":\"Completed successfully\",\"entitlements\":[{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"4fd6e4ea-757a-47d3-a6cd-173feb87cc87\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"ID3\",\"featureName\":\"HB\",\"featureType\":\"CP\",\"featureLicensingModel\":\"OPN#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true}]}"
+            
+            
+        },  
+        {
+            "testName": "Test_REST_GetEntitlement_FeatureId_Method",
+            "userId": "AutoScriptGet",
+            "expectedJsonData": "{\"statusCode\":\"ENTSYS-1000\",\"statusMessage\":\"Completed successfully\",\"entitlements\":[{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"0484b211-a333-4a78-8fd3-3e24dd34d661\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"entitlementEndDate\":\"2020-04-16T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"FSN360\",\"featureName\":\"Fusion 360 Core Product\",\"featureType\":\"CP\",\"featureLicensingModel\":\"TRL#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true},{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"4fd6e4ea-757a-47d3-a6cd-173feb87cc87\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"ID3\",\"featureName\":\"HB\",\"featureType\":\"CP\",\"featureLicensingModel\":\"OPN#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true},{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"54e9a3c6-f4f6-43f2-96f3-071a439d0d49\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"entitlementEndDate\":\"2020-04-16T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"RenderingWS\",\"featureName\":\"Rendering\",\"featureType\":\"CS\",\"featureLicensingModel\":\"CMP#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true},{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"7c73d3f7-b357-4435-a164-af8e118ce465\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"ID1\",\"featureName\":\"Import\",\"featureType\":\"AO\",\"featureLicensingModel\":\"OPN#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true}]}"
+            
+            
+        },
+        {
+            "testName": "Test_REST_GetEntitlement_OfferingId_Method",
+            "userId": "AutoScriptGet",
+            "expectedJsonData": "{\"statusCode\":\"ENTSYS-1000\",\"statusMessage\":\"Completed successfully\",\"entitlements\":[{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"0484b211-a333-4a78-8fd3-3e24dd34d661\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"entitlementEndDate\":\"2020-04-16T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"FSN360\",\"featureName\":\"Fusion 360 Core Product\",\"featureType\":\"CP\",\"featureLicensingModel\":\"TRL#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true},{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"54e9a3c6-f4f6-43f2-96f3-071a439d0d49\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"entitlementEndDate\":\"2020-04-16T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"RenderingWS\",\"featureName\":\"Rendering\",\"featureType\":\"CS\",\"featureLicensingModel\":\"CMP#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true},{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"4fd6e4ea-757a-47d3-a6cd-173feb87cc87\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"ID3\",\"featureName\":\"HB\",\"featureType\":\"CP\",\"featureLicensingModel\":\"OPN#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true},{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"7c73d3f7-b357-4435-a164-af8e118ce465\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"ID1\",\"featureName\":\"Import\",\"featureType\":\"AO\",\"featureLicensingModel\":\"OPN#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true}]}"
+            
+            
+        },
+        {
+            "testName": "Test_REST_GetEntitlement_OfferingIdandFeatureId_Method",
+            "userId": "AutoScriptGet",
+            "expectedJsonData": "{\"statusCode\":\"ENTSYS-1000\",\"statusMessage\":\"Completed successfully\",\"entitlements\":[{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"0484b211-a333-4a78-8fd3-3e24dd34d661\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"entitlementEndDate\":\"2020-04-16T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"FSN360\",\"featureName\":\"Fusion 360 Core Product\",\"featureType\":\"CP\",\"featureLicensingModel\":\"TRL#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true},{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"54e9a3c6-f4f6-43f2-96f3-071a439d0d49\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"entitlementEndDate\":\"2020-04-16T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"RenderingWS\",\"featureName\":\"Rendering\",\"featureType\":\"CS\",\"featureLicensingModel\":\"CMP#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true},{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"4fd6e4ea-757a-47d3-a6cd-173feb87cc87\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"ID3\",\"featureName\":\"HB\",\"featureType\":\"CP\",\"featureLicensingModel\":\"OPN#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true},{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"7c73d3f7-b357-4435-a164-af8e118ce465\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"ID1\",\"featureName\":\"Import\",\"featureType\":\"AO\",\"featureLicensingModel\":\"OPN#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true}]}"
+            
+            
+        },
+        {
+            "testName": "Test_REST_GetEntitlement_UserId_Method",
+            "userId": "AutoScriptGet",
+            "expectedJsonData": "{\"statusCode\":\"ENTSYS-1000\",\"statusMessage\":\"Completed successfully\",\"entitlements\":[{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"0484b211-a333-4a78-8fd3-3e24dd34d661\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"entitlementEndDate\":\"2020-04-16T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"FSN360\",\"featureName\":\"Fusion 360 Core Product\",\"featureType\":\"CP\",\"featureLicensingModel\":\"TRL#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true},{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"4fd6e4ea-757a-47d3-a6cd-173feb87cc87\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"ID3\",\"featureName\":\"HB\",\"featureType\":\"CP\",\"featureLicensingModel\":\"OPN#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true},{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"54e9a3c6-f4f6-43f2-96f3-071a439d0d49\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"entitlementEndDate\":\"2020-04-16T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"RenderingWS\",\"featureName\":\"Rendering\",\"featureType\":\"CS\",\"featureLicensingModel\":\"CMP#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true},{\"userId\":\"AutoScriptGet\",\"entitlementId\":\"7c73d3f7-b357-4435-a164-af8e118ce465\",\"contextId\":\"27d99232-3535-44e0-bf0b-b4a1005f8295\",\"entitlementStartDate\":\"2014-03-17T20:50:03Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"ID1\",\"featureName\":\"Import\",\"featureType\":\"AO\",\"featureLicensingModel\":\"OPN#1\",\"dateLastModified\":\"2014-03-17T20:50:03Z\",\"active\":true}]}"
+            
+            
+        },
+        {
+            "testName": "Test_REST_GetEntitlement_Negative_BreakJsonFormat_Method",
+            "userId": "AutoScriptGetNegative",
+            "expectedJsonData": "{\"statusCode\":\"ENTSYS-1000\",\"statusMessage\":\"Completed successfully\",\"entitlements\":[{\"userId\":\"AutoScriptGetNegative\",\"entitlementId\":\"1f834578-2948-4ea2-9eef-7871fa914680\",\"contextId\":\"48b66ac0-83ed-456e-bfd5-ae928aae4808\",\"entitlementStartDate\":\"2014-05-02T22:52:43Z\",\"entitlementEndDate\":\"2020-06-01T22:52:43Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"featureId\":\"SVC0000001\",\"featureName\":\"Fusion 360 Core Product\",\"featureType\":\"CLP\",\"featureLicensingModel\":\"TRL#1\",\"dateLastModified\":\"2014-05-02T22:52:43Z\",\"active\":true},{\"userId\":\"AutoScriptGetNegative\",\"entitlementId\":\"52446b28-e86b-4fde-ac4a-0e804c3c1acf\",\"contextId\":\"48b66ac0-83ed-456e-bfd5-ae928aae4808\",\"entitlementStartDate\":\"2014-05-02T22:52:43Z\",\"entitlementEndDate\":\"2020-06-01T22:52:43Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"SVC0000001\",\"featureId\":\"A1002983\",\"featureName\":\"Export\",\"featureType\":\"ADD\",\"featureLicensingModel\":\"TRL#1\",\"dateLastModified\":\"2014-05-02T22:52:43Z\",\"active\":true},{\"userId\":\"AutoScriptGetNegative\",\"entitlementId\":\"775446b4-5396-4ffd-9673-5fd8d501cabe\",\"contextId\":\"48b66ac0-83ed-456e-bfd5-ae928aae4808\",\"entitlementStartDate\":\"2014-05-02T22:52:43Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"SVC0000001\",\"featureId\":\"A1002982\",\"featureName\":\"Import\",\"featureType\":\"ADD\",\"featureLicensingModel\":\"OPN#1\",\"dateLastModified\":\"2014-05-02T22:52:43Z\",\"active\":true},{\"userId\":\"AutoScriptGetNegative\",\"entitlementId\":\"90f3833a-3879-4919-b957-cc4c17a928fd\",\"contextId\":\"48b66ac0-83ed-456e-bfd5-ae928aae4808\",\"entitlementStartDate\":\"2014-05-02T22:52:43Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"featureId\":\"A1009382\",\"featureName\":\"Hub\",\"featureType\":\"CLP\",\"featureLicensingModel\":\"OPN#1\",\"dateLastModified\":\"2014-05-02T22:52:43Z\",\"active\":true},{\"userId\":\"AutoScriptGetNegative\",\"entitlementId\":\"f1c44681-8d07-4d71-8959-8a9ec7c2c63a\",\"contextId\":\"48b66ac0-83ed-456e-bfd5-ae928aae4808\",\"entitlementStartDate\":\"2014-05-02T22:52:43Z\",\"entitlementEndDate\":\"2020-06-01T22:52:43Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"featureId\":\"RenderingWS{\\\\][}\",\"featureName\":\"Rendering\",\"featureType\":\"CLS\",\"featureLicensingModel\":\"CMP#1\",\"dateLastModified\":\"2014-05-02T22:52:43Z\",\"active\":true}]}"
+            
+                        
+        },
+        {
+            "testName": "Test_REST_GetEntitlement_Negative_ExistingUserNonExistingFeature_Method",
+            "userId": "AutoScriptGet",
+            "expectedJsonData": "{\"statusCode\":\"ENTSYS-1102\",\"statusMessage\":\"No Entitlements found\"}"                     
+        },
+        {
+            "testName": "Test_REST_GetEntitlement_Negative_ExistingUserNonExistingOffering_Method",
+            "userId": "AutoScriptGet",            
+            "expectedJsonData": "{\"statusCode\":\"ENTSYS-1102\",\"statusMessage\":\"No Entitlements found\"}"                      
+        },
+        {
+            "testName": "Test_REST_GetEntitlement_Negative_HttpRequest_Method",
+            "userId": "AutoScriptGet",
+            "httpUrl": "http://ent-dev.autodesk.com/service/entitlements/v1/user/",
+            "expectedJsonData": "{\"statusCode\":\"ENTSYS-1000\",\"statusMessage\":\"Completed successfully\",\"entitlements\":[{\"userId\":\"AutoScriptGetNegative\",\"entitlementId\":\"9932503b-4880-4b51-9760-cc4aa0b87055\",\"contextId\":\"b34d2a48-bca2-4288-bcdd-ed6fd9bbebc7\",\"entitlementStartDate\":\"2014-03-19T22:06:01Z\",\"entitlementEndDate\":\"2014-04-18T22:06:01Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"RenderingWS{''\\\\\\\"/\\\"\\\"}\",\"featureName\":\"Rendering\",\"featureType\":\"CS\",\"featureLicensingModel\":\"CMP#1\",\"active\":false},{\"userId\":\"AutoScriptGetNegative\",\"entitlementId\":\"ad821f16-5102-40b4-94c5-7ed6155f1ef1\",\"contextId\":\"b34d2a48-bca2-4288-bcdd-ed6fd9bbebc7\",\"entitlementStartDate\":\"2014-03-19T22:06:01Z\",\"entitlementEndDate\":\"2014-04-18T22:06:01Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"FSN360\",\"featureName\":\"Fusion 360 Core Product\",\"featureType\":\"CP\",\"featureLicensingModel\":\"TRL#1\",\"active\":false},{\"userId\":\"AutoScriptGetNegative\",\"entitlementId\":\"b4988132-a8aa-4d77-bc5d-9ee15216734a\",\"contextId\":\"b34d2a48-bca2-4288-bcdd-ed6fd9bbebc7\",\"entitlementStartDate\":\"2014-03-19T22:06:01Z\",\"entitlementEndDate\":\"2014-04-18T22:06:01Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"ID2\",\"featureName\":\"Export\",\"featureType\":\"AO\",\"featureLicensingModel\":\"TRL#1\",\"active\":false},{\"userId\":\"AutoScriptGetNegative\",\"entitlementId\":\"b82d8322-a57a-4bbc-84cb-571f07324b95\",\"contextId\":\"b34d2a48-bca2-4288-bcdd-ed6fd9bbebc7\",\"entitlementStartDate\":\"2014-03-19T22:06:01Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"ID3\",\"featureName\":\"HB\",\"featureType\":\"CP\",\"featureLicensingModel\":\"OPN#1\",\"active\":true},{\"userId\":\"AutoScriptGetNegative\",\"entitlementId\":\"d32c3f6a-6908-410f-a5e8-e210e93317bd\",\"contextId\":\"b34d2a48-bca2-4288-bcdd-ed6fd9bbebc7\",\"entitlementStartDate\":\"2014-03-19T22:06:01Z\",\"offeringId\":\"FSN360-TRIAL\",\"offeringLegalName\":\"Fusion 360 Trial\",\"offeringTemplateId\":\"FSN-360-TEMPLATE\",\"parentFeatureId\":\"FSN360\",\"featureId\":\"ID1\",\"featureName\":\"Import\",\"featureType\":\"AO\",\"featureLicensingModel\":\"OPN#1\",\"active\":true}]}"                       
+        },
+        {
+            "testName": "Test_REST_GetEntitlement_Negative_NonExistingUser_Method",
+            "userId": "djsjadjsa",
+            "expectedJsonData": "{\"statusCode\":\"ENTSYS-1102\",\"statusMessage\":\"No Entitlements found\"}"                       
+        },
+        {
+            "testName": "Test_REST_CreateEntitlement_EnthusiastOffering_Method",
+            "userId": "AutoScriptEnthusiast",
+            "content": "{\"offeringIds\":[\"FSN360-ETH1\"]}",
+            "offTable1":"Enthusiast_STG.json"                       
+        },
+        {
+            "testName": "Test_REST_CreateEntitlement_RentalOffering_Method",
+            "userId": "AutoScriptRental",
+            "content": "{\"offeringIds\":[\"FSN360-BASE-M\"]}",
+            "offTable1":"Rental1_STG.json"                     
+        },
+        {
+            "testName": "Test_REST_CreateEntitlement_StudentOffering_Method",
+            "userId": "AutoScriptStudent",
+            "content": "{\"offeringIds\":[\"FSN360-STD1\"]}",
+            "offTable1":"Student_STG.json"                     
+        },
+        {
+            "testName": "Test_REST_CreateEntitlement_TrialOffering_Method",
+            "userId": "AutoScriptTrial",
+            "content": "{\"offeringIds\":[\"FSN360-TRIAL\"]}",
+            "offTable1":"Trial_STG.json"                    
+        },
+        {
+            "testName": "Test_REST_CreateEntitlement_TrialStudentOffering_Method",
+            "userId": "AutoScriptTrialStudent",
+            "content": "{\"offeringIds\":[\"FSN360-TRIAL\",\"FSN360-STD1\"]}",
+            "offTable1":"Trial_STG.json",
+            "offTable2":"Student_STG.json"                    
+        },
+        {
+            "testName": "Test_REST_CreateEntitlement_Negative_NonExistingOfferingId_Method",
+            "userId": "AutoScriptNonExisting",
+            "expectedJsonData": "{\"statusCode\":\"ENTSYS-1202\",\"statusMessage\":\"Offering not found\"}",
+            "content":"{\"offeringIds\":[\"FSN360-TRIAL\",\"FSN360-NON-EXISTING\"]}"                                
+        },
+        {
+            "testName": "Test_DEV_REST_CreateEntitlement_Negative_NonActiveOfferingId_Method",
+            "userId": "AutoScriptNonActive",
+            "content": "{\"offeringIds\":[\"FSN360-NOT-ACTIVE\"]}",
+            "expectedJsonData": "{\"statusCode\":\"ENTSYS-1204\",\"statusMessage\":\"Offering not active\"}"                              
+        },
+        {
+            "testName": "Test_DEV_REST_CreateEntitlement_Negative_ExpiredOfferingId_Method",
+            "userId": "AutoScriptExpired",
+            "content": "{\"offeringIds\":[\"FSN360-EXPIRED\"]}",
+            "expectedJsonData": "{\"statusCode\":\"ENTSYS-1203\",\"statusMessage\":\"Offering expired\"}"                              
+        },    
+        {
+            "testName": "Test_REST_UpdateEntitlement_RentalCancelActivate_Method",
+            "userId": "AutoScriptCancelReactivate",
+            "content": "{\"offeringIds\":[\"FSN360-TRIAL\"]}",
+            "offTable1": "Trial_STG.json",
+            "offTable2": "Rental1_STG.json"
+        },
+        {
+            "testName": "Test_REST_UpdateEntitlement_RentalRevoke_Method",
+            "userId": "AutoScriptCancelReactivate",
+            "content": "{\"offeringIds\":[\"FSN360-TRIAL\"]}", 
+            "offTable1": "Trial_STG.json",
+            "offTable2": "Rental1_STG.json"
+        },
+        {
+            "testName": "Test_IPP_Redirect_Commercial_PCN_Method",
+            "userId": "9X4FJJJ5XVQT",  
+            "country": "US",
+            "lang" : "en",
+            "content": "{\"offeringIds\":[\"FSN360-TRIAL\"]}",
+            "offTable1": "Trial_STG.json",
+            "offTable2": "Rental2_STG.json",
+            "ippURL": "https://depot-stg.autodesk.com/service/ipp/v1/ippredirect?",
+            "emailAddress": "johns@ssttest.com"
+        },
+        {
+            "testName": "Test_IPP_Redirect_NonCommercial_PCN_Method",
+            "userId": "8EKVL3MJCAQN",
+            "country": "US",
+            "lang" : "en",
+            "content": "{\"offeringIds\":[\"FSN360-TRIAL\"]}",
+            "offTable1": "Trial_STG.json",
+            "offTable2": "Student_STG.json",
+            "ippURL": "https://depot-stg.autodesk.com/service/ipp/v1/ippredirect?",
+            "emailAddress": "newuserstg@ssttest.net"
+        },
+        {
+            "testName": "Test_Verify_CP_For_StudentID_Method",
+            "content": "{\"offeringIds\":[\"FSN360-STD1\"]}",
+            "offTable1": "Student_STG.json"
+        },
+        {
+            "testName": "Test_Verify_CP_For_User_With_Rental_Product_Method",
+           	"content": "{\"offeringIds\":[\"FSN360-BASE-M\"]}",
+            "offTable1": "Rental1_STG.json"
+        },
+        {
+            "testName": "Test_Verify_CP_For_Enthusiast_User_Method",
+            "content": "{\"offeringIds\":[\"FSN360-ETH1\"]}",
+            "offTable1": "Enthusiast_STG.json"
+        },
+        {
+            "testName": "Test_REST_Offering_For_OfferingID",
+            "offeringId": "FSN360-TRIAL",
+            "offTable1": "Offering_Trial.json"
+        },
+        {
+            "testName": "Test_REST_Offering_For_Both_Existing_And_Invalid_OfferingId",
+            "offeringId": "FSN360-TRIAL,FSN360-NOT-ACTIVE-1",
+            "offTable1": "Offering_Trial_Both_For_ValidAndInvalid.json"
+        },
+        {
+            "testName": "Test_REST_Offering_For_InvalidOfferingId",
+            "offeringId": "FSN360",
+            "expectedJsonData": "{\"statusCode\": \"OFFSYS-1102\",\"statusMessage\": \"No Offerings found\"}"
+        },
+        {
+            "testName": "Test_REST_Offering_For_InActiveOfferingId",
+            "offeringId": "FSN360-NOT-ACTIVE",
+            "expectedJsonData": "{\"statusCode\": \"OFFSYS-1102\",\"statusMessage\": \"Offering not active\"}"
+        },
+        {
+            "testName": "Test_BUUC_REST_ConvergentCharging_Method",
+            "contract":"Automation06",
+            "content":"{\"userId\": \"94FFL485J\",\"eidmGuid\": \"200703030039525\",\"contractNumber\": \"110000021199\",\"productCode\": \"ACD\",\"startTime\": \"2014-06-16 00:00:00\",\"stopTime\": \"2014-06-16 02:00:00\"}",
+            "expectedJsonData": "{\"statusCode\":\"BUUCSYS-1000\",\"statusMessage\":\"Updated Usage successfully after Quattro ChargeEvent\"}"
+        },
+        {
+            "testName": "Test_BUUC_REST_CC_duplicateTransactionId_Method",
+            "contract":"Automation01",
+            "transactionId":"Testburnrate01100112345680",
+            "content":"{\"userId\": \"94FFL485J\",\"eidmGuid\": \"200703030039525\",\"contractNumber\": \"Automation01\",\"productCode\": \"ACD\",\"startTime\": \"2014-06-16 00:00:00\",\"stopTime\": \"2014-06-16 02:00:00\"}",
+            "expectedJsonData": "{\"statusCode\":\"BUUCSYS-502\",\"statusMessage\":\"Duplicate+Transaction+Id\"}"
+        },
+        {
+            "testName": "Test_BUUC_REST_ConvergentCharging_Casual_Method",
+            "contract":"Automation06",
+            "content":"{\"userId\": \"94FFL485J\",\"eidmGuid\": \"200703030039525\",\"contractNumber\": \"110000021199\",\"productCode\": \"ACD\",\"startTime\": \"2014-06-16 00:00:00\",\"stopTime\": \"2014-06-16 01:00:00\"}",
+            "expectedJsonData": "{\"statusCode\":\"BUUCSYS-1000\",\"statusMessage\":\"Updated Usage successfully after Quattro ChargeEvent\"}"
+        },
+               
+        {
+            "testName": "Test_BUUC_REST_ConvergentCharging_Product_Mapping_Method",
+            "contract":"Automation06",
+            "content":"{\"userId\": \"94FFL485J\",\"eidmGuid\": \"xxxxxxxxxxxxxx\",\"contractNumber\": \"AutomationTFlex01\",\"productCode\": \"INVPRO\",\"startTime\": \"2014-06-16 00:00:00\",\"stopTime\": \"2014-06-16 01:00:00\"}",
+            "expectedJsonData": "{\"statusCode\":\"BUUCSYS-1000\",\"statusMessage\":\"Updated Usage successfully after Quattro ChargeEvent\"}"
+        },
+        
+        {
+         	"testName": "Test_BUUC_REST_ConvergentCharging_MultiYearCounter_Method",
+            "contract":"Automation04",
+            "content":"{\"userId\": \"94FFL485J\",\"eidmGuid\": \"xxxxxxxxxxxxxx\",\"contractNumber\": \"AutomationTFlex01\",\"productCode\": \"ACD\",\"startTime\": \"2014-06-16 00:00:00\",\"stopTime\": \"2014-06-16 01:00:00\"}",
+            "expectedJsonData": "{\"statusCode\":\"BUUCSYS-1000\",\"statusMessage\":\"Updated Usage successfully after Quattro ChargeEvent\"}"
+                  
+        },
+        {
+            "testName": "Test_BUUC_REST_ConvergentCharging_CurrentYearConsumption_Method",
+            "contract":"Automation_Stg_07",
+            "content":"{\"userId\": \"94FFL485J\",\"eidmGuid\": \"xxxxxxxxxxxxxx\",\"contractNumber\": \"Automation04\",\"productCode\": \"ACD\",\"startTime\": \"2014-06-16 00:00:00\",\"stopTime\": \"2014-06-16 01:00:00\"}",
+            "expectedJsonData": "{\"statusCode\":\"BUUCSYS-1000\",\"statusMessage\":\"Updated Usage successfully after Quattro ChargeEvent\"}"
+        },
+        
+        {
+            "testName": "Test_BUUC_REST_ConvergentCharging_ErrMsgs_Method",
+            "contract":"Automation06",
+            "content":"{\"userId\": \"94FFL485J\",\"eidmGuid\": \"xxxxxxxxxxxxxx\",\"contractNumber\": \"Automation04\",\"productCode\": \"ACDK\",\"startTime\": \"2014-06-16 00:00:00\",\"stopTime\": \"2014-06-16 01:00:00\"}",
+            "expectedJsonData": "{\"statusCode\":\"BUUCSYS-504\",\"statusMessage\":\"Quattro SOAP Exception : ErrorCode%3A80%2C+ErrorMsg%3AForbiddenChargeException+-+Not+authorized+-+Message+for+NoAccess+is+%3A+No+Product+Line+Code+found+for+the+following+values%3A%0Aitem.SERVICE-CATEGORY+%3D+NULL%0Aitem.SERVICE-CODE+%3D+ACDK%0Aparameter.Rate_Plan+%3D+FY15Q1\"}"
+        },
+        {
+         	"testName": "Test_BUUC_REST_ConvergentCharging_Complex_Product_Mapping_Method",
+            "contract":"Automation_Stg_08",
+            "content":"{\"userId\": \"94FFL485J\",\"eidmGuid\": \"xxxxxxxxxxxxxx\",\"contractNumber\": \"AutomationTFlex01\",\"productCode\": \"ACD\",\"startTime\": \"2014-06-16 00:00:00\",\"stopTime\": \"2014-06-16 01:00:00\"}",
+            "expectedJsonData": "{\"statusCode\":\"BUUCSYS-1000\",\"statusMessage\":\"Updated Usage successfully after Quattro ChargeEvent\"}"
+                  
+        },
+        {
+            "testName": "Test_BUUC_REST_ConvergentCharging_PreviousYearConsumption_Method",
+            "contract":"Automation_Stg_07",
+            "content":"{\"userId\": \"94FFL485J\",\"eidmGuid\": \"xxxxxxxxxxxxxx\",\"contractNumber\": \"Automation04\",\"productCode\": \"ACD\",\"startTime\": \"2014-06-16 00:00:00\",\"stopTime\": \"2014-06-16 01:00:00\"}",
+            "expectedJsonData": "{\"statusCode\":\"BUUCSYS-1000\",\"statusMessage\":\"Updated Usage successfully after Quattro ChargeEvent\"}"
+        },
+        {
+            "testName": "Test_BUUC_REST_ConvergentCharging_PrevYr_Olderthan1Yr_Method",
+            "contract":"Automation01",
+            "content":"{\"userId\": \"94FFL485J\",\"eidmGuid\": \"xxxxxxxxxxxxxx\",\"contractNumber\": \"Automation04\",\"productCode\": \"ACD\",\"startTime\": \"2014-06-16 00:00:00\",\"stopTime\": \"2014-06-16 01:00:00\"}",
+            "expectedJsonData": "{\"statusCode\":\"BUUCSYS-504\",\"statusMessage\":\"Quattro SOAP Exception : ErrorCode%3A80%2C+ErrorMsg%3AForbiddenChargeException+-+Not+authorized+-+Message+for+NoAccess+is+%3A+Cannot+re-run+transactions+earlier+than+the+previous+year+start+date%0Aparameter.consumption+date+%3D+2014-06-16T00%3A00%3A00%0Acomputed.start_date_prev_year+%3D+2016-01-01T00%3A00%3A00%0Acomputed.current_date+%3D+2017-01-12T00%3A00%3A00\"}"
+        },
+        {
+            "testName": "Test_IPP_REST_Get_IPP_Initializer_Method",
+            "grantToken": "abcd",
+            "userId": "9X4FJJJ5XVQT",
+            "country": "US",
+            "offeringId": "FSN360-TRIAL",
+            "subId": "1009",           
+            "expectedJsonData": "[{\"user\":{\"email\":\"johns@ssttest.com\",\"guid\":\"201405280015646\",\"country\":\"US\",\"paymentProfiles\":[],\"product\":{},\"editions\":[],\"noncommercial\":[{\"productImageSmall\":\"http://static-dc.autodesk.net/content/dam/autodesk/www/products/fusion-360/images/badges/fusion-360-2014-badge-75x75.png/_jcr_content/renditions/fusion-360-2014-badge-60x60.png\",\"usageType\":\"NCM\",\"plans\":[{\"productId\":\"FSN360-SUP\",\"price\":[],\"title\":\"Fusion 360 Startup\"}]},{\"productImageSmall\":\"http://static-dc.autodesk.net/content/dam/autodesk/www/products/fusion-360/images/badges/fusion-360-2014-badge-75x75.png/_jcr_content/renditions/fusion-360-2014-badge-60x60.png\",\"usageType\":\"EDU\",\"plans\":[{\"productId\":\"FSN360-STD\",\"price\":[],\"title\":\"Fusion 360 Student\"}]}],\"addons\":[],\"creditpackages\":[]}}]"
+        },
+        {
+            "testName": "Test_IPP_REST_Create_Shopper_Method",
+            "userId": "SV7MPKPQRKCS",  
+            "content": "{\"user\":{\"email\":\"shopper@BlueSnap.com\",\"phone\":\"15303218264\",\"ip\":\"132.188.64.219\",\"paymentProfile\":{\"creditCardInfo\":{\"cardType\":\"VISA\",\"encryptedCardNumber\":\"$bsjs_0_0_1$pvHZmBkcn+u9GZxGvts6XlVh6TUWWQQx/l9nCajgaWuHCGDk7ncpM5PiyXb/oOzJz7UgrSYuU/5QJjDACC0ig7HMi/s9yvhe8mJxntGhYA6PvssApPD+cKtNpuTZhDRQmF4gsphrKdIrwR3B0670MQYr7V0g2SvkA+6bgmulMkS6xj+X9B5K6glUOHq/FxcOHXlBr2uZDk0okUOpXehjtj+ijus4SWvq+lnXm0p3/M8oolVhUiQMkc+51YY5OkWb+7A2FHC+QA0K5VOSVX5AHHUWNgR0WyQZDcXCLgfOxb9ewbGZmHuecU/o2vgSyp/Td/dIuYLysiHgIoGj2SlmzQ==$KQyuNuawmgZZBlKcyOvz/6oyY2CjrTg/yDmVGC8q8VlRk6ZKqeFDz1ufdpAPclCJ$BHyMZ2Y9antj+vcq1xviMrsSNGoR8h5/ZhG8+hSCfIQ=\",\"encryptedCVV\":\"$bsjs_0_0_1$DYgUdmIObUGlf4ZUbaKBtuAFTalIu0nq3wtkAhTC3Id/0oRyVJ1GDmzBhW1TRBdONfDCaBEx1ATvn/BpDbtsL80Uu8XWQaZwVTEeQSJ4GcoSDosXSTnkCRPEWxAF5VcAsviYmZ8JajS9aoEsgEEkH/klW/pYcAj0gBnJM9haz8rC94iW8sarwW34z6rDcbkfq3fSx1I9/2YGim4B/bUhibGekGF8xYL1nqu2l0VjF/PHduhr+xqgJB9SMRs7C8jzIEUaN/Vm5GutNXsUmCgwG/si2UcjCPaEoKGMONKbS1pMRQsz1z4xia5wqHEQYBpzaGGdVFTQHxN4cyPCp1uWmA==$Fz3oTXTQl3Ekdf1S5BO6n3yAal0FEnWoE3zmX3H+LfQ=$FVblfVSczbNDI7ymXswMnk+aNxAld8MkV3pHtis15j0=\",\"expMonth\":\"11\",\"expYear\":\"2019\"},\"billingInfo\":{\"firstName\":\"USER_FIRSTNAME\",\"lastName\":\"USER_LASTNAME\",\"streetAddress\":\"USER_ADDRESS\",\"city\":\"USER_CITY\",\"stateProvince\":\"USER_STATE\",\"country\":\"USER_COUNTRY\",\"postalCode\":\"USER_POSTAL\"}}}}",  
+            "expectedJsonData": "{\"SHOPPER\":{\"FIRSTNAME\":\"USER_FIRSTNAME\",\"LASTNAME\":\"USER_LASTNAME\",\"EMAIL\":\"SHOPPER@BLUESNAP.COM\",\"BILLINGINFO\":{\"FIRSTNAME\":\"USER_FIRSTNAME\",\"LASTNAME\":\"USER_LASTNAME\",\"STREETADDRESS\":\"USER_ADDRESS\",\"CITY\":\"USER_CITY\",\"STATEPROVINCE\":\"USER_STATE\",\"COUNTRY\":\"USER_COUNTRY\",\"POSTALCODE\":\"USER_POSTAL\"},\"PAYMENTPROFILES\":[{\"CREDITCARDINFO\":{\"LAST4DIGITS\":\"1111\",\"CARDTYPE\":\"VISA\"},\"BILLINGINFO\":{\"FIRSTNAME\":\"USER_FIRSTNAME\",\"LASTNAME\":\"USER_LASTNAME\",\"STREETADDRESS\":\"USER_ADDRESS\",\"CITY\":\"USER_CITY\",\"STATEPROVINCE\":\"USER_STATE\",\"COUNTRY\":\"USER_COUNTRY\",\"POSTALCODE\":\"USER_POSTAL\"}}]}}"
+        },
+        {
+            "testName": "Test_IPP_REST_Get_Shopper_Method",
+            "userId": "L7H7RVFJSRVK",
+            "expectedJsonData": "{\"user\":{\"id\":\"9290\",\"externalKey\":\"L7H7RVFJSRVK\"}}"
+        },
+        {
+            "testName": "Test_IPP_REST_Get_Shopper_Bluesnap_Method",
+            "userId": "L7H7RVFJSRVK/bluesnap",
+            "expectedJsonData": "{\"shopper\":{\"firstName\":\"TestUserFirstsdsd\",\"lastName\":\"dsdsdsdrer\",\"email\":\"shopper@BlueSnap.com\",\"billingInfo\":{\"firstName\":\"TestUserFirstsdsd\",\"lastName\":\"dsdsdsdrer\",\"streetAddress\":\"109SaltLake\",\"city\":\"Oakley\",\"stateProvince\":\"CA\",\"country\":\"us\",\"postalCode\":\"94561\"},\"paymentProfiles\":[{\"creditCardInfo\":{\"last4Digits\":\"5100\",\"cardType\":\"MASTERCARD\"},\"billingInfo\":{\"firstName\":\"TestUserFirstsdsd\",\"lastName\":\"dsdsdsdrer\",\"streetAddress\":\"109SaltLake\",\"city\":\"Oakley\",\"stateProvince\":\"CA\",\"country\":\"us\",\"postalCode\":\"94561\"}}],\"lastModifiedPaymentProfile\":{\"creditCardInfo\":{\"last4Digits\":\"5100\",\"cardType\":\"MASTERCARD\"},\"billingInfo\":{\"firstName\":\"TestUserFirstsdsd\",\"lastName\":\"dsdsdsdrer\",\"streetAddress\":\"109SaltLake\",\"city\":\"Oakley\",\"stateProvince\":\"CA\",\"country\":\"us\",\"postalCode\":\"94561\"}}}}"
+        },
+        {
+            "testName": "Test_IPP_REST_Update_Shopper_City_Method",
+            "userId": "BLUFPHVTQF3X",  
+            "content": "{\"user\":{\"paymentProfile\":{\"creditCardInfo\":{\"encryptedCardNumber\":\"$bsjs_0_0_1$DJVP/owskkrNfOtrdZhf1/9Tr3SKrvr02/5FN/0J9//0cR1TsqeXtOi1gASPGLF3VWe8ye36zOObTA2ac3Z5vYjYcYIfg93wzXIJWiAbagrg6MJ7W9SluTQp3oaMHleoUN05db7y/HIItGm8U4vRJYMh6TC2rT8aRTJtYay/5evTxj9JJUXDSH4KuQXIw+/MBhZih4A1sgTa5JPO/0B497H+povOW+xsfTF+kHmF6o9pYeRLo29Uh/l3niwh6iE6ywYEP3Tt4ApGtuT2cSx2BCLgEGeSZY3tYH5e7jV2GKBHBe2VYQBPdnzVAn+jFryDVb7MErtsOhOhclKmNEBMOg==$zMxxyG36z2X/RuMb43IVXYLcO30N+JTOkFKkFPCwz4gEx37IwoElKn3gFV/vb/64$lnPndNW8oQbqcuyfMn2pt2NbehPW6AmtIVHpCQplh1w=\",\"encryptedCVV\":\"$bsjs_0_0_1$GovlxAkt6epe1XtActRL88Hk9avyW5oQUmy1Nk+AXaqsi1yU0icZG7foyEqswNZSC+nWxXwvgfryke+yfj9vZeQhdlzuQHDaKbFgqviPGGGn9uQMeo2zbdJYCcott0hBqBCYEDP8h2LAN2xUs+HJZD/t4vKSb2Nz/fjq933aK0XglKyIDry/l5gRiQeaxxjHgnwHZ6whUYczX1pSJmSOcGp7EhipgDx1T3aGx0TDu2l0wKCrjGMRHqjAOJnBNRuw1x975kz1tmYw8VXGoY41V2GaM1hcdywcpd2JB7YNbRmAwmZ/7eEorpzr8lMQRMzjJKbBkdqYi/QZnebAmFWOdQ==$W8VmjUSBOGBOjMMEIoTuJScaMVkaO9wXSh0Av6Swmkw=$RA97bk8UKuU2MJ9ZN2AZsN9QDMG8DeORVumzbVXzZAY=\",\"expMonth\":\"11\",\"expYear\":\"2017\",\"cardType\":\"MASTERCARD\"},\"billingInfo\":{\"firstName\":\"TestUserFirstsdsd\",\"lastName\":\"dsdsdsdrer\",\"streetAddress\":\"109SaltLake\",\"city\":\"USER_CITY\",\"stateProvince\":\"CA\",\"country\":\"US\",\"postalCode\":\"94561\"}},\"email\":\"shopper@BlueSnap.com\",\"ip\":\"132.123.24.8\"}}",  
+            "expectedJsonData": "{\"shopper\":{\"firstName\":\"TestUserFirstsdsd\",\"lastName\":\"dsdsdsdrer\",\"email\":\"shopper@BlueSnap.com\",\"billingInfo\":{\"firstName\":\"TestUserFirstsdsd\",\"lastName\":\"dsdsdsdrer\",\"streetAddress\":\"109SaltLake\",\"city\":\"USER_CITY\",\"stateProvince\":\"CA\",\"country\":\"us\",\"postalCode\":\"94561\"},\"paymentProfiles\":[{\"creditCardInfo\":{\"last4Digits\":\"5100\",\"cardType\":\"MASTERCARD\"},\"billingInfo\":{\"firstName\":\"TestUserFirstsdsd\",\"lastName\":\"dsdsdsdrer\",\"streetAddress\":\"109SaltLake\",\"city\":\"USER_CITY\",\"stateProvince\":\"CA\",\"country\":\"us\",\"postalCode\":\"94561\"}}],\"lastModifiedPaymentProfile\":{\"creditCardInfo\":{\"last4Digits\":\"5100\",\"cardType\":\"MASTERCARD\"},\"billingInfo\":{\"firstName\":\"TestUserFirstsdsd\",\"lastName\":\"dsdsdsdrer\",\"streetAddress\":\"109SaltLake\",\"city\":\"USER_CITY\",\"stateProvince\":\"CA\",\"country\":\"us\",\"postalCode\":\"94561\"}}}}"
+        },
+        {
+            "testName": "Test_IPP_REST_Negative_Update_Expiration_Year_Method",
+            "userId": "BLUFPHVTQF3X",  
+            "content": "{\"user\":{\"paymentProfile\":{\"creditCardInfo\":{\"encryptedCardNumber\":\"$bsjs_0_0_1$DJVP/owskkrNfOtrdZhf1/9Tr3SKrvr02/5FN/0J9//0cR1TsqeXtOi1gASPGLF3VWe8ye36zOObTA2ac3Z5vYjYcYIfg93wzXIJWiAbagrg6MJ7W9SluTQp3oaMHleoUN05db7y/HIItGm8U4vRJYMh6TC2rT8aRTJtYay/5evTxj9JJUXDSH4KuQXIw+/MBhZih4A1sgTa5JPO/0B497H+povOW+xsfTF+kHmF6o9pYeRLo29Uh/l3niwh6iE6ywYEP3Tt4ApGtuT2cSx2BCLgEGeSZY3tYH5e7jV2GKBHBe2VYQBPdnzVAn+jFryDVb7MErtsOhOhclKmNEBMOg==$zMxxyG36z2X/RuMb43IVXYLcO30N+JTOkFKkFPCwz4gEx37IwoElKn3gFV/vb/64$lnPndNW8oQbqcuyfMn2pt2NbehPW6AmtIVHpCQplh1w=\",\"encryptedCVV\":\"$bsjs_0_0_1$GovlxAkt6epe1XtActRL88Hk9avyW5oQUmy1Nk+AXaqsi1yU0icZG7foyEqswNZSC+nWxXwvgfryke+yfj9vZeQhdlzuQHDaKbFgqviPGGGn9uQMeo2zbdJYCcott0hBqBCYEDP8h2LAN2xUs+HJZD/t4vKSb2Nz/fjq933aK0XglKyIDry/l5gRiQeaxxjHgnwHZ6whUYczX1pSJmSOcGp7EhipgDx1T3aGx0TDu2l0wKCrjGMRHqjAOJnBNRuw1x975kz1tmYw8VXGoY41V2GaM1hcdywcpd2JB7YNbRmAwmZ/7eEorpzr8lMQRMzjJKbBkdqYi/QZnebAmFWOdQ==$W8VmjUSBOGBOjMMEIoTuJScaMVkaO9wXSh0Av6Swmkw=$RA97bk8UKuU2MJ9ZN2AZsN9QDMG8DeORVumzbVXzZAY=\",\"expMonth\":\"11\",\"expYear\":\"1989\",\"cardType\":\"MASTERCARD\"},\"billingInfo\":{\"firstName\":\"TestUserFirstsdsd\",\"lastName\":\"dsdsdsdrer\",\"streetAddress\":\"109SaltLake\",\"city\":\"USER_CITY\",\"stateProvince\":\"CA\",\"country\":\"US\",\"postalCode\":\"94561\"}},\"email\":\"shopper@BlueSnap.com\",\"ip\":\"132.123.24.8\"}}",  
+            "expectedJsonData": "{\"error\":{\"message\":\"Unabletoupdatetheuser:{userExtKey:BLUFPHVTQF3X}\",\"code\":20004,\"type\":\"USER.UPDATE_FAILED\",\"previousErrors\":[{\"message\":\"TherewasanunexpectedBlueSnapAPIError:InvalidInput\",\"code\":90001,\"type\":\"API.BLUESNAP\",\"previousErrors\":[],\"apiError\":{\"code\":\"10001\",\"message\":\"Seller397060encounteredaproblemupdatingshopperduetoincorrectinput.:Thestatedcreditcardexpirationdatehasalreadypassed.(shopperInfo.paymentInfo.creditCardInfo.creditCard.expirationMonth=undefined):\"}},{\"message\":\"Unabletoupdatetheshopper:{userExtKey:BLUFPHVTQF3X}\",\"code\":30003,\"type\":\"SHOPPER.UPDATE_FAILED\"}]}}"
+        },
+        {
+            "testName": "Test_IPP_REST_Create_PaymentProfile_Method",
+            "userId": "6DZSN4RMHHFX/paymentProfiles",  
+            "content": "{\"user\":{\"paymentProfile\":{\"creditCardInfo\":{\"encryptedCardNumber\":\"$bsjs_0_0_1$DJVP/owskkrNfOtrdZhf1/9Tr3SKrvr02/5FN/0J9//0cR1TsqeXtOi1gASPGLF3VWe8ye36zOObTA2ac3Z5vYjYcYIfg93wzXIJWiAbagrg6MJ7W9SluTQp3oaMHleoUN05db7y/HIItGm8U4vRJYMh6TC2rT8aRTJtYay/5evTxj9JJUXDSH4KuQXIw+/MBhZih4A1sgTa5JPO/0B497H+povOW+xsfTF+kHmF6o9pYeRLo29Uh/l3niwh6iE6ywYEP3Tt4ApGtuT2cSx2BCLgEGeSZY3tYH5e7jV2GKBHBe2VYQBPdnzVAn+jFryDVb7MErtsOhOhclKmNEBMOg==$zMxxyG36z2X/RuMb43IVXYLcO30N+JTOkFKkFPCwz4gEx37IwoElKn3gFV/vb/64$lnPndNW8oQbqcuyfMn2pt2NbehPW6AmtIVHpCQplh1w=\",\"encryptedCVV\":\"$bsjs_0_0_1$GovlxAkt6epe1XtActRL88Hk9avyW5oQUmy1Nk+AXaqsi1yU0icZG7foyEqswNZSC+nWxXwvgfryke+yfj9vZeQhdlzuQHDaKbFgqviPGGGn9uQMeo2zbdJYCcott0hBqBCYEDP8h2LAN2xUs+HJZD/t4vKSb2Nz/fjq933aK0XglKyIDry/l5gRiQeaxxjHgnwHZ6whUYczX1pSJmSOcGp7EhipgDx1T3aGx0TDu2l0wKCrjGMRHqjAOJnBNRuw1x975kz1tmYw8VXGoY41V2GaM1hcdywcpd2JB7YNbRmAwmZ/7eEorpzr8lMQRMzjJKbBkdqYi/QZnebAmFWOdQ==$W8VmjUSBOGBOjMMEIoTuJScaMVkaO9wXSh0Av6Swmkw=$RA97bk8UKuU2MJ9ZN2AZsN9QDMG8DeORVumzbVXzZAY=\",\"expMonth\":\"11\",\"expYear\":\"2017\",\"cardType\":\"MASTERCARD\"},\"billingInfo\":{\"firstName\":\"TestUserFirstsdsd\",\"lastName\":\"dsdsdsdrer\",\"streetAddress\":\"109SaltLake\",\"city\":\"Oakley\",\"stateProvince\":\"CA\",\"country\":\"US\",\"postalCode\":\"94561\"}},\"email\":\"shopper@BlueSnap.com\",\"ip\":\"132.123.24.8\"}}",  
+            "expectedJsonData": "{\"paymentProfile\":{\"creditCardInfo\":{\"last4Digits\":\"5100\",\"cardType\":\"MASTERCARD\",\"expMonth\":\"11\",\"expYear\":\"2017\"},\"billingInfo\":{\"firstName\":\"TestUserFirstsdsd\",\"lastName\":\"dsdsdsdrer\",\"streetAddress\":\"109SaltLake\",\"city\":\"Oakley\",\"stateProvince\":\"CA\",\"country\":\"US\",\"postalCode\":\"94561\"},\"id\":\"56285\",\"userId\":\"9292\"}}"
+        },
+        {
+            "testName": "Test_IPP_REST_Get_paymentProfiles_Method",
+            "userId": "6DZSN4RMHHFX/paymentProfiles",
+            "expectedJsonData": "{\"paymentProfiles\":[{\"creditCardInfo\":{\"last4Digits\":\"5100\",\"cardType\":\"MASTERCARD\",\"expMonth\":\"11\",\"expYear\":\"2017\"},\"billingInfo\":{\"firstName\":\"TestUserFirstsdsd\",\"lastName\":\"dsdsdsdrer\",\"streetAddress\":\"109SaltLake\",\"city\":\"Oakley\",\"stateProvince\":\"CA\",\"country\":\"US\",\"postalCode\":\"94561\"},\"id\":\"56285\",\"userId\":\"9292\"}]}" 
+        },
+        {
+            "testName": "Test_IPP_REST_Get_paymentProfiles_With_PayMentType_Method",
+            "userId": "6DZSN4RMHHFX/paymentProfiles/creditCard/5100",
+            "expectedJsonData": "{\"paymentProfile\":{\"creditCardInfo\":{\"last4Digits\":\"5100\",\"cardType\":\"MASTERCARD\",\"expMonth\":\"11\",\"expYear\":\"2017\"},\"billingInfo\":{\"firstName\":\"TestUserFirstsdsd\",\"lastName\":\"dsdsdsdrer\",\"streetAddress\":\"109SaltLake\",\"city\":\"Oakley\",\"stateProvince\":\"CA\",\"country\":\"US\",\"postalCode\":\"94561\"},\"id\":\"56285\",\"userId\":\"9292\"}}" 
+        },
+        {
+            "testName": "Test_IPP_REST_Update_PaymentProfile_Method",
+            "userId": "NWWFKY4JV6Z8/paymentProfiles",
+            "content": "{\"user\":{\"paymentProfile\":{\"creditCardInfo\":{\"encryptedCardNumber\":\"$bsjs_0_0_1$DJVP/owskkrNfOtrdZhf1/9Tr3SKrvr02/5FN/0J9//0cR1TsqeXtOi1gASPGLF3VWe8ye36zOObTA2ac3Z5vYjYcYIfg93wzXIJWiAbagrg6MJ7W9SluTQp3oaMHleoUN05db7y/HIItGm8U4vRJYMh6TC2rT8aRTJtYay/5evTxj9JJUXDSH4KuQXIw+/MBhZih4A1sgTa5JPO/0B497H+povOW+xsfTF+kHmF6o9pYeRLo29Uh/l3niwh6iE6ywYEP3Tt4ApGtuT2cSx2BCLgEGeSZY3tYH5e7jV2GKBHBe2VYQBPdnzVAn+jFryDVb7MErtsOhOhclKmNEBMOg==$zMxxyG36z2X/RuMb43IVXYLcO30N+JTOkFKkFPCwz4gEx37IwoElKn3gFV/vb/64$lnPndNW8oQbqcuyfMn2pt2NbehPW6AmtIVHpCQplh1w=\",\"encryptedCVV\":\"$bsjs_0_0_1$GovlxAkt6epe1XtActRL88Hk9avyW5oQUmy1Nk+AXaqsi1yU0icZG7foyEqswNZSC+nWxXwvgfryke+yfj9vZeQhdlzuQHDaKbFgqviPGGGn9uQMeo2zbdJYCcott0hBqBCYEDP8h2LAN2xUs+HJZD/t4vKSb2Nz/fjq933aK0XglKyIDry/l5gRiQeaxxjHgnwHZ6whUYczX1pSJmSOcGp7EhipgDx1T3aGx0TDu2l0wKCrjGMRHqjAOJnBNRuw1x975kz1tmYw8VXGoY41V2GaM1hcdywcpd2JB7YNbRmAwmZ/7eEorpzr8lMQRMzjJKbBkdqYi/QZnebAmFWOdQ==$W8VmjUSBOGBOjMMEIoTuJScaMVkaO9wXSh0Av6Swmkw=$RA97bk8UKuU2MJ9ZN2AZsN9QDMG8DeORVumzbVXzZAY=\",\"expMonth\":\"11\",\"expYear\":\"2017\",\"last4Digits\":\"5100\",\"cardType\":\"MASTERCARD\"},\"billingInfo\":{\"firstName\":\"TestUserFirstsdsd\",\"lastName\":\"uuiii\",\"streetAddress\":\"109SaltLake\",\"city\":\"Oakley\",\"stateProvince\":\"CA\",\"country\":\"US\",\"postalCode\":\"94561\"}},\"email\":\"shopper@BlueSnap.com\",\"ip\":\"132.123.24.8\"}}",
+            "expectedJsonData": "{\"paymentProfile\":{\"creditCardInfo\":{\"last4Digits\":\"5100\",\"cardType\":\"MASTERCARD\",\"expMonth\":\"11\",\"expYear\":\"2017\"},\"billingInfo\":{\"firstName\":\"TestUserFirstsdsd\",\"lastName\":\"uuiii\",\"streetAddress\":\"109SaltLake\",\"city\":\"Oakley\",\"stateProvince\":\"CA\",\"country\":\"US\",\"postalCode\":\"94561\"},\"id\":\"57442\",\"userId\":\"9293\"}}"
+        },
+        {
+            "testName": "Test_IPP_REST_Create_NewPurchase_Method",
+            "userId": "/newPurchase",  
+            "content": "{\"purchase\":{\"webInfo\":{\"userAgent\":\"Mozilla/4.0(compatible;MSIE6.0;WindowsNT5.1;SV1;GTB6.3;.NETCLR2.0.50727)\",\"remoteHost\":\"bzq-219-121-253.static.bezeqint.net.reinventhosting.com\"},\"user\":{\"email\":\"shopper@BlueSnap.com\",\"phone\":\"15303218264\",\"ip\":\"132.188.64.219\",\"paymentProfile\":{\"creditCardInfo\":{\"cardType\":\"MASTERCARD\",\"encryptedCardNumber\":\"$bsjs_0_0_1$DJVP/owskkrNfOtrdZhf1/9Tr3SKrvr02/5FN/0J9//0cR1TsqeXtOi1gASPGLF3VWe8ye36zOObTA2ac3Z5vYjYcYIfg93wzXIJWiAbagrg6MJ7W9SluTQp3oaMHleoUN05db7y/HIItGm8U4vRJYMh6TC2rT8aRTJtYay/5evTxj9JJUXDSH4KuQXIw+/MBhZih4A1sgTa5JPO/0B497H+povOW+xsfTF+kHmF6o9pYeRLo29Uh/l3niwh6iE6ywYEP3Tt4ApGtuT2cSx2BCLgEGeSZY3tYH5e7jV2GKBHBe2VYQBPdnzVAn+jFryDVb7MErtsOhOhclKmNEBMOg==$zMxxyG36z2X/RuMb43IVXYLcO30N+JTOkFKkFPCwz4gEx37IwoElKn3gFV/vb/64$lnPndNW8oQbqcuyfMn2pt2NbehPW6AmtIVHpCQplh1w=\",\"encryptedCVV\":\"$bsjs_0_0_1$GovlxAkt6epe1XtActRL88Hk9avyW5oQUmy1Nk+AXaqsi1yU0icZG7foyEqswNZSC+nWxXwvgfryke+yfj9vZeQhdlzuQHDaKbFgqviPGGGn9uQMeo2zbdJYCcott0hBqBCYEDP8h2LAN2xUs+HJZD/t4vKSb2Nz/fjq933aK0XglKyIDry/l5gRiQeaxxjHgnwHZ6whUYczX1pSJmSOcGp7EhipgDx1T3aGx0TDu2l0wKCrjGMRHqjAOJnBNRuw1x975kz1tmYw8VXGoY41V2GaM1hcdywcpd2JB7YNbRmAwmZ/7eEorpzr8lMQRMzjJKbBkdqYi/QZnebAmFWOdQ==$W8VmjUSBOGBOjMMEIoTuJScaMVkaO9wXSh0Av6Swmkw=$RA97bk8UKuU2MJ9ZN2AZsN9QDMG8DeORVumzbVXzZAY=\",\"expMonth\":\"11\",\"expYear\":\"2017\"},\"billingInfo\":{\"firstName\":\"TestUserFirstsdsd\",\"lastName\":\"uuiii\",\"streetAddress\":\"109SaltLake\",\"city\":\"Oakley\",\"stateProvince\":\"CA\",\"country\":\"US\",\"postalCode\":\"94561\"}}},\"currency\":\"USD\",\"configId\":\"1002\",\"offers\":[{\"externalKey\":\"FSN360-BASE-M\",\"amount\":\"40\",\"taxCode\":\"SW052000\"}]}}",  
+            "expectedJsonData": "state\": \"AUTHORIZED"
+        },
+        {
+            "testName": "Test_IPP_REST_Create_StoredPurchase_Method",
+            "userId": "WAHRRNHTN235/storedPurchase",  
+            "content": "{\"purchase\":{\"webInfo\":{\"userAgent\":\"Mozilla/4.0(compatible;MSIE6.0;WindowsNT5.1;SV1;GTB6.3;.NETCLR2.0.50727)\",\"remoteHost\":\"bzq-219-121-253.static.bezeqint.net.reinventhosting.com\"},\"user\":{\"ip\":\"132.188.64.219\",\"paymentProfile\":{\"creditCardInfo\":{\"last4Digits\":\"5100\",\"cardType\":\"MASTERCARD\"}}},\"currency\":\"USD\",\"configId\":\"1002\",\"offers\":[{\"externalKey\":\"FSN360-BASE-M\",\"amount\":\"40\",\"taxCode\":\"SW052000\"}]}}",  
+            "expectedJsonData": "\"state\": \"AUTHORIZED\""
+        },
+        {	
+            "testName": "Test_IPP_REST_GetTax",  
+            "content": "{\"tax\":{\"currency\":\"USD\",\"offers\":[{\"externalKey\":\"FSN360-BASE-M\",\"amount\":\"40\",\"taxCode\":\"SW052000\",\"taxAmount\":\"30\"}],\"billingInfo\":{\"firstName\":\"Carmen\",\"lastName\":\"Cheshire\",\"streetAddress\":\"18CotatiCt\",\"city\":\"Oakley\",\"stateProvince\":\"AL\",\"country\":\"US\",\"postalCode\":\"35203\"}}}",  
+            "expectedJsonData": "{\"cart\":{\"jsonRef\":\"cart\",\"subtotal\":40,\"tax\":30,\"needsTaxAmounts\":false,\"currency\":\"USD\",\"offers\":[{\"name\":\"offer\",\"externalKey\":\"FSN360-BASE-M\",\"type\":\"SUBSCRIPTION\",\"amount\":\"40\",\"taxCode\":\"SW052000\",\"taxAmount\":\"30\",\"skuId\":\"2151074\",\"quantity\":\"1\"}],\"subscriptions\":[],\"total\":70}}"
+        },
+        {	
+            "testName": "Test_IPP_REST_GetTax_With_Out_Tax_Amount",  
+            "content": "{\"tax\":{\"currency\":\"USD\",\"offers\":[{\"externalKey\":\"FSN360-BASE-M\",\"amount\":\"40\",\"taxCode\":\"SW052000\",\"taxAmount\":\"\"}],\"billingInfo\":{\"firstName\":\"Carmen\",\"lastName\":\"Cheshire\",\"streetAddress\":\"18CotatiCt\",\"city\":\"Oakley\",\"stateProvince\":\"AL\",\"country\":\"US\",\"postalCode\":\"35203\"}}}",  
+            "expectedJsonData": "{\"cart\":{\"jsonRef\":\"cart\",\"subtotal\":40,\"tax\":30,\"needsTaxAmounts\":false,\"currency\":\"USD\",\"offers\":[{\"name\":\"offer\",\"externalKey\":\"FSN360-BASE-M\",\"type\":\"SUBSCRIPTION\",\"amount\":\"40\",\"taxCode\":\"SW052000\",\"taxAmount\":\"30\",\"skuId\":\"2151074\",\"quantity\":\"1\"}],\"subscriptions\":[],\"total\":70}}"
+        },
+        {
+            "testName": "Test_IPP_REST_Create_Purchase_TaxCity_Method",
+            "userId": "6DZSN4RMHHFX/purchase",  
+            "content": "{\"purchase\":{\"name\":\"purchase\",\"webInfo\":{\"userAgent\":\"Mozilla/4.0(compatible;MSIE6.0;WindowsNT5.1;SV1;GTB6.3;.NETCLR2.0.50727)\",\"remoteHost\":\"bzq-219-121-253.static.bezeqint.net.reinventhosting.com\"},\"user\":{\"name\":\"user\",\"ip\":\"132.188.64.219\",\"paymentProfile\":{\"name\":\"paymentProfile\",\"creditCardInfo\":{\"last4Digits\":\"5100\",\"cardType\":\"MASTERCARD\",\"expMonth\":\"11\",\"expYear\":\"2017\"},\"billingInfo\":{\"firstName\":\"TestUserFirstsdsd\",\"lastName\":\"dsdsdsdrer\",\"streetAddress\":\"109SaltLake\",\"city\":\"Birmingham\",\"stateProvince\":\"AL\",\"country\":\"US\",\"postalCode\":\"35203\"}}},\"currency\":\"USD\",\"offers\":[{\"externalKey\":\"FSN360-BASE-M\",\"amount\":\"40\",\"taxCode\":\"SW052000\"}]}}",  
+            "expectedJsonData": "\"state\": \"APPROVED\""
+        },
+        {
+            "testName": "Test_IPP_REST_Create_Purchase_Tax_Free_City_Method",
+            "userId": "6DZSN4RMHHFX/purchase",  
+            "content": "{\"purchase\":{\"name\":\"purchase\",\"webInfo\":{\"userAgent\":\"Mozilla/4.0(compatible;MSIE6.0;WindowsNT5.1;SV1;GTB6.3;.NETCLR2.0.50727)\",\"remoteHost\":\"bzq-219-121-253.static.bezeqint.net.reinventhosting.com\"},\"user\":{\"name\":\"user\",\"ip\":\"132.188.64.219\",\"paymentProfile\":{\"name\":\"paymentProfile\",\"creditCardInfo\":{\"last4Digits\":\"5100\",\"cardType\":\"MASTERCARD\",\"expMonth\":\"11\",\"expYear\":\"2017\"},\"billingInfo\":{\"firstName\":\"TestUserFirstsdsd\",\"lastName\":\"dsdsdsdrer\",\"streetAddress\":\"109SaltLake\",\"city\":\"Oakley\",\"stateProvince\":\"CA\",\"country\":\"US\",\"postalCode\":\"94561\"}}},\"currency\":\"USD\",\"offers\":[{\"externalKey\":\"FSN360-BASE-M\",\"amount\":\"40\",\"taxCode\":\"SW052000\"}]}}",  
+            "expectedJsonData": "\"state\": \"APPROVED\""
+        },
+        {
+            "testName": "Test_IPP_REST_Get_Error_For_InValid_paymentType_Method",
+            "userId": "6DZSN4RMHHFX/paymentProfiles/paymentType/paymentRef",
+            "expectedJsonData": "{\"error\": {\"message\": \"Unable to find payment profile\",\"code\": 401,\"type\": \"PAYMENT_PROFILE\",\"statusCode\": 404,\"previousErrors\": [{\"message\": \"Matching Profile Not Found\",\"code\": 103,\"type\": \"NOT_FOUND\",\"statusCode\": 404}]}}"
+        }
+                          
+    ]
+}

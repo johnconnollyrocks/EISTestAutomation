@@ -1,0 +1,39 @@
+name                =Verify Payment Details are Displayed for Existing User  
+description         =Verify Payment Details are Displayed for Existing User
+resultType          =positive
+author              =Sreedhar
+createDate          =16/5/2014
+lastModifiedDate    =
+
+#*********** Instance *********************************************************
+
+FILLDETAILS=CONSTANT[5689785]
+#*********************************************************
+
+
+PageHome.NameText=CONSTANT[aa]##FILLDETAILS
+PageHome.CardNumberText=CONSTANT[]##FILLDETAILS
+PageHome.SelectExpMonth=CONSTANT[]##FILLDETAILS
+PageHome.SelectExpYear=CONSTANT[]##FILLDETAILS
+PageHome.SecurityCodeText=CONSTANT[]##FILLDETAILS
+PageHome.BillingAddressText=CONSTANT[]##FILLDETAILS
+PageHome.cityText=CONSTANT[]##FILLDETAILS
+PageHome.SelectProvince=CONSTANT[]##FILLDETAILS
+PageHome.ZipCodeText=CONSTANT[]##FILLDETAILS
+
+USER_ID								=CONSTANT[FZTZQZQ8B3BA]
+COUNTRY								=CONSTANT[US]
+LANGUAGE							=CONSTANT[en]
+
+NameText								=CONSTANT[santosh kumar]
+CardNumberText							=CONSTANT[4111111111111111]
+SelectExpMonth							=CONSTANT[05 (May)]
+SelectExpYear							=CONSTANT[2015]
+SecurityCodeText						=CONSTANT[123]
+BillingAddressText						=CONSTANT[billing address]
+cityText								=CONSTANT[city]
+SelectProvince							=CONSTANT[Alabama]
+ZipCodeText								=CONSTANT[12345]
+validCardNumberText						=CONSTANT[4111111111111111]
+VerifyCountry							=CONSTANT[United States of America]
+eMail									=CONSTANT[pooraj@ssttest.net]

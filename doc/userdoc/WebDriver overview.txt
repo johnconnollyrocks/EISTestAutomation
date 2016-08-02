@@ -1,0 +1,43 @@
+WebDriver overview
+  
+   WebDriver-Backed Selenium-RC version
+		http://seleniumhq.org/docs/03_webdriver.html#webdriver-backed-selenium-rc
+	
+	The Java version of WebDriver provides an implementation of the Selenium-RC API.  This means
+	that you can use the underlying WebDriver technology using the	Selenium-RC API. This is
+	primarily provided for backward compatibility. It allows those who have existing test suites
+	using the Selenium-RC API to use WebDriver under the covers. It’s provided to help ease the
+	migration path to Selenium-WebDriver. Also, this allows one to use both APIs, side-by-side,
+	in the same test code.
+	
+	Note that WebDriver-backed Selenium requires the Selenium server jar (currently selenium-server-standalone-2.17.0.jar)
+	
+	Pros
+		•Allows for the WebDriver and Selenium APIs to live side-by-side (e.g., can embed Selenese)
+		•Provides a simple mechanism for a managed migration from the Selenium RC API to WebDriver’s
+		•Does not require the stand-alone Selenium RC server to be run
+		•Provides access to Selenium functionality that is not yet implemented in WebDriver
+	
+	Cons
+		•Does not implement every Selenium method
+		•More advanced Selenium usage (using “browserbot” or other built-in JavaScript methods from Selenium Core) may not work
+		•Some methods may be slower due to underlying implementation differences
+
+	Introducing WebDriver’s Drivers
+		WebDriver is the name of the key interface against which tests should be written, but there
+		are several implementations. These include:
+			•HtmlUnit (see gotchas at http://seleniumhq.org/docs/03_webdriver.html#htmlunit-driver)
+			•Firefox
+			•Internet Explorer
+			•Chrome
+			•Opera
+			•iPhone
+			•Android
+
+	Supported languages:
+		•Java
+		•C#
+		•Python
+		•perl
+		•PHP
+		•Ruby	

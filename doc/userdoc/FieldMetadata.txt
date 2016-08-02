@@ -1,0 +1,58 @@
+Field metadata elements contain metadata about the page fields on a page, and are defined in Page
+	metadata files.
+
+
+------------------------
+
+
+Format:
+	fieldName	=type##locator(s)##[isRequired]##[messageLocator(s)]
+	
+	fieldName is a user-defined value, and is used as a reference in Page metadata files and test code
+		
+These Field metadata properties are required:
+	1) type
+		
+		Must be a value of the ITConstants.FieldType enumeration
+		If it is equal to ITConstants.FieldType.READ_ONLY, the field will be interpreted as a field
+			used primarily for verifying expected results, and will be skipped by all methods that
+			populate the GUI
+
+	2) locator(s)
+		
+		Defines the Selenium locator(s) for a field
+		To specify more than one locator, delimit them with ITConstants.PROPERTY_INSTANCE_DELIM
+		Note that a locator can contain a ParameterizedLocatorType object and associated strings,
+			instead of a Selenium locator (see documentation in ITConstants.java)
+		Note that a locator can contain one or more tokens (see ITConstants.TOKEN_REGEX_TERM
+			for details).  These tokens are replaced with relevant data by the test code; the
+			resulting locator may then be used to locate a context-specific element in the GUI,
+			for example a login link for a specific user in a table of users
+  	
+These Field metadata properties are optional:
+	1) isRequired
+	
+		If it is specified, it must be a value of the ITConstants.isRequired enumeration:
+    		REQUIRED:  expected to be present, and required
+    		OPTIONAL:  expected to be present, but not necessarily required
+    		VARIABLE:  not expected to be present.  If it turns out to be present, we will populate it;
+				if it turns out to be absent, we will skip it and display a warning
+		Default is ITConstants.IsRequired.OPTIONAL
+
+	2) messageLocator(s)
+	
+		Defines the Selenium locator(s) for a field-level error or message field
+		To specify more than one messageLocator, delimit them with ITConstants.PROPERTY_INSTANCE_DELIM
+		Note that a messageLocator can contain a ParmSet object instead of a Selenium locator
+			(see documentation in ITConstants.java); if a ParmSet is present, all other messageLocators
+			will be ignored
+
+Field metadata examples:
+	contentProductStartDate	=DATE##ContentEE_ContentEE_uev @@ \
+                          		ContentPE_ContentPE_uev @@ \
+                          		ContentGE_ContentGE_uev @@ \
+                           		ContentUE_ContentUE_uev####//tr[@id='sfdcitem696i0']/td/span[2]/div
+                               
+    username				=TEXT##username##required
+	password				=TEXT##password##required
+	loginButton				=BUTTON##Login

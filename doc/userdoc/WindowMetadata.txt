@@ -1,0 +1,41 @@
+A window metadata file (also known as a window properties file) contains metadata about a window.
+	The contents of the file are used in the instantiation of a Window object.
+  
+Window metadata files are stored in an application-specific directory, the path of which is built in
+	an application-specific constants or "test base" class.  In that directory is a manifest file,
+	which contains file handles and actual file names.  The names of all Window metadata files
+	MUST be present in the manifest!  (See the AppstoreTestBase class, and documentation in the
+	IT Quality Engineering portal for details.) 
+
+
+------------------------
+
+
+This Window metadata property is required:
+	1) windowName		=myWindowName
+
+		Used in page metadata files and Page object methods as a means of determining the window to
+			which the page belongs
+
+These Window metadata properties are optional:
+	1) locator			=myLocator
+
+		Defines the Selenium locator for a window
+		If a locator is not supplied, or is specified as "main", the window will be assumed to
+			be the application's main window
+		There cannot be more than one (unlike locators and messageLocators in page and field metadata)
+		Note that the locator may not contain a ParmSet object instead of a string
+		NOTE that this field has been deprecated since the migration to WebDriver 
+		
+	2) loadTimeout		=timeoutInMillis
+	
+		Used when waiting for a child Page of the window to load
+		Defaults to the value in ITConstants.DEFAULT_WINDOW_WAIT_TIMEOUT
+		Specify in millisecondspageRedrawDelay
+		
+	3) pageRedrawDelay	=delayInMillis
+	
+		Used when waiting for a child Page of the window to be redrawn (ala Ajax)
+		Defaults to the value in ITConstants.DEFAULT_PAGE_REDRAW_DELAY
+		Specify in milliseconds
+		

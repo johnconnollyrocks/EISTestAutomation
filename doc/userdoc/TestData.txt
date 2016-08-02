@@ -1,0 +1,186 @@
+A test data file (also known as a test properties file) contains metadata about the test itself,
+	as well as the test data itself.  The entire contents of the file are used in the instantiation
+	of a TestProperties object.
+
+Note that the term "test data" encompasses both:
+	1) test data (for entry into the GUI)
+	2) verification data (expected results used in verification)
+	
+	Except as noted in this document, the term "test data" refers to both
+	
+Test data files are NOT intended to include navigation "data" like names of links and buttons!  It
+	is the responsibility of the test author (or the author of test utilities) to explicitly handle
+	navigation through the application!
+	
+Test data files for storing data used in test utilities can be created; they have the same format
+	as described here.  It is recommended that those files be stored in the same directory as the
+	regular	test data files, and that a naming convention be used to differentiate them.  Except
+	as noted in this document, the term "test data file" refers to files that contain either test
+	data or utility data
+	
+Test data files are stored in an application-specific directory, the path of which is built in
+	an application-specific constants or "test base" class.  In that directory is a manifest file,
+	which contains file handles and actual file names.  The names of all test and utility data files
+	MUST be present in the manifest!  (See the AppstoreTestBase class, and documentation in the
+	IT Quality Engineering portal for details.) 
+
+
+------------------------
+
+
+This test property is required
+	1) name				=my test name (typically maps to the name of a test in a written test plan)
+		Used in test data files as a means of referencing a Field object in page metadata
+
+These test properties are optional
+	1) description		=description of my test (typically a summary of a test in a written test plan)
+
+	2) resultType
+		!!! This feature has not yet been implemented (Aug 2010) !!!
+		
+		If it is specified, it must be a value of the ITConstants.TestResultType enumeration:
+    		POSITIVE:  the test is expected to return an error in the application  
+    		NEGATIVE:  the test is not expected to return an error in the application
+		Default is ITConstants.TestResultType.POSITIVE
+		
+		The test automation framework will return results as follows:
+			resultType		actual result		returned result
+			----------		-------------		---------------
+			POSITIVE		no error found			pass
+			POSITIVE		error found				fail
+			NEGATVIE		no error found			fail
+			NEGATIVE		error found				pass
+
+		Note that a NEGATIVE test will be deemed as having passed if any error is found,
+			not just the one expected by the test author.  It is up to the test author to
+			trap any other errors as appropriate
+
+	3) author			=my dog's name
+
+	4) createDate		=date this file was created
+
+	5) lastModifiedDate	=date this file was modified
+
+
+------------------------
+
+
+Zero or more lines of test or verification data, each of which will	be converted to an instance
+	of the	FieldDataInstance class at run time.
+	
+	Lines of data can be specified in any order, even though the AUT may place restrictions on
+		the order in which	data can be entered into the GUI; for example, dependent pick lists
+		are subject to such	restrictions.  (See the discussion of field dependencies in the Page
+		metadata documentation for instructions on how to circumvent those restrictions.)
+
+Format:
+	dataElementName		=[value]##[instance]
+
+    dataElementName is used as a reference in test code and possibly by other test data.  It is
+    	comprised of two parts, separated by a period (.):
+    		pageName:	a reference to the pageName property in the metadata of a given page
+    		fieldName:	a reference to the fieldName element of a Field metadata entry in that page metadata
+    		
+    		Examples:
+    			PageCreateAccount.currency maps to the Field metadata entry named currency in a page
+    				metadata property whose pageName property is PageCreateAccount.  A snippet of that
+    				file:
+    					pageName	=PageCreateAccount
+						currency	=PICKLIST##acc24##required
+			
+			There is an exception to the rule that the dataElementName property contain two parts: a test-scope
+				constant will contain just the name of the constant, e.g.:
+					MY_TEST_CONSTANT						=CONSTANT[Whassup?]
+				(see ResultsVerification.doc for details)
+
+These test data properties are optional:
+	1) value
+	
+		NOTE that even if the value property is not supplied, the = must be present!
+	
+		Its value can be either test data or verification data
+		
+		If not present, it is assumed that test code will set it at some point.  For example, when
+			creating an opportunity, the name of the associated account is unknown until the account
+			itself is created.  In that case, after the test code creates an account (using a utility
+			that returns the name of the account), it could then do either:
+				1) make a call to explicitly set the account name in the test data that is used to create
+					an opportunity, and then call a utility to create the opportunity
+				2) pass the account name to a utility that creates an opportunity; that utility would
+					make a call to explicitly set the account name in the test data before actually
+					creating the opportunity.
+
+			Another use of a blank value field is in the creation of names for SFDC objects, such as\
+				accounts, opportunities, contacts, etc.  If the object name is left blank, e.g.:
+					PageCreateAccount.accountName=
+				the code that creates the account will generate a name for that object using a prefix
+					constant associated with that object type, followed by a timestamp, e.g.:
+						AutoAcct_2010_08_25_13_12_18
+				A call will then be made to set the account test data to that value, so that other test
+					code  or utilities (for example, code that creates an opportunity) will have access
+					to it.
+				
+		If present, it can contain one of:
+			1) a string
+			2) a reference to a predefined constant (for example, TODAY in ITConstants.java)
+			3) a special type-specific parameter, such as an offset to the current date
+			4) a verification token and associated values
+				(see ITConstants.VerificationTokens, and documentation in ResultsVerification.doc)
+			5) a CONSTANT token and value (either page-scope or test-scope) (see ResultsVerification.doc
+				for details)	
+
+			Its value (when used as entry into the GUI) is interpreted in the context of its underlying
+				Field metadata type.  For example, the type of PageCreateAccount.currency is PICKLIST, so
+				attempts to find the proper entry in the GUI will involve trimming spaces, case-insensitive
+				matching, regular expression evaluation, etc.  Values for fields of type DATE are validated,
+				and can contain special flags and constants.  Values for fields of type CHECKBOX and RADIOBUTTON
+				can contain a variety of text to indicate checking, un-checking, or selecting. (See
+				ITConstants.java for more information.)
+
+	2) instance
+	
+		Default is 1
+		
+		Note that CONSTANT values cannot contain an instance property!
+		
+		Instances allow the user to specify multiple instances of test data for the same field.  For example
+			we can use the following test data to validate a date-related business rule:
+			PageProdCfgAP.dataStorage50MBStartDate		=!-30!
+			PageProdCfgAP.dataStorage50MBStartDate		=%TODAY%##2
+			
+			First, the test code makes a call to a GUI populate method without specifying an instance; the field
+				is populated with the date 30 days prior to today.  The test code then submits the form and checks
+				for an expected error.  It then calls the same populate method, specifying an instance of 2; the
+				field is populated with today's date.  The test code then submits the form and verifies that there
+				is no error.
+				
+		Another use is for creating multiple objects:  generate all of the test data necessary to create an object.
+			Copy and paste that data, and append a 2 to the end of the new entries.  Change a few values if you wish.
+			Your test code could then call the populate method for that page twice to create the two objects.
+
+
+------------------------
+
+
+Zero or more include statements, which allow for the nesting of test data
+
+	!!! This feature has not been rigorously tested (Aug 2010) !!!
+
+	Include statements are typically used for including	test data that is common to multiple tests
+		or utilities.  An example might be the data used to create a "standard" Appstore account
+	
+	Format:
+		include		=handleToTestDataFile
+	
+	Example:
+		include		=UTIL_CREATE_OPPTY_PROPERTIES_FILE
+
+	See the comments at the top of this page for the use of file handles and manifests
+	
+    Implementation notes:
+		Include statements can appear anywhere in the test data file; the exact placement in the
+			file is irrelevant
+		Lines of data in the included file can be specified in any order
+		Nesting of included files is NOT supported, and the result of doing so is undefined (but
+			rest assured, you will not be pleased)!
+

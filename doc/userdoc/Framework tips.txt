@@ -1,0 +1,24 @@
+Use commonPage's saveButton field, and call clickToSubmit()
+		//addSalesTeamPage.click("save");
+		commonPage.clickToSubmit("saveButton");
+When clickToSubmit is called on the commonPage, the framework performs much more extensive logic to determine when the page has loaded and "settled."  
+
+Please don't add partners, competitors, or sales teams (or anything else for that matter) in the utility properties files for creating opptys.  Those are for creating opptys only, not modifying or adding things to them.
+     I put those test properties into the main test properties file
+
+Please don't call setUrl and setID in addPartner, addCompetitor, or addSalesTeam.  Those should be called only in methods that create new SFDC objects, like create(), or doCreate()
+ 
+I moved the driver.switchTo().frame(3) calls out of the test method and into Oppty.addPartner().  It is probably a good idea to keep these calls at the lowest level possible, because:
+	- it is consistent with all other create() and add***() methods, wherein all actions involved in creating or adding the object are handled inside that method, not in the test method 
+	- the code won't require as much maintenance once I have implemented frame handling.
+I added a new EISTestBase.switchDriverToFrame(int frameNumber) method, which executethe driver.switchTo() call; addPartner calls that new method
+
+In Page_AddPartner.properties, I made this change for two reasons:
+	#partnerAccount			=RADIOBUTTON##//input[normalize-space(@type)='radio' and contains(@name, 'Radio')]##required
+	firstFoundPartnerAccount=RADIOBUTTON##//tr[contains(@class,'dataRow') and contains(@class,'first')]//td[1][contains(@class,'dataCell')]/input[normalize-space(@type)='radio' and contains(@name, 'Radio')]##required
+1) I changed the xpath to point to the first row, because it is always possible that the search will return more than one result.  But in addPartner we are clicking the first item no matter how many results were returned, just as we do in Page.doPopulateLookupField.  (There are cases in some apps where we have to search through a list of returned search results and then select it, but the default is to select the first result, as we do in look-up dialogs.)
+2) I changed the name of the field to map more closely with firstFoundObject in Page_LookupPopUp.properties
+
+I added open() calls to addPartner, addCompetitor, and addSalesTeam.  I like to have the open calls in those methods instead of in the test code, because that way you can't forget to call open(), and it makes the test method less cluttered
+
+I made the addPartner, addCompetitor, and addSalesTeam methods accept an instanceName parameter.  They still create just one item at a time, but the use of instances makes the required test properties and test code simple to implement.  (Perhaps you remember how test properties instances work - if not, we can review it at our next training session.  If you want to try to figure it out for yourself, go ahead, but I suggest you don;t try to learn from the code in Oppty.addProducts!  That method does more advanced stuff with instances, and would probably not be a good starting point for you.)

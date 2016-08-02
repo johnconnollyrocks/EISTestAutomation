@@ -1,0 +1,583 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions targetNamespace="http://www.autodesk.com/schemas/Business/ConvergentChargingExV1.0" xmlns:cc="http://www.autodesk.com/schemas/Business/ConvergentChargingExV1.0" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <wsdl:types>
+<xs:schema targetNamespace="http://www.autodesk.com/schemas/Business/ConvergentChargingExV1.0" xmlns:cc="http://www.autodesk.com/schemas/Business/ConvergentChargingExV1.0" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<xs:element name="ChargeEventRequest" type="cc:ChargeDataType"/>
+			<xs:element name="ChargeEventResponse" type="cc:ResponseType"/>
+			<!-- Copied from Enterprise Schema Tech Common 1.0 -->
+			<xs:complexType name="ResponseType">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="ResponseCode" type="xs:normalizedString"/>
+					<xs:element minOccurs="0" name="ResponseMsg" type="xs:string"/>
+					<xs:element minOccurs="0" name="ResponseStatus" type="xs:normalizedString"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="SOAPFaultType">
+				<xs:sequence>
+					<xs:element name="ErrorCode" type="xs:normalizedString"/>
+					<xs:element name="ErrorMsg" type="xs:string"/>
+					<xs:element minOccurs="0" name="ErrorType" type="xs:normalizedString"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="SOAPFault">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" minOccurs="0" name="Fault" type="cc:SOAPFaultType"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="GetCcTransactionsRequest">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="StartDate" type="xs:date"/>
+						<xs:element minOccurs="0" name="EndDate" type="xs:date"/>
+						<xs:element name="ListOfContractNumbers" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="ContractNumber" type="xs:normalizedString" minOccurs="0" maxOccurs="unbounded"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="ListOfAccountCSN" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="AccountCSN" type="xs:normalizedString" minOccurs="0" maxOccurs="unbounded"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="ListOfGuids" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="GUID" type="xs:normalizedString" minOccurs="0" maxOccurs="unbounded"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="ListOfJobUids" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="JobUid" type="xs:normalizedString" minOccurs="0" maxOccurs="unbounded">
+										<xs:annotation>
+											<xs:documentation>ChargedItem Id for a transaction</xs:documentation>
+										</xs:annotation>								
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="GetCcTransactionsResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="ListOfCcTransactions">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element maxOccurs="unbounded" minOccurs="0" name="CcTransaction">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element minOccurs="0" name="ChargedItemId" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="TxnType" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="GUID" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="EmailID" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="AccountCSN" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="ContractNumber" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="OfferType" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="ServiceCode" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="ServiceCategory" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="ProductLineCode" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="ProductLineDescription" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="UsageType" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="UserLogon" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="Status" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="SubscriptionLevel" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="OrderNumber" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="UnitType" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="Comment" type="xs:string"/>
+												<xs:element minOccurs="0" name="Quantity" type="xs:double"/>
+												<xs:element minOccurs="0" name="TxnUnits" type="xs:integer"/>
+												<xs:element minOccurs="0" name="UnitsBalance" type="xs:integer"/>
+												<xs:element minOccurs="0" name="UnitsOverage" type="xs:integer"/>
+												<xs:element minOccurs="0" name="Amount" type="xs:integer"/>
+												<xs:element minOccurs="0" name="AnnualValueBalance" type="xs:integer"/>
+												<xs:element minOccurs="0" name="TxnTimeStamp" type="xs:dateTime"/>
+												<xs:element minOccurs="0" name="StartTime" type="xs:dateTime"/>
+												<xs:element minOccurs="0" name="EndTime" type="xs:dateTime"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>	
+			<xs:element name="GetCcTransactionSummaryRequest">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="SummaryType" type="xs:normalizedString" minOccurs="0"/>
+						<xs:element name="StartDate" type="xs:date" minOccurs="0"/>
+						<xs:element name="EndDate" type="xs:date" minOccurs="0"/>
+						<xs:element name="ListOfContractNumbers" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="ContractNumber" type="xs:normalizedString" minOccurs="0" maxOccurs="unbounded"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="ListOfAccountCSN" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="AccountCSN" type="xs:normalizedString" minOccurs="0" maxOccurs="unbounded"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="ListOfGuids" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="GUID" type="xs:normalizedString" minOccurs="0" maxOccurs="unbounded"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="GetCcTransactionSummaryResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="ListOfCcTransactionSummary">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element maxOccurs="unbounded" minOccurs="0" name="CcSummaryTransaction">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element minOccurs="0" name="SummaryType" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="TxnType" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="TxnTimeStamp" type="xs:dateTime"/>
+												<xs:element minOccurs="0" name="GUID" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="AccountCSN" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="ContractNumber" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="OfferType" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="ServiceCode" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="ServiceCategory" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="ProductLineCode" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="UsageType" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="UserLogon" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="SubscriptionLevel" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="UnitType" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="UnitValue" type="xs:integer"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QuerySubscriptionBalanceRequest">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="ListOfContracts">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element minOccurs="0" maxOccurs="unbounded" name="Contract">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element minOccurs="0" name="ContractNumber" type="xs:normalizedString" />
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QuerySubscriptionBalanceResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="ListOfContracts">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element minOccurs="0" maxOccurs="unbounded" name="Contract">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element minOccurs="0" name="ContractNumber" type="xs:normalizedString" />
+												<xs:element minOccurs="0" name="ContractType" type="xs:normalizedString" >
+												<xs:annotation>
+															<xs:documentation>This is Contract/Subscription Type,This is for Future Use</xs:documentation>									
+												</xs:annotation>	
+												</xs:element>
+												<xs:element minOccurs="0" name="Status" type="xs:normalizedString" />
+												<xs:element minOccurs="0" name="ListOfServicePrivileges">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element minOccurs="0" maxOccurs="unbounded" name="ServicePrivilege" type="cc:ServicePrivilege"/>
+														</xs:sequence>
+													</xs:complexType>
+													</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			
+			<!--NEW OBJECTS PL-->
+
+			<xs:element name="GetCcUsageSummaryRequest">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="SummaryType" type="xs:normalizedString" minOccurs="1"/>
+						<xs:element name="StartDate" type="xs:date" minOccurs="0"/>
+						<xs:element name="EndDate" type="xs:date" minOccurs="0"/>
+						<!--xs:element minOccurs="0" name="ListOfContracts">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element minOccurs="0" maxOccurs="unbounded" name="Contracts">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="ContractNumber" type="xs:normalizedString" minOccurs="0"/>
+												<xs:element name="StartDate" type="xs:date" minOccurs="0"/>
+												<xs:element name="EndDate" type="xs:date" minOccurs="0"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element-->
+						<xs:element minOccurs="0" name="ListOfContracts">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element minOccurs="0" maxOccurs="unbounded" name="ContractNumber" type="xs:normalizedString" />
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="ListOfGuids" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="GUID" type="xs:normalizedString" minOccurs="0" maxOccurs="unbounded"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="GetCcUsageSummaryResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="ListOfCcUsageSummary">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element maxOccurs="unbounded" minOccurs="0" name="CcSummaryUsage">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element minOccurs="0" name="SummaryType" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="TxnType" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="TxnTimeStamp" type="xs:dateTime"/>
+												<xs:element minOccurs="0" name="GUID" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="FirstName" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="LastName" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="Email" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="AccountCSN" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="ContractNumber" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="OfferType" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="ServiceCode" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="ServiceCategory" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="ProductLineCode" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="UsageType" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="UserLogon" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="SubscriptionLevel" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="UnitType" type="xs:normalizedString"/>
+												<xs:element minOccurs="0" name="UnitValue" type="xs:integer"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+
+			<!--NEW OBJECTS PL-->
+			
+			<xs:complexType name="ServicePrivilege">
+				<xs:sequence>
+				<xs:element minOccurs="0" name="Name" type="xs:normalizedString"/>
+				<xs:element minOccurs="0" name="Description" type="xs:normalizedString" />
+				<xs:element minOccurs="0" name="Type" type="xs:normalizedString" />
+				<xs:element minOccurs="0" name="UnitOfMeasure" type="xs:normalizedString" />
+				<xs:element minOccurs="0" maxOccurs="1" name="ListOfUnits">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" maxOccurs="unbounded" name="Unit" type="cc:Unit" />
+					</xs:sequence>
+				</xs:complexType>
+				</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			
+			<xs:complexType name="Unit">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="Type" type="xs:normalizedString" />
+					<xs:element minOccurs="0" name="Value" type="xs:integer" />
+					</xs:sequence>
+			</xs:complexType>
+			
+						
+			<!-- New Schema Created for Convergent Charging -->
+			<xs:complexType name="ChargeDataType">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="JobUID" type="xs:normalizedString">
+						<xs:annotation>
+							<xs:documentation>ID is to identify a particular job sent by the
+								customer</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="UID" type="xs:normalizedString">
+						<xs:annotation>
+							<xs:documentation>Represents the identity under which the
+								product or service is used</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="SID" type="xs:normalizedString">
+						<xs:annotation>
+							<xs:documentation>The service being consumed. valid values
+								Cloud, Cloud, Provisioning, Product-use</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="UserLogon" type="xs:normalizedString">
+						<xs:annotation>
+							<xs:documentation>Logon id of the user who accessed an Autodesk
+								product</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="GUID" type="xs:normalizedString">
+						<xs:annotation>
+							<xs:documentation>EIDM GUID</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="ServiceCode" type="xs:normalizedString">
+						<xs:annotation>
+							<xs:documentation>Service being consumed by the event. e.g.
+								Rendering, Simulation etc. null in case of usage
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="FirstProductUse" type="xs:boolean">
+						<xs:annotation>
+							<xs:documentation>Y if if the product is being used uniquely by
+								a user in a month</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="ProductLinecode" type="xs:normalizedString">
+						<xs:annotation>
+							<xs:documentation>Product Lince Code</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="SerialNum" type="xs:normalizedString">
+						<xs:annotation>
+							<xs:documentation>Product Serial # from Product Usage collecting
+								Systems</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="StartTime" type="xs:date">
+						<xs:annotation>
+							<xs:documentation>Timestamp for the event start time
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="EndTime" type="xs:date">
+						<xs:annotation>
+							<xs:documentation>Timestamp for the event end time
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="Status" type="xs:normalizedString">
+						<xs:annotation>
+							<xs:documentation>Generally Null. If a Job Fails the will have
+								the value Failure</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="Quantity" type="xs:double">
+						<xs:annotation>
+							<xs:documentation>Any Units or Number associated with the event
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="Comments" type="xs:normalizedString">
+						<xs:annotation>
+							<xs:documentation>Any textual info describing the event
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="ServiceCategory" type="xs:normalizedString">
+						<xs:annotation>
+							<xs:documentation>Any text value with Value of Service Category
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="ChargeEventOut">
+    <wsdl:part element="cc:ChargeEventResponse" name="ChargeEventOutPart">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ChargeEventIn">
+    <wsdl:part element="cc:ChargeEventRequest" name="ChargeEventInPart">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SOAPFault">
+    <wsdl:part element="cc:SOAPFault" name="SOAPFault">
+    </wsdl:part>
+  </wsdl:message>
+    <wsdl:message name="GetCcTransactionsIn">
+    <wsdl:part element="cc:GetCcTransactionsRequest" name="GetCcTransactionsInPart">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetCcTransactionsOut">
+    <wsdl:part element="cc:GetCcTransactionsResponse" name="GetCcTransactionsOutPart">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetCcTransactionSummaryIn">
+    <wsdl:part element="cc:GetCcTransactionSummaryRequest" name="GetCcTransactionSummaryInPart">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetCcTransactionSummaryOut">
+    <wsdl:part element="cc:GetCcTransactionSummaryResponse" name="GetCcTransactionSummaryOutPart">
+    </wsdl:part>
+  </wsdl:message>
+  
+  <!-- New Objects PL-->
+	<wsdl:message name="GetCcUsageSummaryIn">
+		<wsdl:part element="cc:GetCcUsageSummaryRequest" name="GetCcUsageSummaryInPart" />
+	</wsdl:message>
+	<wsdl:message name="GetCcUsageSummaryOut">
+	<wsdl:part element="cc:GetCcUsageSummaryResponse" name="GetCcUsageSummaryOutPart" />
+	</wsdl:message>
+  <!-- New Objects PL-->
+    	
+  <wsdl:message name="QuerySubscriptionBalanceIn">
+		<wsdl:part element="cc:QuerySubscriptionBalanceRequest" name="QuerySubscriptionBalanceInPart" />
+	</wsdl:message>
+	<wsdl:message name="QuerySubscriptionBalanceOut">
+		<wsdl:part element="cc:QuerySubscriptionBalanceResponse" name="QuerySubscriptionBalanceOutPart" />
+	</wsdl:message>
+  <wsdl:portType name="ConvergentChargingExPortType">
+    <wsdl:operation name="ChargeEvent">
+      <wsdl:input message="cc:ChargeEventIn">
+    </wsdl:input>
+      <wsdl:output message="cc:ChargeEventOut">
+    </wsdl:output>
+      <wsdl:fault message="cc:SOAPFault" name="SOAPFault">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCcTransactions">
+      <wsdl:input message="cc:GetCcTransactionsIn">
+    </wsdl:input>
+      <wsdl:output message="cc:GetCcTransactionsOut">
+    </wsdl:output>
+      <wsdl:fault message="cc:SOAPFault" name="SOAPFault">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCcTransactionSummary">
+      <wsdl:input message="cc:GetCcTransactionSummaryIn">
+    </wsdl:input>
+      <wsdl:output message="cc:GetCcTransactionSummaryOut">
+    </wsdl:output>
+      <wsdl:fault message="cc:SOAPFault" name="SOAPFault">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="querySubscriptionBalance">
+		<wsdl:input message="cc:QuerySubscriptionBalanceIn" />
+		<wsdl:output message="cc:QuerySubscriptionBalanceOut" />
+		<wsdl:fault message="cc:SOAPFault" name="SOAPFault" />
+	</wsdl:operation>
+	
+	<!-- New Object PL-->
+	<wsdl:operation name="GetCcUsageSummary">
+			<wsdl:input message="cc:GetCcUsageSummaryIn" />
+			<wsdl:output message="cc:GetCcUsageSummaryOut" />
+			<wsdl:fault message="cc:SOAPFault" name="SOAPFault" />
+	</wsdl:operation>
+	<!-- New Object PL-->
+
+  </wsdl:portType>
+  <wsdl:binding name="ConvergentChargingExBinding" type="cc:ConvergentChargingExPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ChargeEvent">
+      <soap:operation soapAction="ChargeEvent" style="document"/>
+      <wsdl:input>
+        <soap:body parts="ChargeEventInPart" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="ChargeEventOutPart" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPFault">
+        <soap:fault name="SOAPFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCcTransactions">
+      <soap:operation soapAction="GetCcTransactions" style="document"/>
+      <wsdl:input>
+        <soap:body parts="GetCcTransactionsInPart" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="GetCcTransactionsOutPart" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPFault">
+        <soap:fault name="SOAPFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCcTransactionSummary">
+      <soap:operation soapAction="GetCcTransactionSummary" style="document"/>
+      <wsdl:input>
+        <soap:body parts="GetCcTransactionSummaryInPart" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="GetCcTransactionSummaryOutPart" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SOAPFault">
+        <soap:fault name="SOAPFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="querySubscriptionBalance">
+		<soap:operation soapAction="querySubscriptionBalance" style="document" />
+		<wsdl:input>
+			<soap:body parts="QuerySubscriptionBalanceInPart" use="literal" />
+		</wsdl:input>
+		<wsdl:output>
+			<soap:body parts="QuerySubscriptionBalanceOutPart" use="literal" />
+		</wsdl:output>
+		<wsdl:fault name="SOAPFault">
+			<soap:fault name="SOAPFault" use="literal" />
+		</wsdl:fault>
+	</wsdl:operation>
+	
+	<!-- New Object PL-->
+    <wsdl:operation name="GetCcUsageSummary">
+	      <soap:operation soapAction="GetCcUsageSummary" style="document" />
+	      <wsdl:input>
+		<soap:body parts="GetCcUsageSummaryInPart" use="literal" />
+	      </wsdl:input>
+	      <wsdl:output>
+		<soap:body parts="GetCcUsageSummaryOutPart" use="literal" />
+	      </wsdl:output>
+	      <wsdl:fault name="SOAPFault">
+		<soap:fault name="SOAPFault" use="literal" />
+	      </wsdl:fault>
+    </wsdl:operation>
+    <!-- New Object PL-->
+	    
+  </wsdl:binding>
+  <wsdl:service name="ConvergentChargingExService">
+    <wsdl:port binding="cc:ConvergentChargingExBinding" name="ConvergentChargingExPort">
+      <soap:address location="http://uspetdeccprx001:8080/quattroCloud/services/ConvergentCharging"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
